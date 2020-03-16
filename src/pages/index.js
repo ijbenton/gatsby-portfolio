@@ -1,21 +1,22 @@
 import React from "react"
-import { Link } from "gatsby"
+import { ParallaxProvider } from "react-scroll-parallax"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Home from "../sections/home/home"
+import AboutMe from "../sections/about-me/about-me"
+import Portfolio from "../sections/portfolio/portfolio"
+import Contact from "../sections/contact/contact"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <ParallaxProvider>
+    <Layout>
+      <Home />
+      <Portfolio />
+      <AboutMe />
+
+      <Contact />
+    </Layout>
+  </ParallaxProvider>
 )
 
 export default IndexPage

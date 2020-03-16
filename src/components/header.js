@@ -1,14 +1,15 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components"
+
+const Wrapper = styled.div`
+  background: #1b1b1e;
+  margin-bottom: 1.45rem;
+`
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+  <Wrapper>
     <div
       style={{
         margin: `0 auto`,
@@ -20,7 +21,7 @@ const Header = ({ siteTitle }) => (
         <Link
           to="/"
           style={{
-            color: `white`,
+            color: `#D8DBE2`,
             textDecoration: `none`,
           }}
         >
@@ -28,7 +29,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
     </div>
-  </header>
+  </Wrapper>
 )
 
 Header.propTypes = {
