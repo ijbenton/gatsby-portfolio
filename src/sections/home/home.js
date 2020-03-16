@@ -63,15 +63,10 @@ const Home = () => {
                 bounds
                 image {
                   childImageSharp {
-                    fluid {
-                      base64
+                    fluid(maxWidth: 400) {
                       tracedSVG
                       srcWebp
                       srcSetWebp
-                      originalImg
-                      originalName
-                      presentationWidth
-                      presentationHeight
                     }
                   }
                 }
@@ -119,15 +114,15 @@ const Home = () => {
         {allFile.edges.map(({ node }, i) => {
           console.log(node)
           return (
-            <Parallax y={[yOff * (i + 1) + "px", -yOff * (i + 1) + "px"]}>
+            <Parallax y={[yOff * i + "px", -yOff * i + "px"]}>
               <Img
                 fluid={
                   node.childMarkdownRemark.frontmatter.image.childImageSharp
                     .fluid
                 }
                 style={{
-                  width: "12rem",
-                  height: "12rem",
+                  width: "15rem",
+                  height: "15rem",
                 }}
               />
             </Parallax>
