@@ -1,5 +1,5 @@
 ---
-image: "flowers.png"
+image: "island.png"
 bounds:
   - "110"
   - "281"
