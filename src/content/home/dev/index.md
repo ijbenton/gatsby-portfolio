@@ -1,5 +1,5 @@
 ---
-image: "bulb.png"
+image: "dev.png"
 bounds:
   - "167"
   - "281"

@@ -1,5 +1,5 @@
 ---
-image: "fish.png"
+image: "wave.png"
 bounds:
   - "167"
   - "281"
