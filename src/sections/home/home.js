@@ -20,7 +20,7 @@ import { useSpring, animated, config } from "react-spring"
 
 const StyledTitle = styled(animated.h1)`
   color: white;
-  font-size: 3rem;
+  font-size: 5rem;
   margin-bottom: 0.5rem;
 `
 
@@ -102,7 +102,7 @@ const Home = () => {
     config: { duration: 10000 },
     reset: true,
   })
-  const yOff = getRandomInt(100, -200)
+  const yOff = getRandomInt(0, -200)
   // const yOff = -75
   // (<ParallaxImages>
   //   <Parallax y={["100px", "300px"]}>

@@ -10,6 +10,7 @@ const StyledHeader = styled.header`
   top: 0;
   left: 0;
   z-index: 20;
+  font-size: 2rem;
 `
 
 const Wrapper = styled.div`
