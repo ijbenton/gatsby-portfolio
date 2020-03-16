@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import { StyledSection } from "../../styles/section-styles"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import range from "lodash-es/range"
 import {
   faChevronCircleDown,
   faLaptop,
@@ -39,13 +40,18 @@ const ParallaxImages = styled.div`
 // `
 
 const ParallaxImage = styled(animated(Img))`
-  transition: all 1s ease-out;
   z-index: 20;
+  height: 10rem;
+  width: 10rem;
 `
 
 const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
+
+const items = range(4)
+const interp = i => r =>
+  `translate3d(0, ${90 * Math.sin(r + (i * 2 * Math.PI) / 1.6)}px, 0)`
 
 const Home = () => {
   const { allFile } = useStaticQuery(graphql`
@@ -87,7 +93,17 @@ const Home = () => {
       transform: "translateY(200px)",
     },
   })
-  const yOff = getRandomInt(50, -100)
+
+  const { radians } = useSpring({
+    to: async next => {
+      while (1) await next({ radians: 2 * Math.PI })
+    },
+    from: { radians: 0 },
+    config: { duration: 10000 },
+    reset: true,
+  })
+  const yOff = getRandomInt(100, -200)
+  // const yOff = -75
   // (<ParallaxImages>
   //   <Parallax y={["100px", "300px"]}>
   //     <ParalaxIcon icon={faLaptop} size="2x" style={ParallaxSpring} />
@@ -114,16 +130,16 @@ const Home = () => {
         {allFile.edges.map(({ node }, i) => {
           console.log(node)
           return (
-            <Parallax y={[yOff * i + "px", -yOff * i + "px"]}>
-              <Img
+            <Parallax
+              y={[yOff * i + "px", -yOff * i + "px"]}
+              style={ParallaxSpring}
+            >
+              <ParallaxImage
                 fluid={
                   node.childMarkdownRemark.frontmatter.image.childImageSharp
                     .fluid
                 }
-                style={{
-                  width: "15rem",
-                  height: "15rem",
-                }}
+                style={{ transform: radians.interpolate(interp(i)) }}
               />
             </Parallax>
           )

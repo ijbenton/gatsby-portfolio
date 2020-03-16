@@ -4,36 +4,41 @@ import { StyledSection } from "../../styles/section-styles"
 import PortfolioItem from "../../templates/portfolio-item"
 
 const Portfolio = () => {
-  const { allMarkdownRemark } = useStaticQuery(graphql`
+  const { allFile } = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(sort: { order: DESC, fields: fileAbsolutePath }) {
+      allFile(
+        filter: { sourceInstanceName: { eq: "portfolio" }, ext: { eq: ".md" } }
+        sort: { order: DESC, fields: absolutePath }
+      ) {
         edges {
           node {
-            frontmatter {
-              live
-              source
-              stack
-              title
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 800, quality: 80) {
-                    tracedSVG
-                    srcWebp
-                    srcSetWebp
-                    srcSet
-                    src
-                    sizes
-                    presentationWidth
-                    presentationHeight
-                    originalName
-                    originalImg
-                    base64
-                    aspectRatio
+            childMarkdownRemark {
+              frontmatter {
+                live
+                source
+                stack
+                title
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 800, quality: 80) {
+                      tracedSVG
+                      srcWebp
+                      srcSetWebp
+                      srcSet
+                      src
+                      sizes
+                      presentationWidth
+                      presentationHeight
+                      originalName
+                      originalImg
+                      base64
+                      aspectRatio
+                    }
                   }
                 }
               }
+              html
             }
-            html
           }
         }
       }
@@ -41,7 +46,7 @@ const Portfolio = () => {
   `)
   return (
     <StyledSection id="portfolio">
-      {allMarkdownRemark.edges.map(({ node }) => (
+      {allFile.edges.map(({ node }) => (
         <PortfolioItem node={node} />
       ))}
     </StyledSection>

@@ -95,7 +95,13 @@ const Image = styled(Img)`
 `
 
 const PortfolioItem = ({ node }) => {
-  const { title, live, source, stack, image } = node.frontmatter
+  const {
+    title,
+    live,
+    source,
+    stack,
+    image,
+  } = node.childMarkdownRemark.frontmatter
   console.log(image.childImageSharp.fluid)
   return (
     <ItemWrapper>
@@ -103,7 +109,9 @@ const PortfolioItem = ({ node }) => {
       <ContentWrapper>
         <Image fluid={image.childImageSharp.fluid} />
         <Content>
-          <Text dangerouslySetInnerHTML={{ __html: node.html }} />
+          <Text
+            dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html }}
+          />
           <Stack>{stack}</Stack>
           <ButtonsWrapper>
             <ButtonLink target="_blank" solid href={live} rel="noreferrer">
