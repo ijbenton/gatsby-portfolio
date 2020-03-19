@@ -1,6 +1,4 @@
 ---
 image: "island.png"
-bounds:
-  - "110"
-  - "281"
+bounds: "55"
 ---

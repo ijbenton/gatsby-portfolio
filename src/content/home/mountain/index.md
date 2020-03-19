@@ -1,6 +1,4 @@
 ---
 image: "mountain.png"
-bounds:
-  - "135"
-  - "281"
+bounds: "30"
 ---

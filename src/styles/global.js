@@ -34,7 +34,7 @@ body {
   --white: #fff;
   --shadow-btn: rgba(7, 49, 69, .1);
   --shadow-color: rgba(0, 0, 0, 0.1);
-  background-color: var(--background);
+  background: var(--background);
 
 }
 form,

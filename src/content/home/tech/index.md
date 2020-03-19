@@ -1,6 +1,4 @@
 ---
 image: "tech.png"
-bounds:
-  - "134"
-  - "281"
+bounds: "5"
 ---

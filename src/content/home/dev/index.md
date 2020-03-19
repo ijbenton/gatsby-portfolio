@@ -1,6 +1,4 @@
 ---
 image: "dev.png"
-bounds:
-  - "167"
-  - "281"
+bounds: "15"
 ---

@@ -1,6 +1,4 @@
 ---
 image: "wave.png"
-bounds:
-  - "167"
-  - "281"
+bounds: "85"
 ---

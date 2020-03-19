@@ -1,6 +1,4 @@
 ---
 image: "tree.png"
-bounds:
-  - "204"
-  - "281"
+bounds: "50"
 ---

@@ -124,27 +124,27 @@ const Home = () => {
   //     <ParalaxIcon icon={faSmile} size="2x" style={ParallaxSpring} />
   //   </Parallax>
   // </ParallaxImages>)
+  // <ParallaxImages>
+  //         {allFile.edges.map(({ node }, i) => {
+  //           console.log(node)
+  //           return (
+  //             <Parallax
+  //               y={[yOff * i + "px", -yOff * i + "px"]}
+  //               style={ParallaxSpring}
+  //             >
+  //               <ParallaxImage
+  //                 fluid={
+  //                   node.childMarkdownRemark.frontmatter.image.childImageSharp
+  //                     .fluid
+  //                 }
+  //                 style={{ transform: radians.interpolate(interp(i)) }}
+  //               />
+  //             </Parallax>
+  //           )
+  //         })}
+  //       </ParallaxImages>}
   return (
     <StyledSection id="home">
-      <ParallaxImages>
-        {allFile.edges.map(({ node }, i) => {
-          console.log(node)
-          return (
-            <Parallax
-              y={[yOff * i + "px", -yOff * i + "px"]}
-              style={ParallaxSpring}
-            >
-              <ParallaxImage
-                fluid={
-                  node.childMarkdownRemark.frontmatter.image.childImageSharp
-                    .fluid
-                }
-                style={{ transform: radians.interpolate(interp(i)) }}
-              />
-            </Parallax>
-          )
-        })}
-      </ParallaxImages>
       <StyledTitle style={ParallaxSpring}>Hello 🤙,</StyledTitle>
       <StyledTitle style={ParallaxSpring}>
         I'm <Highlight>Ian</Highlight>

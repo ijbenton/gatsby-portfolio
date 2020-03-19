@@ -102,7 +102,6 @@ const PortfolioItem = ({ node }) => {
     stack,
     image,
   } = node.childMarkdownRemark.frontmatter
-  console.log(image.childImageSharp.fluid)
   return (
     <ItemWrapper>
       <Title>{title}</Title>
