@@ -163,63 +163,63 @@ const IndexPage = () => {
           speed={-0.3}
           style={{ pointerEvents: "none" }}
         >
-          <Img backgroundColor={true}
+          <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "15%", marginLeft: "70%" }}
+            style={{ color: "white", width: "15%", marginLeft: "70%" }}
           />
         </ParallaxLayer>
         <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
-          <Img backgroundColor={true}
+          <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "55%" }}
+            style={{ color: "white", width: "20%", marginLeft: "55%" }}
           />
-          <Img backgroundColor={true}
+          <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "10%", marginLeft: "15%" }}
+            style={{ color: "white", width: "10%", marginLeft: "15%" }}
           />
         </ParallaxLayer>
         <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
-          <Img backgroundColor={true}
+          <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "70%" }}
+            style={{ color: "white", width: "20%", marginLeft: "70%" }}
           />
-          <Img backgroundColor={true}
+          <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "40%" }}
+            style={{ color: "white", width: "20%", marginLeft: "40%" }}
           />
         </ParallaxLayer>
         <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
-          <Img backgroundColor={true}
+          <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "10%", marginLeft: "10%" }}
+            style={{ color: "white", width: "10%", marginLeft: "10%" }}
           />
-          <Img backgroundColor={true}
+          <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "75%" }}
+            style={{ color: "white", width: "20%", marginLeft: "75%" }}
           />
         </ParallaxLayer>
         <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.4 }}>
-          <Img backgroundColor={true}
+          <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "60%" }}
+            style={{ color: "white", width: "20%", marginLeft: "60%" }}
           />
-          <Img backgroundColor={true}
+          <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "25%", marginLeft: "30%" }}
+            style={{ color: "white", width: "25%", marginLeft: "30%" }}
           />
-          <Img backgroundColor={true}
+          <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "10%", marginLeft: "80%" }}
+            style={{ color: "white", width: "10%", marginLeft: "80%" }}
           />
         </ParallaxLayer>
         <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
-          <Img backgroundColor={true}
+          <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "5%" }}
+            style={{ color: "white", width: "20%", marginLeft: "5%" }}
           />
-          <Img backgroundColor={true}
+          <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "15%", marginLeft: "75%" }}
+            style={{ color: "white", width: "15%", marginLeft: "75%" }}
           />
         </ParallaxLayer>
         <ParallaxLayer
@@ -232,7 +232,7 @@ const IndexPage = () => {
             pointerEvents: "none",
           }}
         >
-          <Img backgroundColor={true}
+          <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "60%" }}
           />
