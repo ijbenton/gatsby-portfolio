@@ -179,169 +179,169 @@ const IndexPage = () => {
         >
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "15%", marginLeft: "70%", zIndex: "-3" }}
+            style={{ width: "15%", marginLeft: "70%" }}
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={0.99} speed={0.8} style={{ opacity: 0.1 }}>
+        <ParallaxLayer offset={0.99} speed={0.8} style={{ opacity: 0.1, zIndex: "-3" }}>
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "55%", zIndex: "-3" }}
+            style={{ width: "20%", marginLeft: "55%" }}
           />
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "10%", marginLeft: "15%", zIndex: "-3" }}
-          />
-        </ParallaxLayer>
-        <ParallaxLayer offset={1.8} speed={0.5} style={{ opacity: 0.1 }}>
-          <Img
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "70%", zIndex: "-3" }}
-          />
-          <Img
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "40%", zIndex: "-3" }}
+            style={{ width: "10%", marginLeft: "15%" }}
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={0.99} speed={0.2} style={{ opacity: 0.2 }}>
+        <ParallaxLayer offset={1.8} speed={0.5} style={{ opacity: 0.1, zIndex: "-3" }}>
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "10%", marginLeft: "10%", zIndex: "-3" }}
+            style={{ width: "20%", marginLeft: "70%" }}
           />
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "75%", zIndex: "-3" }}
-          />
-        </ParallaxLayer>
-        <ParallaxLayer offset={1.4} speed={-0.1} style={{ opacity: 0.4 }}>
-          <Img
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "60%", zIndex: "-3" }}
-          />
-          <Img
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "25%", marginLeft: "30%", zIndex: "-3" }}
-          />
-          <Img
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "10%", marginLeft: "80%", zIndex: "-3" }}
+            style={{ width: "20%", marginLeft: "40%" }}
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
+        <ParallaxLayer offset={0.99} speed={0.2} style={{ opacity: 0.2, zIndex: "-3" }}>
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "5%" , zIndex: "-3"}}
+            style={{ width: "10%", marginLeft: "10%" }}
           />
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "15%", marginLeft: "75%", zIndex: "-3" }}
-          />
-        </ParallaxLayer>
-        <ParallaxLayer offset={3} speed={0.8} style={{ opacity: 0.1 }}>
-          <Img
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "55%", zIndex: "-3" }}
-          />
-          <Img
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "10%", marginLeft: "15%", zIndex: "-3" }}
+            style={{ width: "20%", marginLeft: "75%" }}
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={3.8} speed={0.5} style={{ opacity: 0.1 }}>
+        <ParallaxLayer offset={1.4} speed={-0.1} style={{ opacity: 0.4, zIndex: "-3" }}>
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "70%", zIndex: "-3" }}
+            style={{ width: "20%", marginLeft: "60%" }}
           />
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "40%", zIndex: "-3" }}
-          />
-        </ParallaxLayer>
-        <ParallaxLayer offset={3} speed={0.2} style={{ opacity: 0.2 }}>
-          <Img
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "10%", marginLeft: "10%", zIndex: "-3" }}
+            style={{ width: "25%", marginLeft: "30%" }}
           />
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "75%", zIndex: "-3" }}
+            style={{ width: "10%", marginLeft: "80%" }}
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={3.4} speed={-0.1} style={{ opacity: 0.4 }}>
+        <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6, zIndex: "-3" }}>
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "60%", zIndex: "-3" }}
+            style={{ width: "20%", marginLeft: "5%" }}
           />
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "25%", marginLeft: "30%", zIndex: "-3" }}
-          />
-          <Img
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "10%", marginLeft: "80%", zIndex: "-3" }}
+            style={{ width: "15%", marginLeft: "75%" }}
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={4.6} speed={0.4} style={{ opacity: 0.6 }}>
+        <ParallaxLayer offset={3} speed={0.8} style={{ opacity: 0.1, zIndex: "-3" }}>
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "5%" , zIndex: "-3"}}
+            style={{ width: "20%", marginLeft: "55%" }}
           />
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "15%", marginLeft: "75%", zIndex: "-3" }}
-          />
-        </ParallaxLayer>
-        <ParallaxLayer offset={5} speed={0.8} style={{ opacity: 0.1 }}>
-          <Img
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "55%", zIndex: "-3" }}
-          />
-          <Img
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "10%", marginLeft: "15%", zIndex: "-3" }}
+            style={{ width: "10%", marginLeft: "15%" }}
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={5.8} speed={0.5} style={{ opacity: 0.1 }}>
+        <ParallaxLayer offset={3.8} speed={0.5} style={{ opacity: 0.1, zIndex: "-3" }}>
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "70%", zIndex: "-3" }}
+            style={{ width: "20%", marginLeft: "70%"}}
           />
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "40%", zIndex: "-3" }}
-          />
-        </ParallaxLayer>
-        <ParallaxLayer offset={5} speed={0.2} style={{ opacity: 0.2 }}>
-          <Img
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "10%", marginLeft: "10%", zIndex: "-3" }}
-          />
-          <Img
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "75%", zIndex: "-3" }}
+            style={{ width: "20%", marginLeft: "40%" }}
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={5.4} speed={-0.1} style={{ opacity: 0.4 }}>
+        <ParallaxLayer offset={3} speed={0.2} style={{ opacity: 0.2, zIndex: "-3" }}>
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "60%", zIndex: "-3" }}
+            style={{ width: "10%", marginLeft: "10%" }}
           />
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "25%", marginLeft: "30%", zIndex: "-3" }}
-          />
-          <Img
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "10%", marginLeft: "80%", zIndex: "-3" }}
+            style={{ width: "20%", marginLeft: "75%" }}
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={6.6} speed={0.4} style={{ opacity: 0.6 }}>
+        <ParallaxLayer offset={3.4} speed={-0.1} style={{ opacity: 0.4, zIndex: "-3" }}>
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "5%" , zIndex: "-3"}}
+            style={{ width: "20%", marginLeft: "60%" }}
           />
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "15%", marginLeft: "75%", zIndex: "-3" }}
+            style={{ width: "25%", marginLeft: "30%" }}
+          />
+          <Img
+            fluid={allFile.edges[0].node.childImageSharp.fluid}
+            style={{ width: "10%", marginLeft: "80%" }}
+          />
+        </ParallaxLayer>
+        <ParallaxLayer offset={4.6} speed={0.4} style={{ opacity: 0.6, zIndex: "-3" }}>
+          <Img
+            fluid={allFile.edges[0].node.childImageSharp.fluid}
+            style={{ width: "20%", marginLeft: "5%" }}
+          />
+          <Img
+            fluid={allFile.edges[0].node.childImageSharp.fluid}
+            style={{ width: "15%", marginLeft: "75%" }}
+          />
+        </ParallaxLayer>
+        <ParallaxLayer offset={5} speed={0.8} style={{ opacity: 0.1, zIndex: "-3" }}>
+          <Img
+            fluid={allFile.edges[0].node.childImageSharp.fluid}
+            style={{ width: "20%", marginLeft: "55%" }}
+          />
+          <Img
+            fluid={allFile.edges[0].node.childImageSharp.fluid}
+            style={{ width: "10%", marginLeft: "15%" }}
+          />
+        </ParallaxLayer>
+        <ParallaxLayer offset={5.8} speed={0.5} style={{ opacity: 0.1, zIndex: "-3" }}>
+          <Img
+            fluid={allFile.edges[0].node.childImageSharp.fluid}
+            style={{ width: "20%", marginLeft: "70%" }}
+          />
+          <Img
+            fluid={allFile.edges[0].node.childImageSharp.fluid}
+            style={{ width: "20%", marginLeft: "40%" }}
+          />
+        </ParallaxLayer>
+        <ParallaxLayer offset={5} speed={0.2} style={{ opacity: 0.2, zIndex: "-3" }}>
+          <Img
+            fluid={allFile.edges[0].node.childImageSharp.fluid}
+            style={{ width: "10%", marginLeft: "10%" }}
+          />
+          <Img
+            fluid={allFile.edges[0].node.childImageSharp.fluid}
+            style={{ width: "20%", marginLeft: "75%" }}
+          />
+        </ParallaxLayer>
+        <ParallaxLayer offset={5.4} speed={-0.1} style={{ opacity: 0.4, zIndex: "-3" }}>
+          <Img
+            fluid={allFile.edges[0].node.childImageSharp.fluid}
+            style={{ width: "20%", marginLeft: "60%" }}
+          />
+          <Img
+            fluid={allFile.edges[0].node.childImageSharp.fluid}
+            style={{ width: "25%", marginLeft: "30%" }}
+          />
+          <Img
+            fluid={allFile.edges[0].node.childImageSharp.fluid}
+            style={{ width: "10%", marginLeft: "80%" }}
+          />
+        </ParallaxLayer>
+        <ParallaxLayer offset={6.6} speed={0.4} style={{ opacity: 0.6, zIndex: "-3" }}>
+          <Img
+            fluid={allFile.edges[0].node.childImageSharp.fluid}
+            style={{ width: "20%", marginLeft: "5%" }}
+          />
+          <Img
+            fluid={allFile.edges[0].node.childImageSharp.fluid}
+            style={{ width: "15%", marginLeft: "75%" }}
           />
         </ParallaxLayer>
         <ParallaxLayer
