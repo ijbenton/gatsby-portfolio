@@ -6,6 +6,7 @@ const theme = {
     //   light: '#089ECA',
     //   lighter: '#36A6BA',
     lighter: "#02C39A",
+    secondary: "#805E73",
     lightTheme: {
       text: "#585858",
       textHighlight: "#313638",

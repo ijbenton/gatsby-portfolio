@@ -27,6 +27,7 @@ body {
   --primary: ${props => props.theme.colors.primary};
   --primary-light: ${props => props.theme.colors.light};
   --primary-lighter: ${props => props.theme.colors.lighter};
+  --secondary: ${props => props.theme.colors.secondary};
   --navbar: rgba(255, 255, 255, 0.95);
   --text: ${props => props.theme.colors.darkTheme.text};
   --text-highlight: ${props => props.theme.colors.darkTheme.textHighlight};

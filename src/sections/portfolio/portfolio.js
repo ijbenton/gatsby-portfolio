@@ -3,6 +3,11 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import { StyledSection } from "../../styles/section-styles"
 import PortfolioItem from "../../templates/portfolio-item"
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
+import styled from "styled-components"
+
+const StyledParallaxLayer = styled(ParallaxLayer)`
+
+`
 
 const Portfolio = () => {
   const { allFile } = useStaticQuery(graphql`
@@ -46,16 +51,11 @@ const Portfolio = () => {
     }
   `)
   return (
-    <ParallaxLayer
-      offset={1}
-      speed={1}
-      style={{ backgroundColor: "#805E73", border: "2px solid white" }}
-      id="portfolio"
-    >
+    <StyledParallaxLayer offset={1} speed={1} factor={6} id="portfolio">
       {allFile.edges.map(({ node }) => (
         <PortfolioItem node={node} />
       ))}
-    </ParallaxLayer>
+    </StyledParallaxLayer>
   )
 }
 

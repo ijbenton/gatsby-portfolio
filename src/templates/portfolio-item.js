@@ -15,7 +15,7 @@ const ItemWrapper = styled.div`
   z-index: 5;
 
   &:not(:last-child) {
-    margin-bottom: 5rem;
+    margin-bottom: 7rem;
   }
 `
 
@@ -42,7 +42,7 @@ const ButtonsWrapper = styled.div`
 
 const Title = styled.h1`
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 4rem;
   position: relative;
   font-style: italic;
   margin: 0;
@@ -68,7 +68,7 @@ const Stack = styled.span`
   color: var(--text-highlight);
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 1.6rem;
   font-family: "Roboto";
   margin-bottom: 2.75rem;
 `
@@ -76,7 +76,7 @@ const Stack = styled.span`
 const Text = styled.div`
   color: var(--text);
   p {
-    font-size: 0.8rem;
+    font-size: 1.4rem;
     font-weight: 400;
     margin-top: 0;
     line-height: 1.75;
