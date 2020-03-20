@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   height: 60px;
   margin: 0 3rem;
-  a {
+  span {
     color: #d8dbe2;
   }
 `
@@ -30,35 +30,26 @@ const StyledNav = styled.nav`
   flex: 1;
   justify-content: flex-end;
   align-items: center;
-  a {
+  span {
     padding: 0 2rem;
   }
 `
 
 const Logo = styled.div`
-  a {
+  span {
     color: white;
   }
 `
 
-const Navbar = () => (
+const Navbar = ({ handleClick }) => (
   <StyledHeader>
     <Wrapper>
-      <Logo>
-        <Link to="home" spy={true} smooth={true}>
-          Ian Benton
-        </Link>
-      </Logo>
+      <Logo onClick={() => handleClick(0)}>Ian Benton</Logo>
       <StyledNav>
-        <Link to="portfolio" spy={true} smooth={true}>
-          Portfolio
-        </Link>
-        <Link to="about-me" spy={true} smooth={true}>
-          About Me
-        </Link>
-        <Link to="contact" spy={true} smooth={true}>
-          Contact
-        </Link>
+        <span onClick={() => handleClick(1)}>Portfolio</span>
+        <span onClick={() => handleClick(4)}>About Me</span>
+
+        <span onClick={() => handleClick(5)}>Contact</span>
       </StyledNav>
     </Wrapper>
   </StyledHeader>

@@ -32,7 +32,9 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <SEO />
-      <Navbar />
+   {
+      //  <Navbar />
+      }
       <StyledMain>{children}</StyledMain>
       <GlobalStyles />
     </ThemeProvider>

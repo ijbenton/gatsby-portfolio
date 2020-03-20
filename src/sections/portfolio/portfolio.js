@@ -5,9 +5,7 @@ import PortfolioItem from "../../templates/portfolio-item"
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import styled from "styled-components"
 
-const StyledParallaxLayer = styled(ParallaxLayer)`
-
-`
+const StyledParallaxLayer = styled(ParallaxLayer)``
 
 const Portfolio = () => {
   const { allFile } = useStaticQuery(graphql`

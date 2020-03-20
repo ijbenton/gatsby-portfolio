@@ -45,8 +45,6 @@ const ParallaxImage = styled(animated(Img))`
   width: 10rem;
 `
 
-
-
 const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
@@ -55,7 +53,7 @@ const items = range(4)
 const interp = i => r =>
   `translate3d(0, ${90 * Math.sin(r + (i * 2 * Math.PI) / 1.6)}px, 0)`
 
-const Home = () => {
+const Home = ({handleClick}) => {
   const { allFile } = useStaticQuery(graphql`
     query {
       allFile(
@@ -154,18 +152,18 @@ const Home = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-         border: "2px solid white" 
       }}
     >
       <StyledTitle style={ParallaxSpring}>Hello 🤙,</StyledTitle>
       <StyledTitle style={ParallaxSpring}>
         I'm <Highlight>Ian</Highlight>
       </StyledTitle>
-      <Link to="portfolio" spy={true} smooth={true}>
+      <Link to="#portfolio" spy={true} smooth={true}>
         <FontAwesomeIcon
           icon={faChevronCircleDown}
           size="3x"
           style={{ marginTop: "1rem", color: "white" }}
+          onClick={() => handleClick(1)}
         />
       </Link>
     </ParallaxLayer>
