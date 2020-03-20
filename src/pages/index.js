@@ -170,7 +170,7 @@ const IndexPage = () => {
   return (
     <Layout>
     <Navbar handleClick={handleClick} />
-      <Parallax pages={6} ref={ref => (parallax = ref)}>
+      <Parallax pages={6.25} ref={ref => (parallax = ref)}>
         <SmallStarsAnimation reset config={{ duration: 50000 }}>
           {styles => <SmallStarsLayer style={styles} />}
         </SmallStarsAnimation>
@@ -405,7 +405,7 @@ const IndexPage = () => {
           />
         </ParallaxLayer>
         <ParallaxLayer
-          offset={5.5}
+          offset={6}
           speed={1}
           style={{
             display: "flex",
@@ -419,10 +419,10 @@ const IndexPage = () => {
             style={{ width: "30%" }}
           />
         </ParallaxLayer>
-        <StyledParallaxLayer secondary offset={4} speed={1}>
+        <StyledParallaxLayer secondary offset={4.5} factor={1.5} speed={1}>
           <AboutMe />
         </StyledParallaxLayer>
-        <StyledParallaxLayer primary offset={5} speed={1}>
+        <StyledParallaxLayer primary offset={5.5} factor={1.5} speed={1}>
           <Contact />
         </StyledParallaxLayer>
         {

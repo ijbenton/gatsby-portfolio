@@ -45,6 +45,12 @@ const ParallaxImage = styled(animated(Img))`
   width: 10rem;
 `
 
+const StyledIcon = styled(animated(FontAwesomeIcon))`
+margin-top: 1rem;
+color: white;
+cursor: pointer;
+`
+
 const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
@@ -159,10 +165,10 @@ const Home = ({ handleClick }) => {
         I'm <Highlight>Ian</Highlight>
       </StyledTitle>
       <Link to="#portfolio" spy={true} smooth={true}>
-        <FontAwesomeIcon
+        <StyledIcon
           icon={faChevronCircleDown}
           size="3x"
-          style={{ marginTop: "1rem", color: "white", cursor: "pointer" }}
+          styled={ParallaxSpring}
           onClick={() => handleClick(1)}
         />
       </Link>
