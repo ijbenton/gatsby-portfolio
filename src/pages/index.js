@@ -172,16 +172,6 @@ const IndexPage = () => {
         </BigStarsAnimation>
         <Home />
         <Portfolio />
-        <ParallaxLayer
-          offset={1.3}
-          speed={-0.3}
-          style={{ pointerEvents: "none" }}
-        >
-          <Img
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "15%", marginLeft: "70%" }}
-          />
-        </ParallaxLayer>
         <ParallaxLayer offset={0.99} speed={0.8} style={{ opacity: 0.1, zIndex: "-3" }}>
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
