@@ -168,7 +168,7 @@ const IndexPage = () => {
             style={{ width: "15%", marginLeft: "70%" }}
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
+        <ParallaxLayer offset={0.99} speed={0.8} style={{ opacity: 0.1 }}>
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "55%" }}
@@ -188,7 +188,7 @@ const IndexPage = () => {
             style={{ width: "20%", marginLeft: "40%" }}
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
+        <ParallaxLayer offset={0.99} speed={0.2} style={{ opacity: 0.2 }}>
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "10%" }}
@@ -277,8 +277,8 @@ const IndexPage = () => {
           />
         </ParallaxLayer>
         <ParallaxLayer
-          offset={5}
-          speed={0}
+          offset={5.6}
+          speed={1}
           style={{
             display: "flex",
             alignItems: "center",
