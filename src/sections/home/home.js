@@ -17,11 +17,21 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import { useSpring, animated, config } from "react-spring"
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
+import Typewriter from "typewriter-effect"
 
 const StyledTitle = styled(animated.div)`
   color: white;
   font-size: 5rem;
   margin-bottom: 0.5rem;
+`
+const StyledSlogan = styled(animated.div)`
+  display: flex;
+  align-items: center;
+  color: var(--text);
+  font-size: 3rem;
+  .Typewriter {
+    padding: 0.5rem;
+  }
 `
 
 const Highlight = styled.span`
@@ -46,9 +56,9 @@ const ParallaxImage = styled(animated(Img))`
 `
 
 const StyledIcon = styled(animated(FontAwesomeIcon))`
-margin-top: 1rem;
-color: white;
-cursor: pointer;
+  margin-top: 1rem;
+  color: white;
+  cursor: pointer;
 `
 
 const getRandomInt = (min, max) => {
@@ -109,46 +119,6 @@ const Home = ({ handleClick }) => {
     reset: true,
   })
   const yOff = getRandomInt(0, -200)
-  // const yOff = -75
-  // (<ParallaxImages>
-  //   <Parallax y={["100px", "300px"]}>
-  //     <ParalaxIcon icon={faLaptop} size="2x" style={ParallaxSpring} />
-  //   </Parallax>
-  //   <Parallax y={["100px", "-200px"]}>
-  //     <ParalaxIcon icon={faCode} size="2x" style={ParallaxSpring} />
-  //   </Parallax>
-  //   <Parallax y={["100px", "300px"]}>
-  //     <ParalaxIcon icon={faMoneyBill} size="2x" style={ParallaxSpring} />
-  //   </Parallax>
-  //   <Parallax y={["100px", "-200px"]}>
-  //     <ParalaxIcon icon={faThumbsUp} size="2x" style={ParallaxSpring} />
-  //   </Parallax>
-  //   <Parallax y={["100px", "300px"]}>
-  //     <ParalaxIcon icon={faRunning} size="2x" style={ParallaxSpring} />
-  //   </Parallax>
-  //   <Parallax y={["100px", "-200px"]}>
-  //     <ParalaxIcon icon={faSmile} size="2x" style={ParallaxSpring} />
-  //   </Parallax>
-  // </ParallaxImages>)
-  // <ParallaxImages>
-  //         {allFile.edges.map(({ node }, i) => {
-  //           console.log(node)
-  //           return (
-  //             <Parallax
-  //               y={[yOff * i + "px", -yOff * i + "px"]}
-  //               style={ParallaxSpring}
-  //             >
-  //               <ParallaxImage
-  //                 fluid={
-  //                   node.childMarkdownRemark.frontmatter.image.childImageSharp
-  //                     .fluid
-  //                 }
-  //                 style={{ transform: radians.interpolate(interp(i)) }}
-  //               />
-  //             </Parallax>
-  //           )
-  //         })}
-  //       </ParallaxImages>}
   return (
     <ParallaxLayer
       offset={0}
@@ -160,18 +130,30 @@ const Home = ({ handleClick }) => {
         justifyContent: "center",
       }}
     >
-      <StyledTitle style={ParallaxSpring}>Hello 🤙,</StyledTitle>
-      <StyledTitle style={ParallaxSpring}>
-        I'm <Highlight>Ian</Highlight>
-      </StyledTitle>
-      <Link to="#portfolio" spy={true} smooth={true}>
-        <StyledIcon
-          icon={faChevronCircleDown}
-          size="3x"
-          styled={ParallaxSpring}
-          onClick={() => handleClick(1)}
+      <StyledTitle style={ParallaxSpring}>Hi, I'm Ian Benton</StyledTitle>
+      <StyledSlogan style={ParallaxSpring}>
+        <span>A</span>
+        <Typewriter
+          options={{
+            strings: [
+              "passionate",
+              "hard-working",
+              "self-motivated",
+              "committed",
+            ],
+            autoStart: true,
+            loop: true,
+          }}
         />
-      </Link>
+        <span>web developer</span>
+      </StyledSlogan>
+
+      <StyledIcon
+        icon={faChevronCircleDown}
+        size="3x"
+        style={ParallaxSpring}
+        onClick={() => handleClick(1)}
+      />
     </ParallaxLayer>
   )
 }

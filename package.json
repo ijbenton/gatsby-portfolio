@@ -31,7 +31,8 @@
     "react-scroll": "^1.7.16",
     "react-scroll-parallax": "^2.3.2",
     "react-spring": "^8.0.27",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "typewriter-effect": "^2.13.0"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
