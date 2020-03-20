@@ -13,9 +13,10 @@ const ItemWrapper = styled.div`
   align-items: center;
   width: 100%;
   z-index: 5;
+  margin-bottom: 8rem;
 
-  &:not(:last-child) {
-    margin-bottom: 7rem;
+  &:first-child {
+    margin-top: 60px;
   }
 `
 
@@ -42,16 +43,18 @@ const ButtonsWrapper = styled.div`
 
 const Title = styled.h1`
   font-weight: 600;
-  font-size: 4rem;
+  font-size: 3.5rem;
   position: relative;
   font-style: italic;
   margin: 0;
   margin-bottom: 3.5rem;
   color: white;
   transition: color 0.2s ease-out;
-  padding: 0.15rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  background: var(--primary);
 
-  &:after {
+  /* &:after {
     content: "";
     z-index: -1;
     position: absolute;
@@ -59,26 +62,27 @@ const Title = styled.h1`
     left: 0;
     height: 100%;
     width: 100%;
-    transform: rotate(-1.5deg);
+    border-radius: 5px;
     background: var(--primary);
-  }
+  } */
 `
 
 const Stack = styled.span`
   color: var(--text-highlight);
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.6rem;
+  font-size: 1.15vw;
   font-family: "Roboto";
-  margin-bottom: 2.75rem;
+  margin-bottom: 4rem;
 `
 
 const Text = styled.div`
   color: var(--text);
   p {
-    font-size: 1.4rem;
+    font-size: 1vw;
     font-weight: 400;
     margin-top: 0;
+    margin-bottom: 3.7rem;
     line-height: 1.75;
     letter-spacing: 1.5px;
   }

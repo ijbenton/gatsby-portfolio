@@ -53,7 +53,7 @@ const items = range(4)
 const interp = i => r =>
   `translate3d(0, ${90 * Math.sin(r + (i * 2 * Math.PI) / 1.6)}px, 0)`
 
-const Home = ({handleClick}) => {
+const Home = ({ handleClick }) => {
   const { allFile } = useStaticQuery(graphql`
     query {
       allFile(
@@ -162,7 +162,7 @@ const Home = ({handleClick}) => {
         <FontAwesomeIcon
           icon={faChevronCircleDown}
           size="3x"
-          style={{ marginTop: "1rem", color: "white" }}
+          style={{ marginTop: "1rem", color: "white", cursor: "pointer" }}
           onClick={() => handleClick(1)}
         />
       </Link>

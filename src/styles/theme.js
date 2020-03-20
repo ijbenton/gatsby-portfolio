@@ -1,11 +1,11 @@
 const theme = {
   colors: {
     //   primary: '#127EB1',
-    primary: "#05668D",
+    primary: "#3A506B",
     light: "#028090",
     //   light: '#089ECA',
     //   lighter: '#36A6BA',
-    lighter: "#02C39A",
+    lighter: "#5BC0BE",
     secondary: "#805E73",
     lightTheme: {
       text: "#585858",

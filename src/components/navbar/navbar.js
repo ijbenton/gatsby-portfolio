@@ -9,7 +9,7 @@ const StyledHeader = styled.header`
   max-width: 100vw;
   top: 0;
   left: 0;
-  z-index: 20;
+  z-index: 5;
   font-size: 2rem;
 `
 
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   overflow-x: hidden;
   justify-content: space-between;
   height: 60px;
-  margin: 0 3rem;
+  background: var(--background);
   span {
     color: #d8dbe2;
   }
@@ -30,14 +30,24 @@ const StyledNav = styled.nav`
   flex: 1;
   justify-content: flex-end;
   align-items: center;
+  margin-right: 3rem;
   span {
+    cursor: pointer;
     padding: 0 2rem;
+    transition: color 0.15s ease-out;
+    &:hover {
+      color: var(--primary);
+    }
   }
 `
 
 const Logo = styled.div`
-  span {
-    color: white;
+  color: #d8dbe2;
+  margin-left: 3rem;
+  cursor: pointer;
+  transition: color 0.15s ease-out;
+  &:hover {
+    color: var(--primary);
   }
 `
 

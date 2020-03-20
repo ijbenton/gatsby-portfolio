@@ -14,8 +14,8 @@ const StyledLink = styled.a`
   letter-spacing: 1.5px;
   border: ${({ solid }) => (solid ? "1px transparent" : "1px solid")};
   border-radius: 7rem;
-  font-size: 0.75rem;
-  padding: 0.75rem 2rem;
+  font-size: 1vw;
+  padding: 1rem 2.25rem;
   margin: 0rem;
   cursor: pointer;
   box-shadow: ${({ solid }) =>

@@ -31,11 +31,12 @@ body {
   --navbar: rgba(255, 255, 255, 0.95);
   --text: ${props => props.theme.colors.darkTheme.text};
   --text-highlight: ${props => props.theme.colors.darkTheme.textHighlight};
-  --background: ${props => props.theme.colors.darkTheme.background};
+  --background: rgba(27,27,30, 0.9);
   --white: #fff;
   --shadow-btn: rgba(7, 49, 69, .1);
   --shadow-color: rgba(0, 0, 0, 0.1);
-  background: var(--background);
+  background: ${props => props.theme.colors.darkTheme.background};
+  
 
 }
 form,
