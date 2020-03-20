@@ -92,6 +92,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
 const Image = styled(Img)`
   margin: 0 2rem;
   flex: 1 1 50%;
+  z-index: 5;
 `
 
 const PortfolioItem = ({ node }) => {
