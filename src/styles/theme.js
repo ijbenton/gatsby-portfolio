@@ -13,8 +13,8 @@ const theme = {
       background: "#FFFFFF",
     },
     darkTheme: {
-      text: "#E8E9EB",
-      textHighlight: "#EBF5EE",
+      text: "#FEE9EB",
+      textHighlight: "#FEF5EE",
       background: "#1b1b1e",
     },
   },

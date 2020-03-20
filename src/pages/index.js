@@ -185,7 +185,7 @@ const IndexPage = () => {
         <ParallaxLayer
           offset={0.99}
           speed={0.8}
-          style={{ opacity: 0.1, zIndex: "-3" }}
+          style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
@@ -199,7 +199,7 @@ const IndexPage = () => {
         <ParallaxLayer
           offset={1.8}
           speed={0.5}
-          style={{ opacity: 0.1, zIndex: "-3" }}
+          style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
@@ -213,7 +213,7 @@ const IndexPage = () => {
         <ParallaxLayer
           offset={0.99}
           speed={0.2}
-          style={{ opacity: 0.2, zIndex: "-3" }}
+          style={{ opacity: 0.15, zIndex: "-3" }}
         >
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
@@ -227,7 +227,7 @@ const IndexPage = () => {
         <ParallaxLayer
           offset={1.4}
           speed={-0.1}
-          style={{ opacity: 0.4, zIndex: "-3" }}
+          style={{ opacity: 0.3, zIndex: "-3" }}
         >
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
@@ -245,7 +245,7 @@ const IndexPage = () => {
         <ParallaxLayer
           offset={2.6}
           speed={0.4}
-          style={{ opacity: 0.6, zIndex: "-3" }}
+          style={{ opacity: 0.45, zIndex: "-3" }}
         >
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
@@ -259,7 +259,7 @@ const IndexPage = () => {
         <ParallaxLayer
           offset={3}
           speed={0.8}
-          style={{ opacity: 0.1, zIndex: "-3" }}
+          style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
@@ -273,7 +273,7 @@ const IndexPage = () => {
         <ParallaxLayer
           offset={3.8}
           speed={0.5}
-          style={{ opacity: 0.1, zIndex: "-3" }}
+          style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
@@ -287,7 +287,7 @@ const IndexPage = () => {
         <ParallaxLayer
           offset={3}
           speed={0.2}
-          style={{ opacity: 0.2, zIndex: "-3" }}
+          style={{ opacity: 0.15, zIndex: "-3" }}
         >
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
@@ -301,7 +301,7 @@ const IndexPage = () => {
         <ParallaxLayer
           offset={3.4}
           speed={-0.1}
-          style={{ opacity: 0.4, zIndex: "-3" }}
+          style={{ opacity: 0.3, zIndex: "-3" }}
         >
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
@@ -319,7 +319,7 @@ const IndexPage = () => {
         <ParallaxLayer
           offset={4.6}
           speed={0.4}
-          style={{ opacity: 0.6, zIndex: "-3" }}
+          style={{ opacity: 0.45, zIndex: "-3" }}
         >
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
@@ -333,7 +333,7 @@ const IndexPage = () => {
         <ParallaxLayer
           offset={5}
           speed={0.8}
-          style={{ opacity: 0.1, zIndex: "-3" }}
+          style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
@@ -347,7 +347,7 @@ const IndexPage = () => {
         <ParallaxLayer
           offset={5.8}
           speed={0.5}
-          style={{ opacity: 0.1, zIndex: "-3" }}
+          style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
@@ -361,7 +361,7 @@ const IndexPage = () => {
         <ParallaxLayer
           offset={5}
           speed={0.2}
-          style={{ opacity: 0.2, zIndex: "-3" }}
+          style={{ opacity: 0.15, zIndex: "-3" }}
         >
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
@@ -375,7 +375,7 @@ const IndexPage = () => {
         <ParallaxLayer
           offset={5.4}
           speed={-0.1}
-          style={{ opacity: 0.4, zIndex: "-3" }}
+          style={{ opacity: 0.3, zIndex: "-3" }}
         >
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
@@ -393,7 +393,7 @@ const IndexPage = () => {
         <ParallaxLayer
           offset={6.6}
           speed={0.4}
-          style={{ opacity: 0.6, zIndex: "-3" }}
+          style={{ opacity: 0.45, zIndex: "-3" }}
         >
           <Img
             fluid={allFile.edges[0].node.childImageSharp.fluid}
