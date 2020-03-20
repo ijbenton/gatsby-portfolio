@@ -15,10 +15,10 @@ import {
   faRunning,
   faSmile,
 } from "@fortawesome/free-solid-svg-icons"
-import { Parallax } from "react-scroll-parallax"
 import { useSpring, animated, config } from "react-spring"
+import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 
-const StyledTitle = styled(animated.h1)`
+const StyledTitle = styled(animated.div)`
   color: white;
   font-size: 5rem;
   margin-bottom: 0.5rem;
@@ -44,6 +44,8 @@ const ParallaxImage = styled(animated(Img))`
   height: 10rem;
   width: 10rem;
 `
+
+
 
 const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min
@@ -144,15 +146,29 @@ const Home = () => {
   //         })}
   //       </ParallaxImages>}
   return (
-    <StyledSection id="home">
+    <ParallaxLayer
+      offset={0}
+      speed={1}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+         border: "2px solid white" 
+      }}
+    >
       <StyledTitle style={ParallaxSpring}>Hello 🤙,</StyledTitle>
       <StyledTitle style={ParallaxSpring}>
         I'm <Highlight>Ian</Highlight>
       </StyledTitle>
       <Link to="portfolio" spy={true} smooth={true}>
-        <FontAwesomeIcon icon={faChevronCircleDown} />
+        <FontAwesomeIcon
+          icon={faChevronCircleDown}
+          size="3x"
+          style={{ marginTop: "1rem", color: "white" }}
+        />
       </Link>
-    </StyledSection>
+    </ParallaxLayer>
   )
 }
 
