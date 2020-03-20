@@ -277,7 +277,7 @@ const IndexPage = () => {
           />
         </ParallaxLayer>
         <ParallaxLayer
-          offset={5.6}
+          offset={5.5}
           speed={1}
           style={{
             display: "flex",
@@ -288,7 +288,7 @@ const IndexPage = () => {
         >
           <Img
             fluid={allFile.edges[1].node.childImageSharp.fluid}
-            style={{ width: "60%" }}
+            style={{ width: "40%" }}
           />
         </ParallaxLayer>
         <ParallaxLayer offset={4} speed={1}>
