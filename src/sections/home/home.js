@@ -112,7 +112,6 @@ const Home = ({ handleClick }) => {
     },
   })
 
-  
   return (
     <ParallaxLayer
       offset={0}
@@ -124,7 +123,9 @@ const Home = ({ handleClick }) => {
         justifyContent: "center",
       }}
     >
-      <StyledTitle style={ParallaxSpring}>Hi, I'm <Highlight>Ian Benton</Highlight></StyledTitle>
+      <StyledTitle style={ParallaxSpring}>
+        Hi, I'm <Highlight>Ian Benton</Highlight>
+      </StyledTitle>
       <StyledSlogan style={ParallaxSpring}>
         <span>A</span>
         <Typewriter
@@ -133,7 +134,7 @@ const Home = ({ handleClick }) => {
               "passionate",
               "hard-working",
               "self-motivated",
-              "committed",
+              "dedicated",
             ],
             autoStart: true,
             loop: true,

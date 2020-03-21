@@ -206,10 +206,13 @@ const IndexPage = () => {
           style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
+          durationFadeIn={100}
+            durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "55%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "15%" }}
           />
@@ -220,10 +223,12 @@ const IndexPage = () => {
           style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "70%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "40%" }}
           />
@@ -234,10 +239,12 @@ const IndexPage = () => {
           style={{ opacity: 0.15, zIndex: "-3" }}
         >
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "10%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "75%" }}
           />
@@ -248,14 +255,17 @@ const IndexPage = () => {
           style={{ opacity: 0.3, zIndex: "-3" }}
         >
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "60%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "25%", marginLeft: "30%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "80%" }}
           />
@@ -266,10 +276,12 @@ const IndexPage = () => {
           style={{ opacity: 0.45, zIndex: "-3" }}
         >
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "5%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "15%", marginLeft: "75%" }}
           />
@@ -280,10 +292,12 @@ const IndexPage = () => {
           style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "55%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "15%" }}
           />
@@ -294,10 +308,12 @@ const IndexPage = () => {
           style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "70%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "40%" }}
           />
@@ -308,10 +324,12 @@ const IndexPage = () => {
           style={{ opacity: 0.15, zIndex: "-3" }}
         >
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "10%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "75%" }}
           />
@@ -322,14 +340,17 @@ const IndexPage = () => {
           style={{ opacity: 0.3, zIndex: "-3" }}
         >
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "60%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "25%", marginLeft: "30%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "80%" }}
           />
@@ -340,10 +361,12 @@ const IndexPage = () => {
           style={{ opacity: 0.45, zIndex: "-3" }}
         >
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "5%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "15%", marginLeft: "75%" }}
           />
@@ -354,10 +377,12 @@ const IndexPage = () => {
           style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "55%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "15%" }}
           />
@@ -368,10 +393,12 @@ const IndexPage = () => {
           style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "70%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "40%" }}
           />
@@ -382,10 +409,12 @@ const IndexPage = () => {
           style={{ opacity: 0.15, zIndex: "-3" }}
         >
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "10%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "75%" }}
           />
@@ -396,14 +425,17 @@ const IndexPage = () => {
           style={{ opacity: 0.3, zIndex: "-3" }}
         >
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "60%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "25%", marginLeft: "30%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "80%" }}
           />
@@ -414,10 +446,12 @@ const IndexPage = () => {
           style={{ opacity: 0.45, zIndex: "-3" }}
         >
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "5%" }}
           />
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "15%", marginLeft: "75%" }}
           />
@@ -433,6 +467,7 @@ const IndexPage = () => {
           }}
         >
           <Img
+          durationFadeIn={100}
             fluid={allFile.edges[1].node.childImageSharp.fluid}
             style={{ width: "30%" }}
           />

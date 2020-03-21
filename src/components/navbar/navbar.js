@@ -2,6 +2,7 @@ import { Link } from "react-scroll"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
+import { useMediaQuery } from "react-responsive"
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -51,18 +52,78 @@ const Logo = styled.div`
   }
 `
 
-const Navbar = ({ handleClick }) => (
-  <StyledHeader>
-    <Wrapper>
-      <Logo onClick={() => handleClick(0)}>Ian Benton</Logo>
-      <StyledNav>
-        <span onClick={() => handleClick(1)}>Portfolio</span>
-        <span onClick={() => handleClick(4)}>About Me</span>
+const Navbar = ({ handleClick }) => {
+  // Media Queries
+  const isXsHeight = useMediaQuery({ maxDeviceHeight: "545px" })
+  const isSmartPhone = useMediaQuery({
+    maxDeviceWidth: "480px",
+    maxDeviceHeight: "800px",
+  })
+  const isXlSmartPhone = useMediaQuery({
+    maxDeviceWidth: "480px",
+    minDeviceHeight: "801px",
+  })
+  const isSmallHeight = useMediaQuery({
+    minDeviceHeight: "546px",
+    maxDeviceHeight: "799px",
+    minDeviceWidth: "480px",
+  })
+  const isMediumHeight = useMediaQuery({
+    minDeviceHeight: "800px",
+    maxDeviceHeight: "999px",
+    minDeviceWidth: "480px",
+  })
+  const isLargeHeight = useMediaQuery({ minDeviceHeight: "1000px" })
+  const isLargeDesktop = useMediaQuery({
+    minDeviceHeight: "1000px",
+    minDeviceWidth: "1025px",
+  })
 
-        <span onClick={() => handleClick(5)}>Contact</span>
-      </StyledNav>
-    </Wrapper>
-  </StyledHeader>
-)
+  return (
+    <StyledHeader>
+      <Wrapper>
+        <Logo onClick={() => handleClick(0)}>Ian Benton</Logo>
+        <StyledNav>
+          <span onClick={() => handleClick(1)}>Portfolio</span>
+          <span
+            onClick={() =>
+              handleClick(
+                isXsHeight
+                  ? "6"
+                  : isSmallHeight || isLargeDesktop
+                  ? "5"
+                  : isMediumHeight || isSmartPhone
+                  ? "4"
+                  : isLargeHeight || isXlSmartPhone
+                  ? "3"
+                  : "6"
+              )
+            }
+          >
+            About Me
+          </span>
+
+          <span
+            onClick={() =>
+              handleClick(
+                isXsHeight
+                  ? "7"
+                  : isSmallHeight || isLargeDesktop
+                  ? "6"
+                  : isMediumHeight || isSmartPhone
+                  ? "5"
+                  : isLargeHeight || isXlSmartPhone
+                  ? "4"
+                  : "7"
+              )
+            }
+          >
+            Contact
+          </span>
+        </StyledNav>
+      </Wrapper>
+    </StyledHeader>
+  )
+}
 
 export default Navbar
