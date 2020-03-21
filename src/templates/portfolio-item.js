@@ -13,10 +13,14 @@ const ItemWrapper = styled.div`
   align-items: center;
   width: 100%;
   z-index: 5;
-  margin-bottom: 8rem;
+  padding: 0 4rem 12rem 4rem;
 
   &:first-child {
     margin-top: 60px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 `
 
@@ -30,7 +34,7 @@ const Content = styled.div`
   display: flex;
   flex: 1 1 50%;
   flex-direction: column;
-  margin: 0 2rem;
+  margin: 0 4rem;
 `
 
 const ButtonsWrapper = styled.div`

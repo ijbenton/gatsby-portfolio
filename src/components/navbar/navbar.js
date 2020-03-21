@@ -30,24 +30,24 @@ const StyledNav = styled.nav`
   flex: 1;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 3rem;
+  margin-right: 4rem;
   span {
     cursor: pointer;
     padding: 0 2rem;
     transition: color 0.15s ease-out;
     &:hover {
-      color: var(--primary);
+      color: var(--primary-lighter);
     }
   }
 `
 
 const Logo = styled.div`
   color: #d8dbe2;
-  margin-left: 3rem;
+  margin-left: 4rem;
   cursor: pointer;
   transition: color 0.15s ease-out;
   &:hover {
-    color: var(--primary);
+    color: var(--primary-lighter);
   }
 `
 

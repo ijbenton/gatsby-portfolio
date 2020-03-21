@@ -7,6 +7,8 @@ const theme = {
     //   lighter: '#36A6BA',
     lighter: "#5BC0BE",
     secondary: "#805E73",
+    box1: "rgba(58,80,107, 0.8)",
+    box2: "rgba(91,192,190, 0.8)",
     lightTheme: {
       text: "#585858",
       textHighlight: "#313638",

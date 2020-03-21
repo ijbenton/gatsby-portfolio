@@ -31,6 +31,8 @@ const StyledSlogan = styled(animated.div)`
   font-size: 3rem;
   .Typewriter {
     padding: 0.5rem;
+    font-weight: bold;
+    color: white;
   }
 `
 
@@ -110,15 +112,7 @@ const Home = ({ handleClick }) => {
     },
   })
 
-  const { radians } = useSpring({
-    to: async next => {
-      while (1) await next({ radians: 2 * Math.PI })
-    },
-    from: { radians: 0 },
-    config: { duration: 10000 },
-    reset: true,
-  })
-  const yOff = getRandomInt(0, -200)
+  
   return (
     <ParallaxLayer
       offset={0}
@@ -130,7 +124,7 @@ const Home = ({ handleClick }) => {
         justifyContent: "center",
       }}
     >
-      <StyledTitle style={ParallaxSpring}>Hi, I'm Ian Benton</StyledTitle>
+      <StyledTitle style={ParallaxSpring}>Hi, I'm <Highlight>Ian Benton</Highlight></StyledTitle>
       <StyledSlogan style={ParallaxSpring}>
         <span>A</span>
         <Typewriter

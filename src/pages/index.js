@@ -1,12 +1,14 @@
-import React, { useRef } from "react"
+import React from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import { ParallaxProvider } from "react-scroll-parallax"
 import { animated, useSpring } from "react-spring"
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import { Keyframes } from "react-spring/renderprops"
 import Navbar from "../components/navbar/navbar"
+import { useMediaQuery } from 'react-responsive'
+
+import {multipleBoxShadow} from '../styles/helpers'
 
 import Layout from "../components/layout"
 import Home from "../sections/home/home"
@@ -14,29 +16,11 @@ import AboutMe from "../sections/about-me/about-me"
 import Portfolio from "../sections/portfolio/portfolio"
 import Contact from "../sections/contact/contact"
 
-import Background from "../content/home/stars/stars.jpg"
-
-const getRandomInt = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min
-}
-
-// n is number of stars required
-const multipleBoxShadow = n => {
-  let value = `${getRandomInt(0, 2000)}px ${getRandomInt(0, 2000)}px #FFF`
-  for (let i = 0; i < n; i++) {
-    value = `${value}, ${getRandomInt(0, 2000)}px ${getRandomInt(
-      0,
-      2000
-    )}px #FFF`
-  }
-  return value
-}
 
 let shadowsSmall = multipleBoxShadow(700)
 let shadowsMedium = multipleBoxShadow(200)
 let shadowsBig = multipleBoxShadow(100)
 
-console.log(shadowsBig)
 
 const SmallStarsLayer = styled(animated.div)`
   width: 1px;
@@ -98,15 +82,16 @@ const StyledParallaxLayer = styled(ParallaxLayer)`
     width: 100%;
     opacity: 0.6;
     background: ${props =>
-      props.primary
-        ? "var(--primary)"
-        : props.secondary
-        ? "var(--secondary)"
+      props.box1
+        ? "var(--box-1)"
+        : props.box2
+        ? "var(--box-2)"
         : ""};
   }
 `
 
 const IndexPage = () => {
+  // Query for Parallax Page Images
   const { allFile } = useStaticQuery(graphql`
     query {
       allFile(
@@ -137,8 +122,7 @@ const IndexPage = () => {
       }
     }
   `)
-
-  console.log(allFile.edges[0].node.childImageSharp.fluid)
+// Stars Animations
   const SmallStarsAnimation = Keyframes.Spring(async next => {
     while (true) {
       await next({
@@ -163,6 +147,25 @@ const IndexPage = () => {
       })
     }
   })
+
+  // Media Queries
+  const isXsHeight = useMediaQuery({ maxDeviceHeight: "545px" })
+  const isSmartPhone = useMediaQuery({ maxDeviceWidth: "480px", maxDeviceHeight: "800px" })
+  const isXlSmartPhone = useMediaQuery({ maxDeviceWidth: "480px", minDeviceHeight: "801px" })
+  const isSmallHeight = useMediaQuery({
+    minDeviceHeight: "546px",
+    maxDeviceHeight: "799px",
+    minDeviceWidth: "480px"
+  })
+  const isMediumHeight = useMediaQuery({
+    minDeviceHeight: "800px",
+    maxDeviceHeight: "999px",
+    minDeviceWidth: "480px"
+  })
+  const isLargeHeight = useMediaQuery({ minDeviceHeight: "1000px" })
+  const isLargeDesktop = useMediaQuery({ minDeviceHeight: "1000px", minDeviceWidth: "1025px" })
+
+  // Parallax Scroll To
   let parallax
   const handleClick = (pageNum) => {
     parallax.scrollTo(pageNum)
@@ -170,7 +173,9 @@ const IndexPage = () => {
   return (
     <Layout>
     <Navbar handleClick={handleClick} />
-      <Parallax pages={6.25} ref={ref => (parallax = ref)}>
+     { /* Start of Parallax Page */ }
+      <Parallax pages={isXsHeight ? "8" : isSmallHeight || isLargeDesktop ? "7" : isMediumHeight || isSmartPhone ? "6" : isLargeHeight || isXlSmartPhone ? "5" : "8"} ref={ref => (parallax = ref)}>
+      { /* Star animations fill entire page */ }
         <SmallStarsAnimation reset config={{ duration: 50000 }}>
           {styles => <SmallStarsLayer style={styles} />}
         </SmallStarsAnimation>
@@ -180,8 +185,21 @@ const IndexPage = () => {
         <BigStarsAnimation reset config={{ duration: 150000 }}>
           {styles => <BigStarsLayer style={styles} />}
         </BigStarsAnimation>
+        { /* PAGE SECTIONS */ }
+        { /* Home Section */ }
         <Home handleClick={handleClick}/>
+        { /* Portfolio Section */ }
         <Portfolio />
+                { /* About Me Section */ }
+                <StyledParallaxLayer box1 offset={isXsHeight ? "6" : isSmallHeight || isLargeDesktop ? "5" : isMediumHeight || isSmartPhone ? "4" : isLargeHeight || isXlSmartPhone ? "3" : "6"} speed={1}>
+                <AboutMe />
+              </StyledParallaxLayer>
+              { /* Contact Section */ }
+              <StyledParallaxLayer box2 offset={isXsHeight ? "7" : isSmallHeight || isLargeDesktop ? "6" : isMediumHeight || isSmartPhone ? "5" : isLargeHeight || isXlSmartPhone ? "4" : "7"} speed={1}>
+                <Contact />
+              </StyledParallaxLayer>
+
+              { /* PARALLAX LAYER IMAGES */ }
         <ParallaxLayer
           offset={0.99}
           speed={0.8}
@@ -405,7 +423,7 @@ const IndexPage = () => {
           />
         </ParallaxLayer>
         <ParallaxLayer
-          offset={6}
+          offset={isXsHeight ? "7.5" : isSmallHeight || isLargeDesktop ? "6.5" : isMediumHeight || isSmartPhone ? "5.5" : isLargeHeight || isXlSmartPhone ? "4.5" : "7.5"}
           speed={1}
           style={{
             display: "flex",
@@ -419,111 +437,6 @@ const IndexPage = () => {
             style={{ width: "30%" }}
           />
         </ParallaxLayer>
-        <StyledParallaxLayer secondary offset={4.5} factor={1.5} speed={1}>
-          <AboutMe />
-        </StyledParallaxLayer>
-        <StyledParallaxLayer primary offset={5.5} factor={1.5} speed={1}>
-          <Contact />
-        </StyledParallaxLayer>
-        {
-          //  <ParallaxLayer offset={0}>
-          //   <Home />
-          // </ParallaxLayer>
-          // <ParallaxLayer
-          //   offset={1}
-          //   speed={1}
-          //   style={{ backgroundColor: "#805E73" }}
-          // >
-          //   <Portfolio />
-          // </ParallaxLayer>
-          // <ParallaxLayer offset={2}>
-          //   <AboutMe />
-          // </ParallaxLayer>
-          // <ParallaxLayer offset={3}>
-          //   <Contact />
-          // </ParallaxLayer>
-        }
-        {
-          //   allFile.edges.map(({ node }, i) => {
-          //   console.log(node)
-          //   return (
-          //     <ParallaxLayer
-          //       offset={i / 3}
-          //       speed={-0.3}
-          //       style={{ pointerEvents: "none" }}
-          //     >
-          //       <Img
-          //         fluid={
-          //           node.childMarkdownRemark.frontmatter.image.childImageSharp
-          //             .fluid
-          //         }
-          //         style={{
-          //           width: "10%",
-          //           height: "10%",
-          //           marginLeft: node.childMarkdownRemark.frontmatter.bounds + "%",
-          //         }}
-          //       />
-          //     </ParallaxLayer>
-          //   )
-          // })
-        }
-        }
-        {
-          //       <ParallaxLayer offset={0} speed={0.8} style={{ opacity: 0.1 }}>
-          //         <img
-          //           src={`url("../content/home/dev/dev.png")`}
-          //           style={{ display: "block", width: "20%", marginLeft: "55%" }}
-          //         />
-          //         <img
-          //           src={`url("../content/home/dev/dev.png")`}
-          //           style={{ display: "block", width: "10%", marginLeft: "15%" }}
-          //         />
-          //       </ParallaxLayer>
-          //       <ParallaxLayer offset={0.75} speed={0.5} style={{ opacity: 0.1 }}>
-          //         <img
-          //           src={`url("../content/home/dev/dev.png")`}
-          //           style={{ display: "block", width: "20%", marginLeft: "70%" }}
-          //         />
-          //         <img
-          //           src={`url("../content/home/dev/dev.png")`}
-          //           style={{ display: "block", width: "20%", marginLeft: "40%" }}
-          //         />
-          //       </ParallaxLayer>
-          //       <ParallaxLayer offset={0} speed={0.2} style={{ opacity: 0.2 }}>
-          //         <img
-          //           src={`url("../content/home/dev/dev.png")`}
-          //           style={{ display: "block", width: "10%", marginLeft: "10%" }}
-          //         />
-          //         <img
-          //           src={`url("../content/home/dev/dev.png")`}
-          //           style={{ display: "block", width: "20%", marginLeft: "75%" }}
-          //         />
-          //       </ParallaxLayer>
-          //       <ParallaxLayer offset={0.6} speed={-0.1} style={{ opacity: 0.4 }}>
-          //         <img
-          //           src={`url("../content/home/dev/dev.png")`}
-          //           style={{ display: "block", width: "20%", marginLeft: "60%" }}
-          //         />
-          //         <img
-          //           src={`url("../content/home/dev/dev.png")`}
-          //           style={{ display: "block", width: "25%", marginLeft: "30%" }}
-          //         />
-          //         <img
-          //           src={`url("../content/home/dev/dev.png")`}
-          //           style={{ display: "block", width: "10%", marginLeft: "80%" }}
-          //         />
-          //       </ParallaxLayer>
-          //       <ParallaxLayer offset={1.6} speed={0.4} style={{ opacity: 0.6 }}>
-          //         <img
-          //           src={`url("../content/home/dev/dev.png")`}
-          //           style={{ display: "block", width: "20%", marginLeft: "5%" }}
-          //         />
-          //         <img
-          //           src={`url("../content/home/dev/dev.png")`}
-          //           style={{ display: "block", width: "15%", marginLeft: "75%" }}
-          //         />
-          //       </ParallaxLayer>)
-        }
       </Parallax>
     </Layout>
   )
