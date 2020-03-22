@@ -2,8 +2,8 @@
 title: 'Spotify Clone'
 live: 'https://spotify-clone-ijbenton.netlify.com/'
 source: 'https://github.com/ijbenton/spotify-clone'
-stack: 'React - Redux'
+stack: 'React - Redux - Sass'
 image: 'spotify.png'
 ---
 
-This very website you're now watching. I wanted something fast and with good SEO for my portfolio, so a static website generator like Gatsby seemed like the best fit. It reads data from markdown files, so it's super easy for me to keep adding Portfolio items as I keep developing stuff. It also has a cool dark mode switch since I couldn't decide between a dark or light design.
+A full fledged Spotify music player clone built with React/Redux. After logging in to your Spotify account you will be directed to a homepage where you can browse, like, and save new music. Created with the Spotify API which gives us info on songs, artists, albums, and playlists. The API only gives out 30 second song previews, but it can still be very useful for finding new music that you'd like to save to your account.

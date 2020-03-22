@@ -8,6 +8,17 @@ import { useMediaQuery } from "react-responsive"
 
 const StyledParallaxLayer = styled(ParallaxLayer)``
 
+const StyledTitle = styled.h2`
+  color: var(--white);
+  font-size: 5rem;
+  color: var(--text);
+  text-align: center;
+  span {
+    padding: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+  }
+`
+
 const Portfolio = () => {
   const { allFile } = useStaticQuery(graphql`
     query {
@@ -51,28 +62,29 @@ const Portfolio = () => {
   `)
 
   const isXsHeight = useMediaQuery({ maxDeviceHeight: "545px" })
-  const isSmartPhone = useMediaQuery({ maxDeviceWidth: "480px", maxDeviceHeight: "800px" })
-  const isXlSmartPhone = useMediaQuery({ maxDeviceWidth: "480px", minDeviceHeight: "801px" })
+  const isSmartPhone = useMediaQuery({
+    maxDeviceWidth: "480px",
+    maxDeviceHeight: "800px",
+  })
+  const isXlSmartPhone = useMediaQuery({
+    maxDeviceWidth: "480px",
+    minDeviceHeight: "801px",
+  })
   const isSmallHeight = useMediaQuery({
     minDeviceHeight: "546px",
     maxDeviceHeight: "799px",
-    minDeviceWidth: "480px"
+    minDeviceWidth: "480px",
   })
   const isMediumHeight = useMediaQuery({
     minDeviceHeight: "800px",
     maxDeviceHeight: "999px",
-    minDeviceWidth: "480px"
+    minDeviceWidth: "480px",
   })
   const isLargeHeight = useMediaQuery({ minDeviceHeight: "1000px" })
   const isLargeDesktop = useMediaQuery({
     minDeviceHeight: "1000px",
     minDeviceWidth: "1025px",
   })
-
-  console.log(isXsHeight)
-  console.log(isSmallHeight)
-  console.log(isMediumHeight)
-  console.log(isLargeHeight)
   return (
     <StyledParallaxLayer
       offset={1}
@@ -90,6 +102,9 @@ const Portfolio = () => {
       }
       id="portfolio"
     >
+      <StyledTitle>
+        <span>My Portfolio</span>
+      </StyledTitle>
       {allFile.edges.map(({ node }) => (
         <PortfolioItem node={node} />
       ))}

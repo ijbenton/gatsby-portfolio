@@ -52,8 +52,7 @@ const Title = styled.h1`
   font-style: italic;
   margin: 0;
   margin-bottom: 3.5rem;
-  color: white;
-  transition: color 0.2s ease-out;
+  color: var(--text-highlight);
   padding: 0.5rem 0.75rem;
   border-radius: 5px;
   background: var(--primary);

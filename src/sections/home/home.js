@@ -20,7 +20,7 @@ import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import Typewriter from "typewriter-effect"
 
 const StyledTitle = styled(animated.div)`
-  color: white;
+  color: var(--white);
   font-size: 5rem;
   margin-bottom: 0.5rem;
 `
@@ -32,7 +32,7 @@ const StyledSlogan = styled(animated.div)`
   .Typewriter {
     padding: 0.5rem;
     font-weight: bold;
-    color: white;
+    color: var(--white);
   }
 `
 
