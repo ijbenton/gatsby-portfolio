@@ -11,9 +11,8 @@ const ItemWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   z-index: 5;
-  padding: 0 4rem 12rem 4rem;
+  padding: 0 0 12rem 0;
 
   &:first-child {
     margin-top: 60px;
@@ -27,14 +26,12 @@ const ItemWrapper = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  width: 100%;
 `
 
 const Content = styled.div`
   display: flex;
   flex: 1 1 50%;
   flex-direction: column;
-  margin: 0 4rem;
 `
 
 const ButtonsWrapper = styled.div`
@@ -97,9 +94,15 @@ const StyledIcon = styled(FontAwesomeIcon)`
 `
 
 const Image = styled(Img)`
-  margin: 0 2rem;
+  margin-right: 4rem;
   flex: 1 1 50%;
   z-index: 5;
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    order: 1;
+    width: 100%;
+    margin-right: 2rem;
+  }
 `
 
 const PortfolioItem = ({ node }) => {

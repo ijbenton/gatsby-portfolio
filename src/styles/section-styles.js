@@ -2,13 +2,18 @@ import styled from "styled-components"
 
 export const StyledSection = styled.section`
   display: flex;
-  position: relative;
-  /* overflow-x: hidden !important;
-         overflow-y: hidden !important; */
-  /* justify-content: center; */
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  width: 100%;
   min-height: 100vh;
+  max-width: 124rem;
   border-bottom: 1px solid black;
   padding-top: 60px;
+  margin: 0 7rem;
+  @media ${props => props.theme.mediaQueries.small} {
+    padding: 0 4rem;
+  }
+  @media ${props => props.theme.mediaQueries.smaller} {
+    padding: 0 2rem;
+  }
 `

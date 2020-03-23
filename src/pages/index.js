@@ -72,22 +72,12 @@ const BigStarsLayer = styled(animated.div)`
 `
 
 const StyledParallaxLayer = styled(ParallaxLayer)`
-  &:after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0.6;
     background: ${props =>
       props.box1
         ? "var(--box-1)"
         : props.box2
         ? "var(--box-2)"
         : ""};
-  }
 `
 
 const IndexPage = () => {
@@ -173,9 +163,7 @@ const IndexPage = () => {
   return (
     <Layout>
     <Navbar handleClick={handleClick} />
-     { /* Start of Parallax Page */ }
       <Parallax pages={isXsHeight ? "8" : isSmallHeight || isLargeDesktop ? "7" : isMediumHeight || isSmartPhone ? "6" : isLargeHeight || isXlSmartPhone ? "5" : "8"} ref={ref => (parallax = ref)}>
-      { /* Star animations fill entire page */ }
         <SmallStarsAnimation reset config={{ duration: 50000 }}>
           {styles => <SmallStarsLayer style={styles} />}
         </SmallStarsAnimation>
@@ -185,21 +173,35 @@ const IndexPage = () => {
         <BigStarsAnimation reset config={{ duration: 150000 }}>
           {styles => <BigStarsLayer style={styles} />}
         </BigStarsAnimation>
-        { /* PAGE SECTIONS */ }
-        { /* Home Section */ }
-        <Home handleClick={handleClick}/>
-        { /* Portfolio Section */ }
+        <StyledParallaxLayer offset={0} speed={1} factor={1}>
+          <Home handleClick={handleClick}/>
+        </StyledParallaxLayer>
+        <StyledParallaxLayer
+        offset={1}
+        speed={1}
+        factor={
+          isXsHeight
+            ? "5"
+            : isSmallHeight || isLargeDesktop
+            ? "4"
+            : isMediumHeight || isSmartPhone
+            ? "3"
+            : isLargeHeight || isXlSmartPhone
+            ? "2"
+            : "5"
+        }
+      >
         <Portfolio />
-                { /* About Me Section */ }
+        </StyledParallaxLayer>
+         
                 <StyledParallaxLayer box1 offset={isXsHeight ? "6" : isSmallHeight || isLargeDesktop ? "5" : isMediumHeight || isSmartPhone ? "4" : isLargeHeight || isXlSmartPhone ? "3" : "6"} speed={1}>
                 <AboutMe />
               </StyledParallaxLayer>
-              { /* Contact Section */ }
+      
               <StyledParallaxLayer box2 offset={isXsHeight ? "7" : isSmallHeight || isLargeDesktop ? "6" : isMediumHeight || isSmartPhone ? "5" : isLargeHeight || isXlSmartPhone ? "4" : "7"} speed={1}>
                 <Contact />
               </StyledParallaxLayer>
 
-              { /* PARALLAX LAYER IMAGES */ }
         <ParallaxLayer
           offset={0.99}
           speed={0.8}

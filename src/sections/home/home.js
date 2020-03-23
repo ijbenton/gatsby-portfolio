@@ -1,22 +1,12 @@
 import React from "react"
-import { Link } from "react-scroll"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import { StyledSection } from "../../styles/section-styles"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import range from "lodash-es/range"
-import {
-  faChevronCircleDown,
-  faLaptop,
-  faCode,
-  faMoneyBill,
-  faThumbsUp,
-  faRunning,
-  faSmile,
-} from "@fortawesome/free-solid-svg-icons"
+import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons"
 import { useSpring, animated, config } from "react-spring"
-import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import Typewriter from "typewriter-effect"
 
 const StyledTitle = styled(animated.div)`
@@ -40,68 +30,13 @@ const Highlight = styled.span`
   color: var(--primary-lighter);
 `
 
-const ParallaxImages = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-`
-
-// const ParallaxWrapper = styled.div`
-//   height: 100%;
-//   width: 100%;
-// `
-
-const ParallaxImage = styled(animated(Img))`
-  z-index: 20;
-  height: 10rem;
-  width: 10rem;
-`
-
 const StyledIcon = styled(animated(FontAwesomeIcon))`
   margin-top: 1rem;
   color: white;
   cursor: pointer;
 `
-
-const getRandomInt = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min
-}
-
-const items = range(4)
-const interp = i => r =>
-  `translate3d(0, ${90 * Math.sin(r + (i * 2 * Math.PI) / 1.6)}px, 0)`
-
 const Home = ({ handleClick }) => {
-  const { allFile } = useStaticQuery(graphql`
-    query {
-      allFile(
-        filter: { sourceInstanceName: { eq: "home" }, ext: { eq: ".md" } }
-      ) {
-        edges {
-          node {
-            id
-            absolutePath
-            childMarkdownRemark {
-              id
-              frontmatter {
-                bounds
-                image {
-                  childImageSharp {
-                    fluid(maxWidth: 400) {
-                      tracedSVG
-                      srcWebp
-                      srcSetWebp
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-  const ParallaxSpring = useSpring({
+  const HomeAnimation = useSpring({
     config: config.wobbly,
     delay: 300,
     opacity: 1,
@@ -113,20 +48,11 @@ const Home = ({ handleClick }) => {
   })
 
   return (
-    <ParallaxLayer
-      offset={0}
-      speed={1}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <StyledTitle style={ParallaxSpring}>
+    <StyledSection id="home">
+      <StyledTitle style={HomeAnimation}>
         Hi, I'm <Highlight>Ian Benton</Highlight>
       </StyledTitle>
-      <StyledSlogan style={ParallaxSpring}>
+      <StyledSlogan style={HomeAnimation}>
         <span>A</span>
         <Typewriter
           options={{
@@ -146,10 +72,10 @@ const Home = ({ handleClick }) => {
       <StyledIcon
         icon={faChevronCircleDown}
         size="3x"
-        style={ParallaxSpring}
+        style={HomeAnimation}
         onClick={() => handleClick(1)}
       />
-    </ParallaxLayer>
+    </StyledSection>
   )
 }
 

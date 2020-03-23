@@ -2,11 +2,7 @@ import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { StyledSection } from "../../styles/section-styles"
 import PortfolioItem from "../../templates/portfolio-item"
-import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import styled from "styled-components"
-import { useMediaQuery } from "react-responsive"
-
-const StyledParallaxLayer = styled(ParallaxLayer)``
 
 const StyledTitle = styled.h2`
   color: var(--white);
@@ -61,54 +57,15 @@ const Portfolio = () => {
     }
   `)
 
-  const isXsHeight = useMediaQuery({ maxDeviceHeight: "545px" })
-  const isSmartPhone = useMediaQuery({
-    maxDeviceWidth: "480px",
-    maxDeviceHeight: "800px",
-  })
-  const isXlSmartPhone = useMediaQuery({
-    maxDeviceWidth: "480px",
-    minDeviceHeight: "801px",
-  })
-  const isSmallHeight = useMediaQuery({
-    minDeviceHeight: "546px",
-    maxDeviceHeight: "799px",
-    minDeviceWidth: "480px",
-  })
-  const isMediumHeight = useMediaQuery({
-    minDeviceHeight: "800px",
-    maxDeviceHeight: "999px",
-    minDeviceWidth: "480px",
-  })
-  const isLargeHeight = useMediaQuery({ minDeviceHeight: "1000px" })
-  const isLargeDesktop = useMediaQuery({
-    minDeviceHeight: "1000px",
-    minDeviceWidth: "1025px",
-  })
   return (
-    <StyledParallaxLayer
-      offset={1}
-      speed={1}
-      factor={
-        isXsHeight
-          ? "5"
-          : isSmallHeight || isLargeDesktop
-          ? "4"
-          : isMediumHeight || isSmartPhone
-          ? "3"
-          : isLargeHeight || isXlSmartPhone
-          ? "2"
-          : "5"
-      }
-      id="portfolio"
-    >
+    <StyledSection id="portfolio">
       <StyledTitle>
         <span>My Portfolio</span>
       </StyledTitle>
       {allFile.edges.map(({ node }) => (
         <PortfolioItem node={node} />
       ))}
-    </StyledParallaxLayer>
+    </StyledSection>
   )
 }
 
