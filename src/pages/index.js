@@ -6,9 +6,9 @@ import { animated, useSpring } from "react-spring"
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import { Keyframes } from "react-spring/renderprops"
 import Navbar from "../components/navbar/navbar"
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from "react-responsive"
 
-import {multipleBoxShadow} from '../styles/helpers'
+import { multipleBoxShadow } from "../styles/helpers"
 
 import Layout from "../components/layout"
 import Home from "../sections/home/home"
@@ -16,11 +16,9 @@ import AboutMe from "../sections/about-me/about-me"
 import Portfolio from "../sections/portfolio/portfolio"
 import Contact from "../sections/contact/contact"
 
-
 let shadowsSmall = multipleBoxShadow(700)
 let shadowsMedium = multipleBoxShadow(200)
 let shadowsBig = multipleBoxShadow(100)
-
 
 const SmallStarsLayer = styled(animated.div)`
   width: 1px;
@@ -72,12 +70,12 @@ const BigStarsLayer = styled(animated.div)`
 `
 
 const StyledParallaxLayer = styled(ParallaxLayer)`
-    background: ${props =>
-      props.box1
-        ? "var(--box-1)"
-        : props.box2
-        ? "var(--box-2)"
-        : ""};
+  background: ${props =>
+    props.pTransparent
+      ? "var(--p-transparent)"
+      : props.plTransparent
+      ? "var(--pl-transparent)"
+      : ""};
 `
 
 const IndexPage = () => {
@@ -112,7 +110,7 @@ const IndexPage = () => {
       }
     }
   `)
-// Stars Animations
+  // Stars Animations
   const SmallStarsAnimation = Keyframes.Spring(async next => {
     while (true) {
       await next({
@@ -140,30 +138,52 @@ const IndexPage = () => {
 
   // Media Queries
   const isXsHeight = useMediaQuery({ maxDeviceHeight: "545px" })
-  const isSmartPhone = useMediaQuery({ maxDeviceWidth: "480px", maxDeviceHeight: "800px" })
-  const isXlSmartPhone = useMediaQuery({ maxDeviceWidth: "480px", minDeviceHeight: "801px" })
+  const isSmartPhone = useMediaQuery({
+    maxDeviceWidth: "480px",
+    maxDeviceHeight: "800px",
+  })
+  const isXlSmartPhone = useMediaQuery({
+    maxDeviceWidth: "480px",
+    minDeviceHeight: "801px",
+  })
   const isSmallHeight = useMediaQuery({
     minDeviceHeight: "546px",
     maxDeviceHeight: "799px",
-    minDeviceWidth: "480px"
+    minDeviceWidth: "480px",
   })
   const isMediumHeight = useMediaQuery({
     minDeviceHeight: "800px",
     maxDeviceHeight: "999px",
-    minDeviceWidth: "480px"
+    minDeviceWidth: "480px",
   })
   const isLargeHeight = useMediaQuery({ minDeviceHeight: "1000px" })
-  const isLargeDesktop = useMediaQuery({ minDeviceHeight: "1000px", minDeviceWidth: "1025px" })
+  const isLargeDesktop = useMediaQuery({
+    minDeviceHeight: "1000px",
+    minDeviceWidth: "1025px",
+  })
 
   // Parallax Scroll To
   let parallax
-  const handleClick = (pageNum) => {
+  const handleClick = pageNum => {
     parallax.scrollTo(pageNum)
   }
   return (
     <Layout>
-    <Navbar handleClick={handleClick} />
-      <Parallax pages={isXsHeight ? "8" : isSmallHeight || isLargeDesktop ? "7" : isMediumHeight || isSmartPhone ? "6" : isLargeHeight || isXlSmartPhone ? "5" : "8"} ref={ref => (parallax = ref)}>
+      <Navbar handleClick={handleClick} />
+      <Parallax
+        pages={
+          isXsHeight
+            ? "8"
+            : isSmallHeight || isLargeDesktop
+            ? "7"
+            : isMediumHeight || isSmartPhone
+            ? "6"
+            : isLargeHeight || isXlSmartPhone
+            ? "5"
+            : "8"
+        }
+        ref={ref => (parallax = ref)}
+      >
         <SmallStarsAnimation reset config={{ duration: 50000 }}>
           {styles => <SmallStarsLayer style={styles} />}
         </SmallStarsAnimation>
@@ -174,33 +194,61 @@ const IndexPage = () => {
           {styles => <BigStarsLayer style={styles} />}
         </BigStarsAnimation>
         <StyledParallaxLayer offset={0} speed={1} factor={1}>
-          <Home handleClick={handleClick}/>
+          <Home handleClick={handleClick} />
         </StyledParallaxLayer>
         <StyledParallaxLayer
-        offset={1}
-        speed={1}
-        factor={
-          isXsHeight
-            ? "5"
-            : isSmallHeight || isLargeDesktop
-            ? "4"
-            : isMediumHeight || isSmartPhone
-            ? "3"
-            : isLargeHeight || isXlSmartPhone
-            ? "2"
-            : "5"
-        }
-      >
-        <Portfolio />
+          offset={1}
+          speed={1}
+          factor={
+            isXsHeight
+              ? "5"
+              : isSmallHeight || isLargeDesktop
+              ? "4"
+              : isMediumHeight || isSmartPhone
+              ? "3"
+              : isLargeHeight || isXlSmartPhone
+              ? "2"
+              : "5"
+          }
+        >
+          <Portfolio />
         </StyledParallaxLayer>
-         
-                <StyledParallaxLayer box1 offset={isXsHeight ? "6" : isSmallHeight || isLargeDesktop ? "5" : isMediumHeight || isSmartPhone ? "4" : isLargeHeight || isXlSmartPhone ? "3" : "6"} speed={1}>
-                <AboutMe />
-              </StyledParallaxLayer>
-      
-              <StyledParallaxLayer box2 offset={isXsHeight ? "7" : isSmallHeight || isLargeDesktop ? "6" : isMediumHeight || isSmartPhone ? "5" : isLargeHeight || isXlSmartPhone ? "4" : "7"} speed={1}>
-                <Contact />
-              </StyledParallaxLayer>
+
+        <StyledParallaxLayer
+          pTransparent
+          offset={
+            isXsHeight
+              ? "6"
+              : isSmallHeight || isLargeDesktop
+              ? "5"
+              : isMediumHeight || isSmartPhone
+              ? "4"
+              : isLargeHeight || isXlSmartPhone
+              ? "3"
+              : "6"
+          }
+          speed={1}
+        >
+          <AboutMe />
+        </StyledParallaxLayer>
+
+        <StyledParallaxLayer
+          plTransparent
+          offset={
+            isXsHeight
+              ? "7"
+              : isSmallHeight || isLargeDesktop
+              ? "6"
+              : isMediumHeight || isSmartPhone
+              ? "5"
+              : isLargeHeight || isXlSmartPhone
+              ? "4"
+              : "7"
+          }
+          speed={1}
+        >
+          <Contact />
+        </StyledParallaxLayer>
 
         <ParallaxLayer
           offset={0.99}
@@ -208,13 +256,13 @@ const IndexPage = () => {
           style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "55%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "15%" }}
           />
@@ -225,12 +273,12 @@ const IndexPage = () => {
           style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "70%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "40%" }}
           />
@@ -241,12 +289,12 @@ const IndexPage = () => {
           style={{ opacity: 0.15, zIndex: "-3" }}
         >
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "10%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "75%" }}
           />
@@ -257,17 +305,17 @@ const IndexPage = () => {
           style={{ opacity: 0.3, zIndex: "-3" }}
         >
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "60%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "25%", marginLeft: "30%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "80%" }}
           />
@@ -278,12 +326,12 @@ const IndexPage = () => {
           style={{ opacity: 0.45, zIndex: "-3" }}
         >
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "5%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "15%", marginLeft: "75%" }}
           />
@@ -294,12 +342,12 @@ const IndexPage = () => {
           style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "55%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "15%" }}
           />
@@ -310,12 +358,12 @@ const IndexPage = () => {
           style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "70%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "40%" }}
           />
@@ -326,12 +374,12 @@ const IndexPage = () => {
           style={{ opacity: 0.15, zIndex: "-3" }}
         >
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "10%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "75%" }}
           />
@@ -342,17 +390,17 @@ const IndexPage = () => {
           style={{ opacity: 0.3, zIndex: "-3" }}
         >
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "60%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "25%", marginLeft: "30%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "80%" }}
           />
@@ -363,12 +411,12 @@ const IndexPage = () => {
           style={{ opacity: 0.45, zIndex: "-3" }}
         >
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "5%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "15%", marginLeft: "75%" }}
           />
@@ -379,12 +427,12 @@ const IndexPage = () => {
           style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "55%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "15%" }}
           />
@@ -395,12 +443,12 @@ const IndexPage = () => {
           style={{ opacity: 0.075, zIndex: "-3" }}
         >
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "70%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "40%" }}
           />
@@ -411,12 +459,12 @@ const IndexPage = () => {
           style={{ opacity: 0.15, zIndex: "-3" }}
         >
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "10%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "75%" }}
           />
@@ -427,17 +475,17 @@ const IndexPage = () => {
           style={{ opacity: 0.3, zIndex: "-3" }}
         >
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "60%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "25%", marginLeft: "30%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "10%", marginLeft: "80%" }}
           />
@@ -448,18 +496,28 @@ const IndexPage = () => {
           style={{ opacity: 0.45, zIndex: "-3" }}
         >
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "5%" }}
           />
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "15%", marginLeft: "75%" }}
           />
         </ParallaxLayer>
         <ParallaxLayer
-          offset={isXsHeight ? "7.5" : isSmallHeight || isLargeDesktop ? "6.5" : isMediumHeight || isSmartPhone ? "5.5" : isLargeHeight || isXlSmartPhone ? "4.5" : "7.5"}
+          offset={
+            isXsHeight
+              ? "7.5"
+              : isSmallHeight || isLargeDesktop
+              ? "6.5"
+              : isMediumHeight || isSmartPhone
+              ? "5.5"
+              : isLargeHeight || isXlSmartPhone
+              ? "4.5"
+              : "7.5"
+          }
           speed={1}
           style={{
             display: "flex",
@@ -469,7 +527,7 @@ const IndexPage = () => {
           }}
         >
           <Img
-          fadeIn={false}
+            fadeIn={false}
             fluid={allFile.edges[1].node.childImageSharp.fluid}
             style={{ width: "30%" }}
           />

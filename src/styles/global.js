@@ -25,12 +25,12 @@ body {
   height: 100%;
   overflow: visible;
   --primary: ${props => props.theme.colors.primary};
-  --primary-light: ${props => props.theme.colors.light};
-  --primary-lighter: ${props => props.theme.colors.lighter};
+  --primary-light: ${props => props.theme.colors.primaryLight};
   --secondary: ${props => props.theme.colors.secondary};
+  --secondary-light: ${props => props.theme.colors.secondaryLight};
   --navbar: rgba(255, 255, 255, 0.95);
-  --box-1: ${props => props.theme.colors.box1};
-  --box-2: ${props => props.theme.colors.box2};
+  --p-transparent: ${props => props.theme.colors.pTransparent};
+  --pl-transparent: ${props => props.theme.colors.plTransparent};
   --text: ${props => props.theme.colors.darkTheme.text};
   --text-highlight: ${props => props.theme.colors.darkTheme.textHighlight};
   --background: rgba(27,27,30, 0.9);

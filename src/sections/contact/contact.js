@@ -23,6 +23,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
 const StyledTitle = styled.h2`
   color: var(--white);
   font-size: 5rem;
+  margin: 0 0 3rem 0;
   text-align: center;
   span {
     padding: 0.5rem;
@@ -31,7 +32,7 @@ const StyledTitle = styled.h2`
 `
 
 const Email = styled.h3`
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   text-align: center;
   color: var(--text-highlight);
   span {
@@ -47,6 +48,12 @@ const Email = styled.h3`
 `
 
 const StyledLink = styled.a``
+
+const Container = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+`
 
 const Contact = () => {
   const { site } = useStaticQuery(graphql`
@@ -65,46 +72,48 @@ const Contact = () => {
   `)
   return (
     <StyledSection id="contact">
-      <StyledTitle>
-        <span>Contact Me!</span>
-      </StyledTitle>
-      <Email>
-        <span>hello@ianbenton.com</span>
-      </Email>
-      <SocialIcons>
-        <StyledLink
-          rel="noreferrer"
-          target="_blank"
-          aria-label="Github"
-          href={`https://github.com/${site.siteMetadata.social.github}`}
-        >
-          <StyledIcon icon={faGithub} size="4x" />
-        </StyledLink>
-        <StyledLink
-          rel="noreferrer"
-          target="_blank"
-          aria-label="Instagram"
-          href={`https://www.instagram.com/${site.siteMetadata.social.instagram}`}
-        >
-          <StyledIcon icon={faInstagram} size="4x" />
-        </StyledLink>
-        <StyledLink
-          rel="noreferrer"
-          target="_blank"
-          aria-label="Linkedin"
-          href={`https://www.linkedin.com/in/${site.siteMetadata.social.linkedin}`}
-        >
-          <StyledIcon icon={faLinkedin} size="4x" />
-        </StyledLink>
-        <StyledLink
-          rel="noreferrer"
-          target="_top"
-          aria-label="Email"
-          href={`mailto:${site.siteMetadata.social.email}`}
-        >
-          <StyledIcon icon={faEnvelope} size="4x" />
-        </StyledLink>
-      </SocialIcons>
+      <Container>
+        <StyledTitle>
+          <span>Contact Me!</span>
+        </StyledTitle>
+        <Email>
+          <span>hello@ianbenton.com</span>
+        </Email>
+        <SocialIcons>
+          <StyledLink
+            rel="noreferrer"
+            target="_blank"
+            aria-label="Github"
+            href={`https://github.com/${site.siteMetadata.social.github}`}
+          >
+            <StyledIcon icon={faGithub} size="4x" />
+          </StyledLink>
+          <StyledLink
+            rel="noreferrer"
+            target="_blank"
+            aria-label="Instagram"
+            href={`https://www.instagram.com/${site.siteMetadata.social.instagram}`}
+          >
+            <StyledIcon icon={faInstagram} size="4x" />
+          </StyledLink>
+          <StyledLink
+            rel="noreferrer"
+            target="_blank"
+            aria-label="Linkedin"
+            href={`https://www.linkedin.com/in/${site.siteMetadata.social.linkedin}`}
+          >
+            <StyledIcon icon={faLinkedin} size="4x" />
+          </StyledLink>
+          <StyledLink
+            rel="noreferrer"
+            target="_top"
+            aria-label="Email"
+            href={`mailto:${site.siteMetadata.social.email}`}
+          >
+            <StyledIcon icon={faEnvelope} size="4x" />
+          </StyledLink>
+        </SocialIcons>
+      </Container>
     </StyledSection>
   )
 }

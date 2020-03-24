@@ -1,14 +1,11 @@
 const theme = {
   colors: {
-    //   primary: '#127EB1',
-    primary: "#3A506B",
-    light: "#028090",
-    //   light: '#089ECA',
-    //   lighter: '#36A6BA',
-    lighter: "#5BC0BE",
-    secondary: "#805E73",
-    box1: "rgba(58,80,107, 0.8)",
-    box2: "rgba(91,192,190, 0.8)",
+    primary: "#05668D",
+    primaryLight: "#028090",
+    secondary: "#00A896",
+    secondaryLight: "#02C39A",
+    pTransparent: "rgba(5,102,141, 0.8)",
+    plTransparent: "rgba(2,128,144, 0.8)",
     lightTheme: {
       text: "#585858",
       textHighlight: "#313638",

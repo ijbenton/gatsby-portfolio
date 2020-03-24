@@ -1,10 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
 import { StyledSection } from "../../styles/section-styles"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import range from "lodash-es/range"
 import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons"
 import { useSpring, animated, config } from "react-spring"
 import Typewriter from "typewriter-effect"
@@ -27,7 +24,8 @@ const StyledSlogan = styled(animated.div)`
 `
 
 const Highlight = styled.span`
-  color: var(--primary-lighter);
+  color: var(--primary-light);
+  font-weight: bold;
 `
 
 const StyledIcon = styled(animated(FontAwesomeIcon))`

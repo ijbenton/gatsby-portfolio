@@ -97,6 +97,8 @@ const Image = styled(Img)`
   margin-right: 4rem;
   flex: 1 1 50%;
   z-index: 5;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
 
   @media ${props => props.theme.mediaQueries.medium} {
     order: 1;

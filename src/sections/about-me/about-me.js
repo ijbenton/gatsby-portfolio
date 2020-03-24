@@ -15,9 +15,11 @@ const StyledTitle = styled.h2`
 const AboutMe = () => {
   return (
     <StyledSection id="about-me">
+
       <StyledTitle>
         <span>About Me</span>
       </StyledTitle>
+ 
     </StyledSection>
   )
 }
