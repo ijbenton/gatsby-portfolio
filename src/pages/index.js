@@ -198,7 +198,7 @@ const IndexPage = () => {
         </StyledParallaxLayer>
         <StyledParallaxLayer
           offset={1}
-          speed={1}
+          speed={0.8}
           factor={
             isXsHeight
               ? "5"
