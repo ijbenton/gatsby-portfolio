@@ -4,11 +4,10 @@ import styled from "styled-components"
 
 const StyledTitle = styled.h2`
   color: var(--white);
-  font-size: 5rem;
+  font-size: 6rem;
   text-align: center;
   span {
     padding: 0.5rem;
-    border-bottom: 2px solid var(--primary);
   }
 `
 

@@ -37,7 +37,7 @@ const StyledNav = styled.nav`
     padding: 0 2rem;
     transition: color 0.15s ease-out;
     &:hover {
-      color: var(--primary-lighter);
+      color: var(--primary);
     }
   }
 `
@@ -48,7 +48,7 @@ const Logo = styled.div`
   cursor: pointer;
   transition: color 0.15s ease-out;
   &:hover {
-    color: var(--primary-lighter);
+    color: var(--primary);
   }
 `
 

@@ -17,17 +17,15 @@ const SocialIcons = styled.div`
 
 const StyledIcon = styled(FontAwesomeIcon)`
   color: var(--white);
-  margin: 2rem;
 `
 
 const StyledTitle = styled.h2`
   color: var(--white);
-  font-size: 5rem;
+  font-size: 6rem;
   margin: 0 0 3rem 0;
   text-align: center;
   span {
     padding: 0.5rem;
-    border-bottom: 2px solid var(--primary);
   }
 `
 
@@ -47,7 +45,10 @@ const Email = styled.h3`
   }
 `
 
-const StyledLink = styled.a``
+const StyledLink = styled.a`
+  margin: 2rem;
+  padding: 0;
+`
 
 const Container = styled.div`
   flex: 1;
