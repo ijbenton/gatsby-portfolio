@@ -14,7 +14,7 @@ const StyledLink = styled.a`
   letter-spacing: 1.5px;
   border: ${({ solid }) => (solid ? "1px transparent" : "1px solid")};
   border-radius: 7rem;
-  font-size: 1vw;
+  font-size: 1.5rem;
   padding: 1rem 2.25rem;
   margin: 0rem;
   cursor: pointer;
@@ -30,6 +30,10 @@ const StyledLink = styled.a`
     transform: translateY(1px);
     box-shadow: ${({ solid }) =>
       solid ? "0 3px 10px var(--shadow-btn)" : "none"};
+  }
+
+  @media ${props => props.theme.mediaQueries.tablet} {
+    font-size: 2rem;
   }
 `
 

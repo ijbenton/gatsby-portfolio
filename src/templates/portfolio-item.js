@@ -1,10 +1,11 @@
 import React from "react"
 import Img from "gatsby-image"
 import styled from "styled-components"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLink } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import { Lead } from "../styles/section-styles"
+
 import ButtonLink from "../components/button-link/button-link"
 
 const ItemWrapper = styled.div`
@@ -26,12 +27,21 @@ const ItemWrapper = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   align-items: flex-start;
+  @media ${props => props.theme.mediaQueries.tablet} {
+    flex-direction: column;
+    margin: 0 4rem;
+  }
 `
 
 const Content = styled.div`
   display: flex;
   flex: 1 1 50%;
   flex-direction: column;
+
+  @media ${props => props.theme.mediaQueries.tablet} {
+    flex: 0 0 auto;
+    width: 100%;
+  }
 `
 
 const ButtonsWrapper = styled.div`
@@ -39,6 +49,10 @@ const ButtonsWrapper = styled.div`
 
   & a:first-of-type {
     margin-right: 2rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.tablet} {
+    justify-content: center;
   }
 `
 
@@ -53,38 +67,19 @@ const Title = styled.h1`
   padding: 0.5rem 0.75rem;
   border-radius: 5px;
   background: var(--primary);
-
-  /* &:after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
-    background: var(--primary);
-  } */
 `
 
 const Stack = styled.span`
   color: var(--text-highlight);
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.15vw;
+  font-size: 1.75rem;
   font-family: "Roboto";
   margin-bottom: 4rem;
-`
 
-const Text = styled.div`
-  color: var(--text);
-  p {
-    font-size: 1vw;
-    font-weight: 400;
-    margin-top: 0;
-    margin-bottom: 3.7rem;
-    line-height: 1.75;
-    letter-spacing: 1.5px;
+  @media ${props => props.theme.mediaQueries.tablet} {
+    text-align: center;
+    font-size: 2.25rem;
   }
 `
 
@@ -100,10 +95,10 @@ const Image = styled(Img)`
   -webkit-filter: drop-shadow(5px 5px 5px #222);
   filter: drop-shadow(5px 5px 5px #222);
 
-  @media ${props => props.theme.mediaQueries.medium} {
-    order: 1;
+  @media ${props => props.theme.mediaQueries.tablet} {
+    flex: 0 0 auto;
     width: 100%;
-    margin-right: 2rem;
+    margin: 0;
   }
 `
 
@@ -121,7 +116,7 @@ const PortfolioItem = ({ node }) => {
       <ContentWrapper>
         <Image fluid={image.childImageSharp.fluid} />
         <Content>
-          <Text
+          <Lead
             dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html }}
           />
           <Stack>{stack}</Stack>

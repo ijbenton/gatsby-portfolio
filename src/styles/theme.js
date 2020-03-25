@@ -24,7 +24,7 @@ const theme = {
     medium: "only screen and (max-width: 56.25em)",
     large: "only screen and (max-width: 80em)",
     larger: "only screen and (max-width: 90em)",
-    largest: "only screen and (max-width: 97em)",
+    tablet: "only screen and (max-width: 1024px)",
   },
 }
 

@@ -1,17 +1,8 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { StyledSection } from "../../styles/section-styles"
+import { StyledSection, SectionTitle } from "../../styles/section-styles"
 import PortfolioItem from "../../templates/portfolio-item"
 import styled from "styled-components"
-
-const StyledTitle = styled.h2`
-  color: var(--white);
-  font-size: 6rem;
-  text-align: center;
-  span {
-    padding: 0.5rem;
-  }
-`
 
 const Portfolio = () => {
   const { allFile } = useStaticQuery(graphql`
@@ -57,9 +48,9 @@ const Portfolio = () => {
 
   return (
     <StyledSection id="portfolio">
-      <StyledTitle>
+      <SectionTitle>
         <span>My Portfolio</span>
-      </StyledTitle>
+      </SectionTitle>
       {allFile.edges.map(({ node }) => (
         <PortfolioItem node={node} />
       ))}

@@ -1,21 +1,16 @@
 import React from "react"
-import { StyledSection, Container } from "../../styles/section-styles"
+import {
+  StyledSection,
+  Container,
+  SectionTitle,
+  Lead
+} from "../../styles/section-styles"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFile } from "@fortawesome/free-solid-svg-icons"
 
 import ButtonLink from "../../components/button-link/button-link"
-
-const StyledTitle = styled.h2`
-  color: var(--white);
-  font-size: 3.5vw;
-  text-align: center;
-  margin: 0;
-  span {
-    padding: 0.5rem;
-  }
-`
 
 const SubTitle = styled.h3`
   font-weight: 600;
@@ -35,15 +30,6 @@ const SubTitle = styled.h3`
 const StyledIcon = styled(FontAwesomeIcon)`
   color: inherit;
   margin-right: 0.5rem;
-`
-
-const Bio = styled.div`
-  text-align: center;
-  color: var(--text);
-  margin: 2rem 4rem;
-  p {
-    font-size: 1.75vw;
-  }
 `
 
 const Stack = styled.span`
@@ -90,10 +76,11 @@ const AboutMe = () => {
   return (
     <StyledSection id="about-me">
       <Container>
-        <StyledTitle>
+        <SectionTitle>
           <span>About Me</span>
-        </StyledTitle>
-        <Bio
+        </SectionTitle>
+        <Lead
+        center
           dangerouslySetInnerHTML={{
             __html: allFile.edges[0].node.childMarkdownRemark.html,
           }}

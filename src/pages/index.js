@@ -137,6 +137,7 @@ const IndexPage = () => {
   })
 
   // Media Queries
+  const isMobileOrTablet = useMediaQuery({ maxDeviceWidth: "1024px" })
   const isXsHeight = useMediaQuery({ maxDeviceHeight: "545px" })
   const isSmartPhone = useMediaQuery({
     maxDeviceWidth: "480px",
@@ -259,7 +260,7 @@ const IndexPage = () => {
               ? "4"
               : "7"
           }
-          factor={0.5}
+          factor={0.7}
           speed={1}
         >
           <Contact />
@@ -288,7 +289,7 @@ const IndexPage = () => {
           <Img
             fadeIn={false}
             fluid={allFile.edges[1].node.childImageSharp.fluid}
-            style={{ width: "40%" }}
+            style={{ width: isMobileOrTablet ? "80%" : "40%" }}
           />
         </ParallaxLayer>
         <ParallaxLayer

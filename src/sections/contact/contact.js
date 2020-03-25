@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { StyledSection, Container } from "../../styles/section-styles"
+import { StyledSection, Container, SectionTitle } from "../../styles/section-styles"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
@@ -27,16 +27,6 @@ const StyledIcon = styled(FontAwesomeIcon)`
   color: var(--white);
 `
 
-const StyledTitle = styled.h2`
-  color: var(--white);
-  font-size: 6rem;
-  margin: 0 0 3rem 0;
-  text-align: center;
-  span {
-    padding: 0.5rem;
-  }
-`
-
 const Email = styled.h3`
   margin-bottom: 3rem;
   text-align: center;
@@ -49,7 +39,7 @@ const Email = styled.h3`
     margin: 0;
     margin-bottom: 3.5rem;
     transition: color 0.2s ease-out;
-    padding: 0.5rem 0.75rem;
+    padding: 0 0.75rem;
   }
 `
 
@@ -75,9 +65,9 @@ const Contact = () => {
   `)
   return (
     <Section id="contact">
-      <StyledTitle>
+      <SectionTitle>
         <span>Contact Me!</span>
-      </StyledTitle>
+      </SectionTitle>
       <Email>
         <span>hello@ianbenton.com</span>
       </Email>
