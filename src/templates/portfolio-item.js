@@ -14,6 +14,7 @@ const ItemWrapper = styled.div`
   align-items: center;
   z-index: 5;
   padding: 0 0 12rem 0;
+  height: 80vh;
 
   &:first-child {
     margin-top: 60px;

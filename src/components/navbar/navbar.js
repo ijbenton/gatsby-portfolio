@@ -85,41 +85,9 @@ const Navbar = ({ handleClick }) => {
         <Logo onClick={() => handleClick(0)}>Ian Benton</Logo>
         <StyledNav>
           <span onClick={() => handleClick(1)}>Portfolio</span>
-          <span
-            onClick={() =>
-              handleClick(
-                isXsHeight
-                  ? "6"
-                  : isSmallHeight || isLargeDesktop
-                  ? "5"
-                  : isMediumHeight || isSmartPhone
-                  ? "4"
-                  : isLargeHeight || isXlSmartPhone
-                  ? "3"
-                  : "6"
-              )
-            }
-          >
-            About Me
-          </span>
+          <span onClick={() => handleClick(7.7)}>About Me</span>
 
-          <span
-            onClick={() =>
-              handleClick(
-                isXsHeight
-                  ? "7"
-                  : isSmallHeight || isLargeDesktop
-                  ? "6"
-                  : isMediumHeight || isSmartPhone
-                  ? "5"
-                  : isLargeHeight || isXlSmartPhone
-                  ? "4"
-                  : "7"
-              )
-            }
-          >
-            Contact
-          </span>
+          <span onClick={() => handleClick(8.7)}>Contact</span>
         </StyledNav>
       </Wrapper>
     </StyledHeader>

@@ -162,7 +162,10 @@ const IndexPage = () => {
     minDeviceHeight: "1000px",
     minDeviceWidth: "1025px",
   })
-  const isTablet = useMediaQuery({ maxDeviceWidth: "1024px", minDeviceHeight: "1000px"})
+  const isTablet = useMediaQuery({
+    maxDeviceWidth: "1024px",
+    minDeviceHeight: "1000px",
+  })
 
   // Parallax Scroll To
   let parallax
@@ -172,20 +175,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <Navbar handleClick={handleClick} />
-      <Parallax
-        pages={
-          isXsHeight
-            ? "8"
-            : isSmallHeight || isLargeDesktop || isTablet
-            ? "7"
-            : isMediumHeight || isSmartPhone
-            ? "6"
-            : isLargeHeight || isXlSmartPhone
-            ? "5"
-            : "8"
-        }
-        ref={ref => (parallax = ref)}
-      >
+      <Parallax pages={9.7} ref={ref => (parallax = ref)}>
         <SmallStarsAnimation reset config={{ duration: 50000 }}>
           {styles => <SmallStarsLayer style={styles} />}
         </SmallStarsAnimation>
@@ -195,91 +185,10 @@ const IndexPage = () => {
         <BigStarsAnimation reset config={{ duration: 150000 }}>
           {styles => <BigStarsLayer style={styles} />}
         </BigStarsAnimation>
-        <StyledParallaxLayer offset={0} speed={1} factor={1}>
-          <Home handleClick={handleClick} />
-        </StyledParallaxLayer>
-        <StyledParallaxLayer
-          offset={1}
-          speed={0.8}
-          factor={
-            isXsHeight
-              ? "5"
-              : isSmallHeight || isLargeDesktop || isTablet
-              ? "4"
-              : isMediumHeight || isSmartPhone
-              ? "3"
-              : isLargeHeight || isXlSmartPhone
-              ? "2"
-              : "5"
-          }
-        >
-          <Portfolio />
-        </StyledParallaxLayer>
-
-        <StyledParallaxLayer
-          pTransparent
-          offset={
-            isXsHeight 
-              ? "6"
-              : isSmallHeight || isLargeDesktop || isTablet
-              ? "5"
-              : isMediumHeight || isSmartPhone
-              ? "4"
-              : isLargeHeight || isXlSmartPhone
-              ? "3"
-              : "6"
-          }
-          speed={1}
-        >
-          <AboutMe />
-        </StyledParallaxLayer>
-
-        <StyledParallaxLayer
-          plTransparent
-          offset={
-            isXsHeight
-              ? "7"
-              : isSmallHeight || isLargeDesktop || isTablet
-              ? "6"
-              : isMediumHeight || isSmartPhone
-              ? "5"
-              : isLargeHeight || isXlSmartPhone
-              ? "4"
-              : "7"
-          }
-          speed={1}
-        />
-        <StyledParallaxLayer
-          offset={
-            isXsHeight
-              ? "7"
-              : isSmallHeight || isLargeDesktop || isTablet
-              ? "6"
-              : isMediumHeight || isSmartPhone
-              ? "5"
-              : isLargeHeight || isXlSmartPhone
-              ? "4"
-              : "7"
-          }
-          factor={0.7}
-          speed={1}
-        >
-          <Contact />
-        </StyledParallaxLayer>
 
         <ParallaxLayer
-          offset={
-            isXsHeight
-              ? "7.5"
-              : isSmallHeight || isLargeDesktop || isTablet
-              ? "6.5"
-              : isMediumHeight || isSmartPhone
-              ? "5.5"
-              : isLargeHeight || isXlSmartPhone
-              ? "4.5"
-              : "7.5"
-          }
-          speed={1}
+          offset={9}
+          speed={0.5}
           style={{
             display: "flex",
             alignItems: "center",
@@ -310,8 +219,8 @@ const IndexPage = () => {
             style={{ width: "10%", marginLeft: "15%" }}
           />
         </ParallaxLayer>
-       
-          <ParallaxLayer
+
+        <ParallaxLayer
           offset={1.8}
           speed={0.5}
           style={{ opacity: 0.075, zIndex: "-3" }}
@@ -321,9 +230,8 @@ const IndexPage = () => {
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "70%" }}
           />
-         
         </ParallaxLayer>
-      
+
         <ParallaxLayer
           offset={0.99}
           speed={0.2}
@@ -340,8 +248,8 @@ const IndexPage = () => {
             style={{ width: "20%", marginLeft: "75%" }}
           />
         </ParallaxLayer>
-       
-          <ParallaxLayer
+
+        <ParallaxLayer
           offset={1.4}
           speed={-0.1}
           style={{ opacity: 0.25, zIndex: "-3" }}
@@ -357,7 +265,7 @@ const IndexPage = () => {
             style={{ width: "10%", marginLeft: "85%" }}
           />
         </ParallaxLayer>
-      
+
         <ParallaxLayer
           offset={2.6}
           speed={0.4}
@@ -539,6 +447,11 @@ const IndexPage = () => {
             style={{ width: "15%", marginLeft: "75%" }}
           />
         </ParallaxLayer>
+        <Home handleClick={handleClick} />
+
+        <Portfolio />
+        <AboutMe />
+        <Contact />
       </Parallax>
     </Layout>
   )

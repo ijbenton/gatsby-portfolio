@@ -75,7 +75,6 @@ const AboutMe = () => {
   `)
   return (
     <StyledSection id="about-me">
-      <Container>
         <SectionTitle>
           <span>About Me</span>
         </SectionTitle>
@@ -101,7 +100,6 @@ const AboutMe = () => {
             Resume
           </ButtonLink>
         </ButtonsWrapper>
-      </Container>
     </StyledSection>
   )
 }

@@ -3,7 +3,6 @@ import styled from "styled-components"
 export const StyledSection = styled.section`
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   min-height: 100vh;
   max-width: 124rem;
@@ -31,7 +30,7 @@ export const SectionTitle = styled.h2`
   font-size: 6rem;
   text-align: center;
   margin: 0;
-  padding-bottom: 3rem;
+  height: 20vh;
 `
 
 export const Lead = styled.div`

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { StyledSection } from "../../styles/section-styles"
+import { StyledSection, Container } from "../../styles/section-styles"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons"
 import { useSpring, animated, config } from "react-spring"
@@ -47,6 +47,7 @@ const Home = ({ handleClick }) => {
 
   return (
     <StyledSection id="home">
+    <Container>
       <StyledTitle style={HomeAnimation}>
         Hi, I'm <Highlight>Ian Benton</Highlight>
       </StyledTitle>
@@ -73,6 +74,7 @@ const Home = ({ handleClick }) => {
         style={HomeAnimation}
         onClick={() => handleClick(1)}
       />
+      </Container>
     </StyledSection>
   )
 }

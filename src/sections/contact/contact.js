@@ -1,6 +1,10 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { StyledSection, Container, SectionTitle } from "../../styles/section-styles"
+import {
+  StyledSection,
+  Container,
+  SectionTitle,
+} from "../../styles/section-styles"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
@@ -28,7 +32,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
 `
 
 const Email = styled.h3`
-  margin-bottom: 3rem;
+  margin: 0 0 1.5rem 0;
   text-align: center;
   color: var(--text-highlight);
   span {
@@ -64,7 +68,7 @@ const Contact = () => {
     }
   `)
   return (
-    <Section id="contact">
+    <StyledSection id="contact">
       <SectionTitle>
         <span>Contact Me!</span>
       </SectionTitle>
@@ -105,7 +109,7 @@ const Contact = () => {
           <StyledIcon icon={faEnvelope} size="4x" />
         </StyledLink>
       </SocialIcons>
-    </Section>
+    </StyledSection>
   )
 }
 
