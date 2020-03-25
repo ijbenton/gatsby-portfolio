@@ -74,7 +74,7 @@ const AboutMe = () => {
     }
   `)
   return (
-    <StyledSection id="about-me">
+    <StyledSection pTransparent id="about-me">
         <SectionTitle>
           <span>About Me</span>
         </SectionTitle>

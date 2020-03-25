@@ -23,6 +23,10 @@ const ItemWrapper = styled.div`
   &:last-child {
     margin-bottom: 0;
   }
+
+  @media ${props => props.theme.mediaQueries.tablet}{
+    height: 70vh;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -80,7 +84,8 @@ const Stack = styled.span`
 
   @media ${props => props.theme.mediaQueries.tablet} {
     text-align: center;
-    font-size: 2.25rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
   }
 `
 
