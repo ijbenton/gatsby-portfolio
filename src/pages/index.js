@@ -246,10 +246,51 @@ const IndexPage = () => {
               : "7"
           }
           speed={1}
+        />
+        <StyledParallaxLayer
+          offset={
+            isXsHeight
+              ? "7"
+              : isSmallHeight || isLargeDesktop
+              ? "6"
+              : isMediumHeight || isSmartPhone
+              ? "5"
+              : isLargeHeight || isXlSmartPhone
+              ? "4"
+              : "7"
+          }
+          factor={0.5}
+          speed={1}
         >
           <Contact />
         </StyledParallaxLayer>
 
+        <ParallaxLayer
+          offset={
+            isXsHeight
+              ? "7.5"
+              : isSmallHeight || isLargeDesktop
+              ? "6.5"
+              : isMediumHeight || isSmartPhone
+              ? "5.5"
+              : isLargeHeight || isXlSmartPhone
+              ? "4.5"
+              : "7.5"
+          }
+          speed={1}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            pointerEvents: "none",
+          }}
+        >
+          <Img
+            fadeIn={false}
+            fluid={allFile.edges[1].node.childImageSharp.fluid}
+            style={{ width: "40%" }}
+          />
+        </ParallaxLayer>
         <ParallaxLayer
           offset={0.99}
           speed={0.8}
@@ -504,32 +545,6 @@ const IndexPage = () => {
             fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "15%", marginLeft: "75%" }}
-          />
-        </ParallaxLayer>
-        <ParallaxLayer
-          offset={
-            isXsHeight
-              ? "7.5"
-              : isSmallHeight || isLargeDesktop
-              ? "6.5"
-              : isMediumHeight || isSmartPhone
-              ? "5.5"
-              : isLargeHeight || isXlSmartPhone
-              ? "4.5"
-              : "7.5"
-          }
-          speed={1}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            pointerEvents: "none",
-          }}
-        >
-          <Img
-            fadeIn={false}
-            fluid={allFile.edges[1].node.childImageSharp.fluid}
-            style={{ width: "30%" }}
           />
         </ParallaxLayer>
       </Parallax>
