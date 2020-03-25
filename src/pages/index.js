@@ -162,6 +162,7 @@ const IndexPage = () => {
     minDeviceHeight: "1000px",
     minDeviceWidth: "1025px",
   })
+  const isTablet = useMediaQuery({ maxDeviceWidth: "1024px", minDeviceHeight: "1000px"})
 
   // Parallax Scroll To
   let parallax
@@ -175,7 +176,7 @@ const IndexPage = () => {
         pages={
           isXsHeight
             ? "8"
-            : isSmallHeight || isLargeDesktop
+            : isSmallHeight || isLargeDesktop || isTablet
             ? "7"
             : isMediumHeight || isSmartPhone
             ? "6"
@@ -203,7 +204,7 @@ const IndexPage = () => {
           factor={
             isXsHeight
               ? "5"
-              : isSmallHeight || isLargeDesktop
+              : isSmallHeight || isLargeDesktop || isTablet
               ? "4"
               : isMediumHeight || isSmartPhone
               ? "3"
@@ -218,9 +219,9 @@ const IndexPage = () => {
         <StyledParallaxLayer
           pTransparent
           offset={
-            isXsHeight
+            isXsHeight 
               ? "6"
-              : isSmallHeight || isLargeDesktop
+              : isSmallHeight || isLargeDesktop || isTablet
               ? "5"
               : isMediumHeight || isSmartPhone
               ? "4"
@@ -238,7 +239,7 @@ const IndexPage = () => {
           offset={
             isXsHeight
               ? "7"
-              : isSmallHeight || isLargeDesktop
+              : isSmallHeight || isLargeDesktop || isTablet
               ? "6"
               : isMediumHeight || isSmartPhone
               ? "5"
@@ -252,7 +253,7 @@ const IndexPage = () => {
           offset={
             isXsHeight
               ? "7"
-              : isSmallHeight || isLargeDesktop
+              : isSmallHeight || isLargeDesktop || isTablet
               ? "6"
               : isMediumHeight || isSmartPhone
               ? "5"
@@ -270,7 +271,7 @@ const IndexPage = () => {
           offset={
             isXsHeight
               ? "7.5"
-              : isSmallHeight || isLargeDesktop
+              : isSmallHeight || isLargeDesktop || isTablet
               ? "6.5"
               : isMediumHeight || isSmartPhone
               ? "5.5"
@@ -309,7 +310,8 @@ const IndexPage = () => {
             style={{ width: "10%", marginLeft: "15%" }}
           />
         </ParallaxLayer>
-        <ParallaxLayer
+       
+          <ParallaxLayer
           offset={1.8}
           speed={0.5}
           style={{ opacity: 0.075, zIndex: "-3" }}
@@ -319,12 +321,9 @@ const IndexPage = () => {
             fluid={allFile.edges[0].node.childImageSharp.fluid}
             style={{ width: "20%", marginLeft: "70%" }}
           />
-          <Img
-            fadeIn={false}
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "40%" }}
-          />
+         
         </ParallaxLayer>
+      
         <ParallaxLayer
           offset={0.99}
           speed={0.2}
@@ -341,31 +340,28 @@ const IndexPage = () => {
             style={{ width: "20%", marginLeft: "75%" }}
           />
         </ParallaxLayer>
-        <ParallaxLayer
+       
+          <ParallaxLayer
           offset={1.4}
           speed={-0.1}
-          style={{ opacity: 0.3, zIndex: "-3" }}
+          style={{ opacity: 0.25, zIndex: "-3" }}
         >
           <Img
             fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "60%" }}
+            style={{ width: "25%", marginLeft: "10%" }}
           />
           <Img
             fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "25%", marginLeft: "30%" }}
-          />
-          <Img
-            fadeIn={false}
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "10%", marginLeft: "80%" }}
+            style={{ width: "10%", marginLeft: "85%" }}
           />
         </ParallaxLayer>
+      
         <ParallaxLayer
           offset={2.6}
           speed={0.4}
-          style={{ opacity: 0.45, zIndex: "-3" }}
+          style={{ opacity: 0.35, zIndex: "-3" }}
         >
           <Img
             fadeIn={false}
@@ -375,7 +371,7 @@ const IndexPage = () => {
           <Img
             fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "15%", marginLeft: "75%" }}
+            style={{ width: "15%", marginLeft: "80%" }}
           />
         </ParallaxLayer>
         <ParallaxLayer
@@ -434,17 +430,12 @@ const IndexPage = () => {
           <Img
             fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "20%", marginLeft: "60%" }}
+            style={{ width: "25%", marginLeft: "15%" }}
           />
           <Img
             fadeIn={false}
             fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "25%", marginLeft: "30%" }}
-          />
-          <Img
-            fadeIn={false}
-            fluid={allFile.edges[0].node.childImageSharp.fluid}
-            style={{ width: "10%", marginLeft: "80%" }}
+            style={{ width: "10%", marginLeft: "85%" }}
           />
         </ParallaxLayer>
         <ParallaxLayer

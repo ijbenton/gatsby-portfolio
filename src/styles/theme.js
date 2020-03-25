@@ -18,12 +18,12 @@ const theme = {
     },
   },
   mediaQueries: {
-    smallest: `only screen and (max-width: 25em)`,
-    smaller: "only screen and (max-width: 31.25em)",
-    small: "only screen and (max-width: 37.5em)",
-    medium: "only screen and (max-width: 56.25em)",
-    large: "only screen and (max-width: 80em)",
-    larger: "only screen and (max-width: 90em)",
+    landscape: `only screen and (max-width: 25em)`,
+    smallPhone: "only screen and (max-width: 31.25em)",
+    mediumPhone: "only screen and (max-width: 37.5em)",
+    largePhone: "only screen and (max-width: 56.25em)",
+    mediumDesktop: "only screen and (max-width: 1600px)",
+    largeDesktop: "only screen and (min-width: 1601px)",
     tablet: "only screen and (max-width: 1024px)",
   },
 }

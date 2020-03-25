@@ -3,7 +3,7 @@ import {
   StyledSection,
   Container,
   SectionTitle,
-  Lead
+  Lead,
 } from "../../styles/section-styles"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
@@ -35,7 +35,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
 const Stack = styled.span`
   text-align: center;
   font-weight: bold;
-  font-size: 2vw;
+  font-size: 2.5rem;
   color: var(--text-highlight);
   margin: 0 4rem 2rem 4rem;
 `
@@ -80,7 +80,7 @@ const AboutMe = () => {
           <span>About Me</span>
         </SectionTitle>
         <Lead
-        center
+          center
           dangerouslySetInnerHTML={{
             __html: allFile.edges[0].node.childMarkdownRemark.html,
           }}

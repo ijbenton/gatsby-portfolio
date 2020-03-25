@@ -46,10 +46,15 @@ export const Lead = styled.div`
     letter-spacing: 1.5px;
   }
 
+  @media ${props => props.theme.mediaQueries.largeDesktop} {
+    p {
+      font-size: 2rem;
+    }
+  }
   @media ${props => props.theme.mediaQueries.tablet} {
     text-align: center;
     p {
-      font-size: 2rem;
+      font-size: 1.6rem;
       margin: 1rem 0;
     }
   }
