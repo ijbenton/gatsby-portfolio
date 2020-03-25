@@ -3,6 +3,7 @@ module.exports = {
     title: `Ian Benton | Front-End Web Developer`,
     description: `I'm Ian Benton, a Front-End Web Developer from Portland, OR`,
     author: `Ian`,
+    site: `ianbenton.com`,
     social: {
       github: `ijbenton`,
       instagram: `bentondev`,
@@ -48,6 +49,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `about-me`,
+        path: `${__dirname}/src/content/about-me`,
       },
     },
     `gatsby-plugin-sharp`,

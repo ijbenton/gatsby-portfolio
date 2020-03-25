@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { StyledSection } from "../../styles/section-styles"
+import { StyledSection, Container } from "../../styles/section-styles"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
@@ -50,11 +50,7 @@ const StyledLink = styled.a`
   padding: 0;
 `
 
-const Container = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-`
+
 
 const Contact = () => {
   const { site } = useStaticQuery(graphql`
