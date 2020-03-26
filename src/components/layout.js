@@ -15,8 +15,8 @@ import theme from "../styles/theme"
 import SEO from "../components/seo"
 
 const StyledMain = styled.main`
-  display: flex;
-  flex-direction: column;
+  height: 100%;
+  width: 100%;
 `
 
 const Layout = ({ children }) => (

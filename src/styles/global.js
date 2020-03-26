@@ -5,6 +5,14 @@ html {
   font-size: 10px;
     box-sizing: border-box;
   }
+  ::-webkit-scrollbar {
+    width: 10px;
+    background: black;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: gray;
+    height: 10rem;
+  }
   * {
     outline: none;
     box-sizing: inherit;
@@ -23,7 +31,7 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  overflow: visible;
+  overflow: hidden;
   --primary: ${props => props.theme.colors.primary};
   --primary-light: ${props => props.theme.colors.primaryLight};
   --secondary: ${props => props.theme.colors.secondary};

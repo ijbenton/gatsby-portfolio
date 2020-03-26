@@ -10,17 +10,19 @@ const StyledHeader = styled.header`
   max-width: 100vw;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: 21;
   font-size: 2rem;
+  background: var(--background);
+  display: flex;
+  justify-content: center;
 `
 
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  overflow-x: hidden;
   justify-content: space-between;
   height: 60px;
-  background: var(--background);
+  width: 124rem;
   span {
     color: #d8dbe2;
   }
@@ -91,13 +93,11 @@ const Navbar = ({ handleClick }) => {
       <Wrapper>
         <Logo onClick={() => handleClick(0)}>Ian Benton</Logo>
         <StyledNav>
-          <span onClick={() => handleClick(1)}>Portfolio</span>
-          <span onClick={() => handleClick(isTablet ? "8" : "7.6")}>
+          <span onClick={() => handleClick(1.05)}>Portfolio</span>
+          <span onClick={() => handleClick(isTablet ? "8" : "7.7")}>
             About Me
           </span>
-          <span onClick={() => handleClick(isTablet ? "9" : "8.6")}>
-            Contact
-          </span>
+          <span onClick={() => handleClick(isTablet ? "9" : "9")}>Contact</span>
         </StyledNav>
       </Wrapper>
     </StyledHeader>

@@ -69,13 +69,11 @@ const BigStarsLayer = styled(animated.div)`
   }
 `
 
-const StyledParallaxLayer = styled(ParallaxLayer)`
-  background: ${props =>
-    props.pTransparent
-      ? "var(--p-transparent)"
-      : props.plTransparent
-      ? "var(--pl-transparent)"
-      : ""};
+const Contained = styled.div`
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 60px 1fr;
 `
 
 const IndexPage = () => {
@@ -167,13 +165,13 @@ const IndexPage = () => {
     parallax.scrollTo(pageNum)
   }
   return (
-    
-      <Layout>
-        <Navbar handleClick={handleClick} />
-        <Parallax
-      pages={isTablet || isMobile ? "10" : "9.6"}
-      ref={ref => (parallax = ref)}
-    >
+    <Layout>
+      <Navbar handleClick={handleClick} />
+      <Parallax
+        style={{ zIndex: "20", top: "60px" }}
+        pages={isTablet || isMobile ? "10" : "9.65"}
+        ref={ref => (parallax = ref)}
+      >
         <SmallStarsAnimation reset config={{ duration: 50000 }}>
           {styles => <SmallStarsLayer style={styles} />}
         </SmallStarsAnimation>
@@ -192,7 +190,6 @@ const IndexPage = () => {
             alignItems: "center",
             justifyContent: "center",
             pointerEvents: "none",
-            overflow: "hidden",
           }}
         >
           <Img
@@ -270,7 +267,6 @@ const IndexPage = () => {
             style={{ width: "15%", marginLeft: "80%" }}
           />
         </ParallaxLayer>
-
 
         <ParallaxLayer
           offset={3}
@@ -502,9 +498,8 @@ const IndexPage = () => {
         <Portfolio />
         <AboutMe />
         <Contact />
-        </Parallax>
-      </Layout>
-   
+      </Parallax>
+    </Layout>
   )
 }
 
