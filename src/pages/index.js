@@ -69,6 +69,7 @@ const BigStarsLayer = styled(animated.div)`
   }
 `
 
+
 const Contained = styled.div`
   height: 100%;
   width: 100%;
@@ -166,10 +167,10 @@ const IndexPage = () => {
   }
   return (
     <Layout>
-      <Navbar handleClick={handleClick} />
+    <Navbar handleClick={handleClick} />
       <Parallax
         style={{ zIndex: "20", top: "60px" }}
-        pages={isTablet || isMobile ? "10" : "9.65"}
+        pages={isTablet || isMobile ? "10" : "9.6"}
         ref={ref => (parallax = ref)}
       >
         <SmallStarsAnimation reset config={{ duration: 50000 }}>
@@ -499,6 +500,7 @@ const IndexPage = () => {
         <AboutMe />
         <Contact />
       </Parallax>
+  
     </Layout>
   )
 }

@@ -46,7 +46,7 @@ const Home = ({ handleClick }) => {
   })
 
   return (
-    <StyledSection center id="home">
+    <StyledSection home center id="home">
       <StyledTitle style={HomeAnimation}>
         Hi, I'm <Highlight>Ian Benton</Highlight>
       </StyledTitle>
