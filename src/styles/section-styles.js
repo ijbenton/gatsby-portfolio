@@ -5,10 +5,10 @@ export const StyledSection = styled.section`
   align-items: center;
   justify-content: ${props => (props.center ? "center" : "normal")};
   flex-direction: column;
-  min-height: ${props => props.home ? "calc(100vh - 60px)" : "100vh"};
+  min-height: ${props => (props.home ? "calc(100vh - 60px)" : "100vh")};
   max-width: 124rem;
   border-bottom: 1px solid black;
-  padding: 6rem 4rem 0 4rem;
+  padding: ${props => (props.home ? "0" : "6rem 4rem 0 4rem")};
   margin: 0 auto;
 `
 export const Container = styled.div`
