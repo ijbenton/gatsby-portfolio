@@ -93,8 +93,10 @@ const Navbar = ({ handleClick }) => {
       <Wrapper>
         <Logo onClick={() => handleClick(0)}>Ian Benton</Logo>
         <StyledNav>
-          <span onClick={() => handleClick(isTablet ? "1.1" : "1")}>Portfolio</span>
-          <span onClick={() => handleClick(isTablet ? "8.1" : "7.6")}>
+          <span onClick={() => handleClick(isTablet ? "1.05" : "1")}>
+            Portfolio
+          </span>
+          <span onClick={() => handleClick(isTablet ? "8.05" : "7.6")}>
             About Me
           </span>
           <span onClick={() => handleClick(isTablet ? "9" : "8.6")}>
