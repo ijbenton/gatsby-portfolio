@@ -3,25 +3,22 @@ import styled from "styled-components"
 export const StyledSection = styled.section`
   display: flex;
   align-items: center;
+  justify-content: ${props => (props.center ? "center" : "normal")};
   flex-direction: column;
   min-height: 100vh;
   max-width: 124rem;
   border-bottom: 1px solid black;
   padding: 6rem 4rem 0 4rem;
   margin: 0 auto;
+`
+export const Container = styled.div`
+  display: flex;
   background: ${props =>
     props.pTransparent
       ? "var(--p-transparent)"
       : props.plTransparent
       ? "var(--pl-transparent)"
       : ""};
-`
-export const Container = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 `
 
 export const SectionTitle = styled.h2`
@@ -51,7 +48,7 @@ export const Lead = styled.div`
 
   @media ${props => props.theme.mediaQueries.largeDesktop} {
     p {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
   }
   @media ${props => props.theme.mediaQueries.tablet} {

@@ -60,7 +60,8 @@ const Contact = () => {
     }
   `)
   return (
-    <StyledSection plTransparent id="contact">
+    <Container plTransparent>
+    <StyledSection id="contact">
       <SectionTitle mTop>Contact Me!</SectionTitle>
       <Email>
         <span>hello@ianbenton.com</span>
@@ -100,6 +101,7 @@ const Contact = () => {
         </StyledLink>
       </SocialIcons>
     </StyledSection>
+    </Container>
   )
 }
 

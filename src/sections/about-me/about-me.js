@@ -75,7 +75,8 @@ const AboutMe = () => {
     }
   `)
   return (
-    <StyledSection pTransparent id="about-me">
+    <Container pTransparent>
+    <StyledSection id="about-me">
       <SectionTitle mTop>
        About Me
       </SectionTitle>
@@ -103,6 +104,7 @@ const AboutMe = () => {
         </ButtonLink>
       </ButtonsWrapper>
     </StyledSection>
+    </Container>
   )
 }
 
