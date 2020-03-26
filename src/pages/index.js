@@ -189,7 +189,7 @@ const IndexPage = () => {
         </BigStarsAnimation>
 
         <ParallaxLayer
-          offset={9}
+          offset={9.2}
           speed={0.1}
           style={{
             display: "flex",
