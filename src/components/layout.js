@@ -14,16 +14,17 @@ import GlobalStyles from "../styles/global"
 import theme from "../styles/theme"
 import SEO from "../components/seo"
 
-const StyledMain = styled.main``
+const StyledMain = styled.main`
+  height: 100%;
+`
 
 const Layout = ({ children }) => (
-    <ThemeProvider theme={theme}>
-      <SEO />
-      <StyledMain>{children}</StyledMain>
-      <GlobalStyles />
-    </ThemeProvider>
-  )
-
+  <ThemeProvider theme={theme}>
+    <SEO />
+    <StyledMain>{children}</StyledMain>
+    <GlobalStyles />
+  </ThemeProvider>
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

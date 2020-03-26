@@ -178,7 +178,7 @@ const IndexPage = () => {
     parallax.scrollTo(pageNum)
   }
   return (
-    <Parallax pages={isTablet || isMobile ? "10.3" : "9.65"} ref={ref => (parallax = ref)}>
+    <Parallax pages={isTablet || isMobile ? "10.3" : "9.6"} ref={ref => (parallax = ref)}>
       <Layout>
         <Navbar handleClick={handleClick} />
 
@@ -200,6 +200,7 @@ const IndexPage = () => {
             alignItems: "center",
             justifyContent: "center",
             pointerEvents: "none",
+            overflow: "hidden"
           }}
         >
           <Img

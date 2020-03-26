@@ -30,7 +30,7 @@ export const SectionTitle = styled.h2`
   text-align: center;
   margin: 0;
   height: 15vh;
-  margin-top: ${props => (props.mTop ? "15vh" : "0")};
+  margin-top: ${props => (props.mTop ? "5vh" : "0")};
 
   @media ${props => props.theme.mediaQueries.tablet} {
     height: 10vh;
@@ -44,7 +44,7 @@ export const Lead = styled.div`
     font-size: 1.5rem;
     font-weight: 400;
     margin-top: 0;
-    margin-bottom: 3.7rem;
+    margin-bottom: 3.5rem;
     line-height: 1.75;
     letter-spacing: 1.5px;
   }
