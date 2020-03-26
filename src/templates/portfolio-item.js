@@ -23,10 +23,6 @@ const ItemWrapper = styled.div`
   &:last-child {
     margin-bottom: 0;
   }
-
-  @media ${props => props.theme.mediaQueries.tablet}{
-    height: 70vh;
-  }
 `
 
 const ContentWrapper = styled.div`

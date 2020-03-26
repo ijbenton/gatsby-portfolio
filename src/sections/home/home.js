@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { HomeSection, Container } from "../../styles/section-styles"
+import { StyledSection, Container } from "../../styles/section-styles"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons"
 import { useSpring, animated, config } from "react-spring"
@@ -46,7 +46,7 @@ const Home = ({ handleClick }) => {
   })
 
   return (
-    <HomeSection id="home">
+    <StyledSection id="home">
     <Container>
       <StyledTitle style={HomeAnimation}>
         Hi, I'm <Highlight>Ian Benton</Highlight>
@@ -75,7 +75,7 @@ const Home = ({ handleClick }) => {
         onClick={() => handleClick(1)}
       />
       </Container>
-    </HomeSection>
+    </StyledSection>
   )
 }
 

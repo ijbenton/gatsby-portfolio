@@ -1,15 +1,5 @@
 import styled from "styled-components"
 
-export const HomeSection = styled.section`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100vh;
-  max-width: 124rem;
-  border-bottom: 1px solid black;
-  padding: 6rem 4rem 0 4rem;
-  margin: 0 auto;
-`
 export const StyledSection = styled.section`
   display: flex;
   align-items: center;
@@ -26,9 +16,6 @@ export const StyledSection = styled.section`
       ? "var(--pl-transparent)"
       : ""};
 
-  @media ${props => props.theme.mediaQueries.tablet} {
-    min-height: 60vh;
-  }
 `
 export const Container = styled.div`
   flex: 1;
