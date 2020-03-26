@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const StyledSection = styled.section`
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   min-height: 100vh;
   max-width: 124rem;
@@ -29,7 +30,11 @@ export const SectionTitle = styled.h2`
   font-size: 6rem;
   text-align: center;
   margin: 0;
-  height: 20vh;
+  height: 15vh;
+
+  @media ${props => props.theme.mediaQueries.tablet} {
+    height: 10vh;
+  }
 `
 
 export const Lead = styled.div`
@@ -52,7 +57,7 @@ export const Lead = styled.div`
   @media ${props => props.theme.mediaQueries.tablet} {
     text-align: center;
     p {
-      font-size: 1.4rem;
+      font-size: ${props => (props.aboutMe ? "1.9rem" : "1.4rem")};
       margin: 1rem 0;
     }
   }

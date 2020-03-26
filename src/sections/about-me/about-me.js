@@ -14,10 +14,10 @@ import ButtonLink from "../../components/button-link/button-link"
 
 const SubTitle = styled.h3`
   font-weight: 600;
-  font-size: 2.75vw;
+  font-size: 2.25rem;
   text-align: center;
   font-style: italic;
-  margin: 0 0 3.5rem 0;
+  margin: 2rem 0 3.5rem 0;
   color: var(--text-highlight);
 
   span {
@@ -36,6 +36,7 @@ const Stack = styled.span`
   text-align: center;
   font-weight: bold;
   font-size: 2.5rem;
+  line-height: 1.3;
   color: var(--text-highlight);
   margin: 0 4rem 2rem 4rem;
 `
@@ -75,31 +76,32 @@ const AboutMe = () => {
   `)
   return (
     <StyledSection pTransparent id="about-me">
-        <SectionTitle>
-          <span>About Me</span>
-        </SectionTitle>
-        <Lead
-          center
-          dangerouslySetInnerHTML={{
-            __html: allFile.edges[0].node.childMarkdownRemark.html,
-          }}
-        />
-        <SubTitle>
-          <span>My Skills</span>
-        </SubTitle>
-        <Stack>
-          {allFile.edges[0].node.childMarkdownRemark.frontmatter.stack}
-        </Stack>
-        <ButtonsWrapper>
-          <ButtonLink
-            target="_blank"
-            rel="noreferrer"
-            href={`${allSite.edges[0].node.siteMetadata.site}/${allFile.edges[0].node.childMarkdownRemark.frontmatter.resume}`}
-          >
-            <StyledIcon icon={faFile} />
-            Resume
-          </ButtonLink>
-        </ButtonsWrapper>
+      <SectionTitle>
+        <span>About Me</span>
+      </SectionTitle>
+      <Lead
+        center
+        aboutMe
+        dangerouslySetInnerHTML={{
+          __html: allFile.edges[0].node.childMarkdownRemark.html,
+        }}
+      />
+      <SubTitle>
+        <span>My Skills</span>
+      </SubTitle>
+      <Stack>
+        {allFile.edges[0].node.childMarkdownRemark.frontmatter.stack}
+      </Stack>
+      <ButtonsWrapper>
+        <ButtonLink
+          target="_blank"
+          rel="noreferrer"
+          href={`${allSite.edges[0].node.siteMetadata.site}/${allFile.edges[0].node.childMarkdownRemark.frontmatter.resume}`}
+        >
+          <StyledIcon icon={faFile} />
+          Resume
+        </ButtonLink>
+      </ButtonsWrapper>
     </StyledSection>
   )
 }
