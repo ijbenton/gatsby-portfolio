@@ -90,18 +90,7 @@ const IndexPage = () => {
           node {
             childImageSharp {
               fluid(maxWidth: 800, quality: 80) {
-                tracedSVG
-                srcWebp
-                srcSetWebp
-                srcSet
-                src
-                sizes
-                presentationWidth
-                presentationHeight
-                originalName
-                originalImg
-                base64
-                aspectRatio
+                ...GatsbyImageSharpFluid_noBase64
               }
             }
             absolutePath
@@ -167,9 +156,9 @@ const IndexPage = () => {
     maxDeviceWidth: "1024px",
     minDeviceWidth: "768px",
   })
-  
+
   const isMobile = useMediaQuery({
-    maxDeviceWidth: "700px"
+    maxDeviceWidth: "700px",
   })
 
   // Parallax Scroll To
@@ -178,7 +167,10 @@ const IndexPage = () => {
     parallax.scrollTo(pageNum)
   }
   return (
-    <Parallax pages={isTablet || isMobile ? "10.3" : "9.6"} ref={ref => (parallax = ref)}>
+    <Parallax
+      pages={isTablet || isMobile ? "10.3" : "9.6"}
+      ref={ref => (parallax = ref)}
+    >
       <Layout>
         <Navbar handleClick={handleClick} />
 
@@ -200,7 +192,7 @@ const IndexPage = () => {
             alignItems: "center",
             justifyContent: "center",
             pointerEvents: "none",
-            overflow: "hidden"
+            overflow: "hidden",
           }}
         >
           <Img

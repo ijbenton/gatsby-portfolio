@@ -22,18 +22,7 @@ const Portfolio = () => {
                 image {
                   childImageSharp {
                     fluid(maxWidth: 800, quality: 80) {
-                      tracedSVG
-                      srcWebp
-                      srcSetWebp
-                      srcSet
-                      src
-                      sizes
-                      presentationWidth
-                      presentationHeight
-                      originalName
-                      originalImg
-                      base64
-                      aspectRatio
+                      ...GatsbyImageSharpFluid_noBase64
                     }
                   }
                 }
