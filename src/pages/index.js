@@ -168,7 +168,7 @@ const IndexPage = () => {
   }
   return (
     <Parallax
-      pages={isTablet || isMobile ? "10.3" : "9.6"}
+      pages={isTablet || isMobile ? "10.1" : "9.6"}
       ref={ref => (parallax = ref)}
     >
       <Layout>
@@ -185,7 +185,7 @@ const IndexPage = () => {
         </BigStarsAnimation>
 
         <ParallaxLayer
-          offset={isTablet || isMobile ? "9.8" : "9.1"}
+          offset={isTablet || isMobile ? "9.6" : "9.1"}
           speed={0.1}
           style={{
             display: "flex",
