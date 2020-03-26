@@ -15,7 +15,6 @@ export const StyledSection = styled.section`
       : props.plTransparent
       ? "var(--pl-transparent)"
       : ""};
-
 `
 export const Container = styled.div`
   flex: 1;
@@ -31,10 +30,6 @@ export const SectionTitle = styled.h2`
   text-align: center;
   margin: 0;
   height: 20vh;
-
-  @media ${props => props.theme.mediaQueries.tablet} {
-    height: 10vh;
-  }
 `
 
 export const Lead = styled.div`
