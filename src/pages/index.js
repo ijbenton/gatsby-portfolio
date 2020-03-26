@@ -167,13 +167,13 @@ const IndexPage = () => {
     parallax.scrollTo(pageNum)
   }
   return (
-    <Parallax
+    
+      <Layout>
+        <Navbar handleClick={handleClick} />
+        <Parallax
       pages={isTablet || isMobile ? "10" : "9.6"}
       ref={ref => (parallax = ref)}
     >
-      <Layout>
-        <Navbar handleClick={handleClick} />
-
         <SmallStarsAnimation reset config={{ duration: 50000 }}>
           {styles => <SmallStarsLayer style={styles} />}
         </SmallStarsAnimation>
@@ -502,8 +502,9 @@ const IndexPage = () => {
         <Portfolio />
         <AboutMe />
         <Contact />
+        </Parallax>
       </Layout>
-    </Parallax>
+   
   )
 }
 

@@ -72,6 +72,10 @@ const Navbar = ({ handleClick }) => {
     maxDeviceWidth: "1024px",
     minDeviceWidth: "768px",
   })
+
+  const isMobile = useMediaQuery({
+    maxDeviceWidth: "700px",
+  })
   const isLargeHeight = useMediaQuery({ minDeviceHeight: "1000px" })
   const isSmallDesktop = useMediaQuery({
     minDeviceHeight: "1000px",
@@ -88,10 +92,10 @@ const Navbar = ({ handleClick }) => {
         <Logo onClick={() => handleClick(0)}>Ian Benton</Logo>
         <StyledNav>
           <span onClick={() => handleClick(1)}>Portfolio</span>
-          <span onClick={() => handleClick(isTablet ? "6.7" : "7.7")}>
+          <span onClick={() => handleClick(isTablet ? "8" : "7.6")}>
             About Me
           </span>
-          <span onClick={() => handleClick(isTablet ? "7.4" : "8.7")}>
+          <span onClick={() => handleClick(isTablet ? "9" : "8.6")}>
             Contact
           </span>
         </StyledNav>
