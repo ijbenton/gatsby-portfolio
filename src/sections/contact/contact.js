@@ -25,7 +25,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
 `
 
 const Email = styled.h3`
-  margin: -3rem 0 1.5rem 0;
+  margin: -6rem 0 1.5rem 0;
   text-align: center;
   color: var(--text-highlight);
   span {

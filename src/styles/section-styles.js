@@ -31,7 +31,7 @@ export const SectionTitle = styled.h2`
   text-align: center;
   margin: 0;
   height: 15vh;
-  margin-top: ${props => (props.mTop ? "-3rem" : "0")};
+  margin-top: ${props => (props.mTop ? "-7rem" : "0")};
 
   @media ${props => props.theme.mediaQueries.tablet} {
     height: 10vh;
