@@ -178,7 +178,7 @@ const IndexPage = () => {
     parallax.scrollTo(pageNum)
   }
   return (
-    <Parallax pages={isTablet || isMobile ? "10.3" : "9.67"} ref={ref => (parallax = ref)}>
+    <Parallax pages={isTablet || isMobile ? "10.3" : "9.66"} ref={ref => (parallax = ref)}>
       <Layout>
         <Navbar handleClick={handleClick} />
 

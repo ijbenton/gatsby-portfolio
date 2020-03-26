@@ -14,14 +14,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 
-const Section = styled.section`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`
-
 const SocialIcons = styled.div`
   display: flex;
   justify-content: center;
@@ -69,7 +61,7 @@ const Contact = () => {
   `)
   return (
     <StyledSection plTransparent id="contact">
-      <SectionTitle>
+      <SectionTitle mTop>
         <span>Contact Me!</span>
       </SectionTitle>
       <Email>
