@@ -3,7 +3,6 @@ import styled from "styled-components"
 export const StyledSection = styled.section`
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   min-height: 100vh;
   max-width: 124rem;
@@ -31,7 +30,7 @@ export const SectionTitle = styled.h2`
   text-align: center;
   margin: 0;
   height: 15vh;
-  margin-top: ${props => (props.mTop ? "-7rem" : "0")};
+  margin-top: ${props => (props.mTop ? "15vh" : "0")};
 
   @media ${props => props.theme.mediaQueries.tablet} {
     height: 10vh;

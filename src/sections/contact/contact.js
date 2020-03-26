@@ -17,7 +17,6 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 const SocialIcons = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: -2rem;
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -25,7 +24,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
 `
 
 const Email = styled.h3`
-  margin: -6rem 0 1.5rem 0;
+  margin: 0 0 1.5rem 0;
   text-align: center;
   color: var(--text-highlight);
   span {
