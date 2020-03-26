@@ -174,7 +174,7 @@ const IndexPage = () => {
     parallax.scrollTo(pageNum)
   }
   return (
-    <Parallax pages={9.67} ref={ref => (parallax = ref)}>
+    <Parallax pages={isTablet ? "10" : "9.67"} ref={ref => (parallax = ref)}>
       <Layout>
         <Navbar handleClick={handleClick} />
 
@@ -189,7 +189,7 @@ const IndexPage = () => {
         </BigStarsAnimation>
 
         <ParallaxLayer
-          offset={9.2}
+          offset={isTablet ? "9.6" : "9.2"}
           speed={0.1}
           style={{
             display: "flex",
