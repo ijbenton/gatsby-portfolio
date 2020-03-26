@@ -167,6 +167,10 @@ const IndexPage = () => {
     maxDeviceWidth: "1024px",
     minDeviceWidth: "768px",
   })
+  
+  const isMobile = useMediaQuery({
+    maxDeviceWidth: "700px"
+  })
 
   // Parallax Scroll To
   let parallax
@@ -174,7 +178,7 @@ const IndexPage = () => {
     parallax.scrollTo(pageNum)
   }
   return (
-    <Parallax pages={isTablet ? "10.3" : "9.67"} ref={ref => (parallax = ref)}>
+    <Parallax pages={isTablet || isMobile ? "10.3" : "9.67"} ref={ref => (parallax = ref)}>
       <Layout>
         <Navbar handleClick={handleClick} />
 
@@ -189,7 +193,7 @@ const IndexPage = () => {
         </BigStarsAnimation>
 
         <ParallaxLayer
-          offset={isTablet ? "9.8" : "9.2"}
+          offset={isTablet || isMobile ? "9.8" : "9.2"}
           speed={0.1}
           style={{
             display: "flex",
