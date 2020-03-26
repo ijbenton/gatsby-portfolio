@@ -57,8 +57,8 @@ export const Lead = styled.div`
   @media ${props => props.theme.mediaQueries.tablet} {
     text-align: center;
     p {
-      font-size: ${props => (props.aboutMe ? "1.9rem" : "1.4rem")};
-      margin: 1rem 0;
+      font-size: ${props => (props.aboutMe ? "1.9rem" : "1.6rem")};
+      margin: 1.5rem 0;
     }
   }
 `
