@@ -24,7 +24,7 @@ const theme = {
     smallDesktop: "only screen and (min-width: 1025px and max-width: 1400px)",
     mediumDesktop: "only screen and (min-width: 1401px and max-width: 1600px)",
     largeDesktop: "only screen and (min-width: 1601px)",
-    tablet: "only screen and (min-width: 768px) and (max-width: 1024px) and (min-height: 1000px)",
+    tablet: "only screen and (min-width: 768px) and (max-width: 1024px)",
   },
 }
 

@@ -164,7 +164,6 @@ const IndexPage = () => {
   })
 
   const isTablet = useMediaQuery({
-    minDeviceHeight: "1000px",
     maxDeviceWidth: "1024px",
     minDeviceWidth: "768px",
   })

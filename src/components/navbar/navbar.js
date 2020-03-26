@@ -69,7 +69,6 @@ const Navbar = ({ handleClick }) => {
     minDeviceWidth: "480px",
   })
   const isTablet = useMediaQuery({
-    minDeviceHeight: "1000px",
     maxDeviceWidth: "1024px",
     minDeviceWidth: "768px",
   })
