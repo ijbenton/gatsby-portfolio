@@ -39,6 +39,10 @@ const Stack = styled.span`
   line-height: 1.3;
   color: var(--text-highlight);
   margin: 0 4rem 2rem 4rem;
+
+  @media ${props => props.theme.mediaQueries.largePhone} {
+    font-size: 1.5rem;
+  }
 `
 
 const ButtonsWrapper = styled.div`

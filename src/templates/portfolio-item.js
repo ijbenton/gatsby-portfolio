@@ -13,15 +13,16 @@ const ItemWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   z-index: 5;
-  padding: 6rem 0 6rem 0;
+  padding: 6re 0;
   min-height: 80vh;
 
   &:first-child {
     margin-top: 60px;
   }
 
-  &:last-child {
-    margin-bottom: 0;
+  @media ${props => props.theme.mediaQueries.largePhone} {
+    min-height: 50vh;
+    padding: 3rem 0;
   }
 `
 

@@ -37,6 +37,10 @@ const Email = styled.h3`
     transition: color 0.2s ease-out;
     padding: 0 0.75rem;
   }
+
+  @media ${props => props.theme.mediaQueries.largePhone} {
+    margin: 1.5rem 0;
+  }
 `
 
 const StyledLink = styled.a`
