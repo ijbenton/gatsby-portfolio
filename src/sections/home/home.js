@@ -10,6 +10,10 @@ const StyledTitle = styled(animated.div)`
   color: var(--white);
   font-size: 5rem;
   margin-bottom: 0.5rem;
+
+  @media ${props => props.theme.mediaQueries.largePhone} {
+    font-size: 3.5rem;
+  }
 `
 const StyledSlogan = styled(animated.div)`
   display: flex;
@@ -20,6 +24,10 @@ const StyledSlogan = styled(animated.div)`
     padding: 0.5rem;
     font-weight: bold;
     color: var(--white);
+  }
+
+  @media ${props => props.theme.mediaQueries.largePhone} {
+    font-size: 1.9rem;
   }
 `
 
@@ -32,6 +40,10 @@ const StyledIcon = styled(animated(FontAwesomeIcon))`
   margin-top: 1rem;
   color: white;
   cursor: pointer;
+
+  @media ${props => props.theme.mediaQueries.largePhone} {
+    margin-top: 1.5rem;
+  }
 `
 const Home = ({ handleClick }) => {
   const HomeAnimation = useSpring({

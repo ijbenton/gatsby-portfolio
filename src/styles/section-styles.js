@@ -10,6 +10,10 @@ export const StyledSection = styled.section`
   border-bottom: 1px solid black;
   padding: ${props => (props.home ? "0" : "6rem 4rem 0 4rem")};
   margin: 0 auto;
+
+  @media ${props => props.theme.mediaQueries.largePhone} {
+    padding: ${props => (props.home ? "0" : "6rem 2rem 0 2rem")};
+  }
 `
 export const Container = styled.div`
   display: flex;
@@ -31,6 +35,11 @@ export const SectionTitle = styled.h2`
 
   @media ${props => props.theme.mediaQueries.tablet} {
     height: 10vh;
+  }
+
+  @media ${props => props.theme.mediaQueries.largePhone} {
+    height: 5vh;
+    font-size: 3.5rem;
   }
 `
 
@@ -56,6 +65,12 @@ export const Lead = styled.div`
     p {
       font-size: ${props => (props.aboutMe ? "1.9rem" : "1.6rem")};
       margin: 1.5rem 0;
+    }
+  }
+
+  @media ${props => props.theme.mediaQueries.largePhone} {
+    p {
+      font-size: ${props => (props.aboutMe ? "1.3rem" : "1.1rem")};
     }
   }
 `

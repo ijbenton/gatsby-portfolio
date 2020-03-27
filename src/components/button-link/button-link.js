@@ -35,6 +35,9 @@ const StyledLink = styled.a`
   @media ${props => props.theme.mediaQueries.tablet} {
     font-size: 2rem;
   }
+  @media ${props => props.theme.mediaQueries.largePhone} {
+    font-size: 1.5rem;
+  }
 `
 
 const ButtonLink = ({ children, solid, ...otherProps }) => (

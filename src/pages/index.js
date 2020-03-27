@@ -169,7 +169,7 @@ const IndexPage = () => {
     <Layout>
     <Navbar handleClick={handleClick} />
       <Parallax
-        style={{ zIndex: "20", top: "60px" }}
+        style={{ top: "60px" }}
         pages={isTablet || isMobile ? "10" : "9.6"}
         ref={ref => (parallax = ref)}
       >

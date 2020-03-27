@@ -13,8 +13,8 @@ const ItemWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   z-index: 5;
-  padding: 0 0 12rem 0;
-  height: 80vh;
+  padding: 6rem 0 6rem 0;
+  min-height: 80vh;
 
   &:first-child {
     margin-top: 60px;
@@ -31,6 +31,9 @@ const ContentWrapper = styled.div`
   @media ${props => props.theme.mediaQueries.tablet} {
     flex-direction: column;
     margin: 0 4rem;
+  }
+  @media ${props => props.theme.mediaQueries.largePhone} {
+    margin: 0;
   }
 `
 
@@ -68,6 +71,10 @@ const Title = styled.h1`
   padding: 0.5rem 0.75rem;
   border-radius: 5px;
   background: var(--primary);
+
+  @media ${props => props.theme.mediaQueries.largePhone} {
+    font-size: 2.75rem;
+  }
 `
 
 const Stack = styled.span`
@@ -83,6 +90,11 @@ const Stack = styled.span`
     margin-bottom: 2rem;
     font-size: 2rem;
   }
+
+  @media ${props => props.theme.mediaQueries.largePhone} {
+    font-size: 1.5rem;
+  }
+
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`

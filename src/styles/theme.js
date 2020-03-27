@@ -21,10 +21,11 @@ const theme = {
     landscape: `only screen and (max-width: 25em)`,
     smallPhone: "only screen and (max-width: 31.25em)",
     mediumPhone: "only screen and (max-width: 37.5em)",
+    largePhone: "only screen and (max-width: 767px)",
     smallDesktop: "only screen and (min-width: 1025px and max-width: 1400px)",
     mediumDesktop: "only screen and (min-width: 1401px and max-width: 1600px)",
     largeDesktop: "only screen and (min-width: 1601px)",
-    tablet: "only screen and (min-width: 768px) and (max-width: 1024px)",
+    tablet: "only screen and (max-width: 1024px)",
   },
 }
 

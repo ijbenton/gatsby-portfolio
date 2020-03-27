@@ -1,8 +1,10 @@
 import { Link } from "react-scroll"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import { useMediaQuery } from "react-responsive"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -10,7 +12,7 @@ const StyledHeader = styled.header`
   max-width: 100vw;
   top: 0;
   left: 0;
-  z-index: 21;
+  z-index: 10;
   font-size: 2rem;
   background: var(--background);
   display: flex;
@@ -54,22 +56,43 @@ const Logo = styled.div`
   }
 `
 
+const MobileMenu = styled.div`
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  height: calc(100vh - 60px);
+  z-index: 5;
+  display: ${props => (props.isMenuOpen === true ? "flex" : "none")};
+`
+
+const StyledList = styled.ul`
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+  background: var(--primary);
+  color: var(--white);
+
+  li {
+    font-weight: bold;
+    font-size: 3rem;
+    padding: 2rem 0;
+  }
+`
+
+const NavIcon = styled(FontAwesomeIcon)`
+  z-index: 25;
+  color: var(--white);
+  margin-right: 4rem;
+`
+
 const Navbar = ({ handleClick }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   // Media Queries
-  const isXsHeight = useMediaQuery({ maxDeviceHeight: "545px" })
-  const isSmartPhone = useMediaQuery({
-    maxDeviceWidth: "480px",
-    maxDeviceHeight: "800px",
-  })
-  const isXlSmartPhone = useMediaQuery({
-    maxDeviceWidth: "480px",
-    minDeviceHeight: "801px",
-  })
-  const isSmallHeight = useMediaQuery({
-    minDeviceHeight: "546px",
-    maxDeviceHeight: "799px",
-    minDeviceWidth: "480px",
-  })
   const isTablet = useMediaQuery({
     maxDeviceWidth: "1024px",
     minDeviceWidth: "768px",
@@ -78,31 +101,74 @@ const Navbar = ({ handleClick }) => {
   const isMobile = useMediaQuery({
     maxDeviceWidth: "700px",
   })
-  const isLargeHeight = useMediaQuery({ minDeviceHeight: "1000px" })
-  const isSmallDesktop = useMediaQuery({
-    minDeviceHeight: "1000px",
-    minDeviceWidth: "1025px",
-  })
-  const isLargeDesktop = useMediaQuery({
-    minDeviceHeight: "1000px",
-    minDeviceWidth: "1025px",
-  })
+
+  const toggleMenu = () => {
+    if (!isMenuOpen) {
+      setIsMenuOpen(true)
+    } else {
+      setIsMenuOpen(false)
+    }
+  }
 
   return (
     <StyledHeader>
       <Wrapper>
-        <Logo onClick={() => handleClick(0)}>Ian Benton</Logo>
-        <StyledNav>
-          <span onClick={() => handleClick(isTablet ? "1.05" : "1")}>
-            Portfolio
-          </span>
-          <span onClick={() => handleClick(isTablet ? "8.05" : "7.6")}>
-            About Me
-          </span>
-          <span onClick={() => handleClick(isTablet ? "9" : "8.6")}>
-            Contact
-          </span>
-        </StyledNav>
+        <Logo
+          onClick={() => {
+            handleClick(0)
+            if (isMobile && isMenuOpen) {
+              toggleMenu()
+            }
+          }}
+        >
+          Ian Benton
+        </Logo>
+        {isMobile ? (
+          <NavIcon
+            onClick={() => toggleMenu()}
+            icon={isMenuOpen ? faTimes : faBars}
+          />
+        ) : (
+          <StyledNav>
+            <span onClick={() => handleClick(isTablet ? "1.05" : "1")}>
+              Portfolio
+            </span>
+            <span onClick={() => handleClick(isTablet ? "8.05" : "7.6")}>
+              About Me
+            </span>
+            <span onClick={() => handleClick(isTablet ? "9" : "8.6")}>
+              Contact
+            </span>
+          </StyledNav>
+        )}
+        <MobileMenu isMenuOpen={isMenuOpen}>
+          <StyledList>
+            <li
+              onClick={() => {
+                handleClick(isTablet ? "1.05" : "1")
+                toggleMenu()
+              }}
+            >
+              Portfolio
+            </li>
+            <li
+              onClick={() => {
+                handleClick(isTablet ? "8.05" : "7.6")
+                toggleMenu()
+              }}
+            >
+              About Me
+            </li>
+            <li
+              onClick={() => {
+                handleClick(isTablet ? "9" : "8.6")
+                toggleMenu()
+              }}
+            >
+              Contact
+            </li>
+          </StyledList>
+        </MobileMenu>
       </Wrapper>
     </StyledHeader>
   )
