@@ -2,7 +2,7 @@ import React from "react"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faLink } from "@fortawesome/free-solid-svg-icons"
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { Lead } from "../styles/section-styles"
 
@@ -97,7 +97,7 @@ const Stack = styled.span`
 
 const StyledIcon = styled(FontAwesomeIcon)`
   color: inherit;
-  margin-right: 0.5rem;
+  margin: ${props => (props.ml ? "0 0 0 0.5rem" : "0 0.5rem 0 0")};
 `
 
 const Image = styled(Img)`
@@ -134,8 +134,8 @@ const PortfolioItem = ({ node }) => {
           <Stack>{stack}</Stack>
           <ButtonsWrapper>
             <ButtonLink target="_blank" solid href={live} rel="noreferrer">
-              <StyledIcon icon={faLink} />
-              Visit
+              Live Demo
+              <StyledIcon ml icon={faExternalLinkAlt} />
             </ButtonLink>
             <ButtonLink target="_blank" href={source} rel="noreferrer">
               <StyledIcon icon={faGithub} />

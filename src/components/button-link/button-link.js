@@ -3,7 +3,8 @@ import styled from "styled-components"
 
 const StyledLink = styled.a`
   outline: none;
-  background: ${({ solid }) => (solid ? "var(--primary)" : "transparent")};
+  background: ${({ solid }) =>
+    solid ? "var(--primary)" : "var(--background)"};
   color: ${({ solid }) => (solid ? "var(--white)" : "var(--text-highlight)")};
   text-transform: uppercase;
   text-decoration: none;
@@ -23,13 +24,8 @@ const StyledLink = styled.a`
   transition: all 0.2s ease-out;
   &:hover {
     transform: translateY(-3px);
-    box-shadow: ${({ solid }) =>
-      solid ? "0px 15px 20px var(--shadow-btn)" : "none"};
-  }
-  &:active {
-    transform: translateY(1px);
-    box-shadow: ${({ solid }) =>
-      solid ? "0 3px 10px var(--shadow-btn)" : "none"};
+    background: ${({ solid }) =>
+      solid ? "var(--primary-light)" : "var(--background)"};
   }
 
   @media ${props => props.theme.mediaQueries.tablet} {
