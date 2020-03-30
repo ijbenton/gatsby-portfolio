@@ -47,6 +47,7 @@ const Stack = styled.span`
 
 const ButtonsWrapper = styled.div`
   margin: 0 auto;
+  padding-bottom: 4rem;
 `
 
 const AboutMe = () => {
@@ -79,9 +80,9 @@ const AboutMe = () => {
     }
   `)
   return (
-    <Container pTransparent>
+    <Container>
     <StyledSection id="about-me">
-      <SectionTitle mTop>
+      <SectionTitle>
        About Me
       </SectionTitle>
       <Lead

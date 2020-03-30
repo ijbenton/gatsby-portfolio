@@ -1,7 +1,6 @@
-import { Link } from "react-scroll"
-import PropTypes from "prop-types"
 import React, { useState } from "react"
 import styled from "styled-components"
+import { Link } from "react-scroll"
 import { useMediaQuery } from "react-responsive"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
@@ -25,8 +24,9 @@ const Wrapper = styled.div`
   justify-content: space-between;
   height: 60px;
   width: 124rem;
-  span {
-    color: #d8dbe2;
+  &:first-child {
+    margin-left: 4rem;
+    padding: 0;
   }
 `
 
@@ -36,19 +36,11 @@ const StyledNav = styled.nav`
   justify-content: flex-end;
   align-items: center;
   margin-right: 4rem;
-  span {
-    cursor: pointer;
-    padding: 0 2rem;
-    transition: color 0.15s ease-out;
-    &:hover {
-      color: var(--primary);
-    }
-  }
 `
 
-const Logo = styled.div`
+const StyledLink = styled(Link)`
   color: #d8dbe2;
-  margin-left: 4rem;
+  padding: 0 2rem;
   cursor: pointer;
   transition: color 0.15s ease-out;
   &:hover {
@@ -65,7 +57,7 @@ const MobileMenu = styled.div`
   display: ${props => (props.isMenuOpen === true ? "flex" : "none")};
 `
 
-const StyledList = styled.ul`
+const MobileNav = styled.nav`
   margin: 0;
   padding: 0;
   width: 100%;
@@ -73,11 +65,10 @@ const StyledList = styled.ul`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  list-style: none;
   background: var(--primary);
   color: var(--white);
 
-  li {
+  a {
     font-weight: bold;
     font-size: 3rem;
     padding: 2rem 0;
@@ -90,8 +81,17 @@ const NavIcon = styled(FontAwesomeIcon)`
   margin-right: 4rem;
 `
 
-const Navbar = ({ handleClick }) => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    if (!isMenuOpen) {
+      setIsMenuOpen(true)
+    } else {
+      setIsMenuOpen(false)
+    }
+  }
+
   // Media Queries
   const isTablet = useMediaQuery({
     maxDeviceWidth: "1024px",
@@ -102,27 +102,18 @@ const Navbar = ({ handleClick }) => {
     maxDeviceWidth: "700px",
   })
 
-  const toggleMenu = () => {
-    if (!isMenuOpen) {
-      setIsMenuOpen(true)
-    } else {
-      setIsMenuOpen(false)
-    }
-  }
-
   return (
     <StyledHeader>
       <Wrapper>
-        <Logo
+        <StyledLink
+          to="home"
+          smooth={true}
           onClick={() => {
-            handleClick(0)
-            if (isMobile && isMenuOpen) {
-              toggleMenu()
-            }
+            if (isMobile && isMenuOpen) toggleMenu()
           }}
         >
           Ian Benton
-        </Logo>
+        </StyledLink>
         {isMobile ? (
           <NavIcon
             onClick={() => toggleMenu()}
@@ -130,44 +121,47 @@ const Navbar = ({ handleClick }) => {
           />
         ) : (
           <StyledNav>
-            <span onClick={() => handleClick(isTablet ? "1.05" : "1")}>
+            <StyledLink to="portfolio" smooth={true}>
               Portfolio
-            </span>
-            <span onClick={() => handleClick(isTablet ? "8.05" : "7.6")}>
+            </StyledLink>
+            <StyledLink to="about-me" smooth={true}>
               About Me
-            </span>
-            <span onClick={() => handleClick(isTablet ? "9" : "8.6")}>
+            </StyledLink>
+            <StyledLink to="contact" smooth={true}>
               Contact
-            </span>
+            </StyledLink>
           </StyledNav>
         )}
         <MobileMenu isMenuOpen={isMenuOpen}>
-          <StyledList>
-            <li
+          <MobileNav>
+            <StyledLink
+              to="portfolio"
+              smooth={true}
               onClick={() => {
-                handleClick(isTablet ? "1.05" : "1")
                 toggleMenu()
               }}
             >
               Portfolio
-            </li>
-            <li
+            </StyledLink>
+            <StyledLink
+              to="about-me"
+              smooth={true}
               onClick={() => {
-                handleClick(isTablet ? "8.05" : "7.6")
                 toggleMenu()
               }}
             >
               About Me
-            </li>
-            <li
+            </StyledLink>
+            <StyledLink
+              to="contact"
+              smooth={true}
               onClick={() => {
-                handleClick(isTablet ? "9" : "8.6")
                 toggleMenu()
               }}
             >
               Contact
-            </li>
-          </StyledList>
+            </StyledLink>
+          </MobileNav>
         </MobileMenu>
       </Wrapper>
     </StyledHeader>

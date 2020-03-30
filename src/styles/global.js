@@ -31,7 +31,6 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   --primary: ${props => props.theme.colors.primary};
   --primary-light: ${props => props.theme.colors.primaryLight};
   --secondary: ${props => props.theme.colors.secondary};

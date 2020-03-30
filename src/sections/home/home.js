@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons"
 import { useSpring, animated, config } from "react-spring"
 import Typewriter from "typewriter-effect"
+import { Link } from "react-scroll"
 
 const StyledTitle = styled(animated.div)`
   color: var(--white);
@@ -45,7 +46,7 @@ const StyledIcon = styled(animated(FontAwesomeIcon))`
     margin-top: 1.5rem;
   }
 `
-const Home = ({ handleClick }) => {
+const Home = () => {
   const HomeAnimation = useSpring({
     config: config.wobbly,
     delay: 300,
@@ -79,12 +80,13 @@ const Home = ({ handleClick }) => {
         <span>web developer</span>
       </StyledSlogan>
 
-      <StyledIcon
-        icon={faChevronCircleDown}
-        size="3x"
-        style={HomeAnimation}
-        onClick={() => handleClick(1)}
-      />
+      <Link to="portfolio" smooth={true}>
+        <StyledIcon
+          icon={faChevronCircleDown}
+          size="3x"
+          style={HomeAnimation}
+        />
+      </Link>
     </StyledSection>
   )
 }

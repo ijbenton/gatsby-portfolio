@@ -17,6 +17,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 const SocialIcons = styled.div`
   display: flex;
   justify-content: center;
+  padding-bottom: 4rem;
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -64,9 +65,9 @@ const Contact = () => {
     }
   `)
   return (
-    <Container plTransparent>
+    <Container>
     <StyledSection id="contact">
-      <SectionTitle mTop>Contact Me!</SectionTitle>
+      <SectionTitle>Contact Me!</SectionTitle>
       <Email>
         <span>hello@ianbenton.com</span>
       </Email>

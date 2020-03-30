@@ -13,8 +13,7 @@ const ItemWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   z-index: 5;
-  padding: 6re 0;
-  min-height: 80vh;
+  padding: 4rem 0;
 
   &:first-child {
     margin-top: 60px;
@@ -63,7 +62,7 @@ const ButtonsWrapper = styled.div`
 
 const Title = styled.h1`
   font-weight: 600;
-  font-size: 3.5rem;
+  font-size: 3rem;
   position: relative;
   font-style: italic;
   margin: 0;
@@ -82,8 +81,7 @@ const Stack = styled.span`
   color: var(--text-highlight);
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.75rem;
-  font-family: "Roboto";
+  font-size: 1.5rem;
   margin-bottom: 4rem;
 
   @media ${props => props.theme.mediaQueries.tablet} {
@@ -95,7 +93,6 @@ const Stack = styled.span`
   @media ${props => props.theme.mediaQueries.largePhone} {
     font-size: 1.5rem;
   }
-
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`
