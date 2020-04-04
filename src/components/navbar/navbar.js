@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { Link } from "react-scroll"
-import { useMediaQuery } from "react-responsive"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 
@@ -36,6 +35,10 @@ const StyledNav = styled.nav`
   justify-content: flex-end;
   align-items: center;
   margin-right: 4rem;
+
+  @media ${props => props.theme.mediaQueries.largePhone} {
+    display: none;
+  }
 `
 
 const StyledLink = styled(Link)`
@@ -44,7 +47,7 @@ const StyledLink = styled(Link)`
   cursor: pointer;
   transition: color 0.15s ease-out;
   &:hover {
-    color: var(--primary);
+    color: var(--primary-light);
   }
 `
 
@@ -66,7 +69,7 @@ const MobileNav = styled.nav`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: var(--primary);
+  background: var(--primary-light);
   color: var(--white);
 
   a {
@@ -76,10 +79,15 @@ const MobileNav = styled.nav`
   }
 `
 
-const NavIcon = styled(FontAwesomeIcon)`
+const MobileIcon = styled(FontAwesomeIcon)`
   z-index: 25;
   color: var(--white);
   margin-right: 4rem;
+  display: none;
+
+  @media ${props => props.theme.mediaQueries.largePhone} {
+    display: inline-block;
+  }
 `
 
 const Navbar = () => {
@@ -93,16 +101,6 @@ const Navbar = () => {
     }
   }
 
-  // Media Queries
-  const isTablet = useMediaQuery({
-    maxDeviceWidth: "1024px",
-    minDeviceWidth: "768px",
-  })
-
-  const isMobile = useMediaQuery({
-    maxDeviceWidth: "700px",
-  })
-
   return (
     <StyledHeader>
       <Wrapper>
@@ -110,29 +108,26 @@ const Navbar = () => {
           to="home"
           smooth={true}
           onClick={() => {
-            if (isMobile && isMenuOpen) toggleMenu()
+            if (isMenuOpen) toggleMenu()
           }}
         >
           Ian Benton
         </StyledLink>
-        {isMobile ? (
-          <NavIcon
-            onClick={() => toggleMenu()}
-            icon={isMenuOpen ? faTimes : faBars}
-          />
-        ) : (
-          <StyledNav>
-            <StyledLink to="portfolio" smooth={true}>
-              Portfolio
-            </StyledLink>
-            <StyledLink to="about-me" smooth={true}>
-              About Me
-            </StyledLink>
-            <StyledLink to="contact" smooth={true}>
-              Contact
-            </StyledLink>
-          </StyledNav>
-        )}
+        <MobileIcon
+          onClick={() => toggleMenu()}
+          icon={isMenuOpen ? faTimes : faBars}
+        />
+        <StyledNav>
+          <StyledLink to="portfolio" smooth={true}>
+            Portfolio
+          </StyledLink>
+          <StyledLink to="about-me" smooth={true}>
+            About Me
+          </StyledLink>
+          <StyledLink to="contact" smooth={true}>
+            Contact
+          </StyledLink>
+        </StyledNav>
         <MobileMenu isMenuOpen={isMenuOpen}>
           <MobileNav>
             <StyledLink
