@@ -15,10 +15,10 @@ import ButtonLink from "../../components/button-link/button-link"
 
 const SubTitle = styled.h3`
   font-weight: 600;
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   text-align: center;
   font-style: italic;
-  margin: 2rem 0 3.5rem 0;
+  margin: 3rem 0;
   color: var(--text-highlight);
 
   span {
@@ -43,6 +43,8 @@ const Stack = styled.span`
 
   @media ${props => props.theme.mediaQueries.largePhone} {
     font-size: 1.5rem;
+    margin: 0 0 2rem 0;
+    line-height: 2.5rem;
   }
 `
 
@@ -56,6 +58,8 @@ const Description = styled.div`
   padding: 2rem 3rem;
   align-items: center;
   background: ${props => props.theme.colors.darkTheme.card};
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
   @media ${props => props.theme.mediaQueries.tablet} {
     flex-direction: column;
@@ -66,8 +70,8 @@ const Image = styled(Img)`
   margin-right: 4rem;
   flex: 1 1 25%;
   z-index: 5;
-  -webkit-filter: drop-shadow(5px 5px 5px #222);
-  filter: drop-shadow(5px 5px 5px #222);
+  -webkit-filter: drop-shadow(3px 3px 3px #222);
+  filter: drop-shadow(3px 3px 3px #222);
 
   @media ${props => props.theme.mediaQueries.tablet} {
     flex: 0 0 auto;
@@ -141,7 +145,7 @@ const AboutMe = () => {
           <ButtonLink
             target="_blank"
             rel="noreferrer"
-            href={`${allSite.edges[0].node.siteMetadata.site}/${allFile.edges[0].node.childMarkdownRemark.frontmatter.resume}`}
+            href={`${allFile.edges[0].node.childMarkdownRemark.frontmatter.resume}`}
           >
             <StyledIcon icon={faFile} />
             Resume

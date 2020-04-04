@@ -14,14 +14,10 @@ const ItemWrapper = styled.div`
   align-items: center;
   z-index: 5;
   padding: 3.5rem 3rem;
-  border: 1px solid white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   margin-bottom: 4rem;
   background: ${props => props.theme.colors.darkTheme.card};
-
-  @media ${props => props.theme.mediaQueries.largePhone} {
-    padding-bottom: 6rem;
-  }
 `
 
 const ContentWrapper = styled.div`
@@ -65,7 +61,7 @@ const Title = styled.h1`
   position: relative;
   font-style: italic;
   margin: 0;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
   color: var(--text-highlight);
   padding: 0.5rem 0.75rem;
   border-radius: 5px;
@@ -103,8 +99,8 @@ const Image = styled(Img)`
   margin-right: 4rem;
   flex: 1 1 50%;
   z-index: 5;
-  -webkit-filter: drop-shadow(5px 5px 5px #222);
-  filter: drop-shadow(5px 5px 5px #222);
+  -webkit-filter: drop-shadow(3px 3px 3px #222);
+  filter: drop-shadow(3px 3px 3px #222);
 
   @media ${props => props.theme.mediaQueries.tablet} {
     flex: 0 0 auto;

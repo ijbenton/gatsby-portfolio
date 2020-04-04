@@ -17,7 +17,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 const SocialIcons = styled.div`
   display: flex;
   justify-content: center;
-  padding-bottom: 4rem;
+  margin-bottom: 2rem;
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -29,8 +29,8 @@ const Email = styled.h3`
   text-align: center;
   color: var(--text-highlight);
   span {
-    font-weight: 600;
-    font-size: 3.5rem;
+    font-weight: 400;
+    font-size: 3rem;
     position: relative;
     font-style: italic;
     margin: 0;
@@ -47,6 +47,18 @@ const Email = styled.h3`
 const StyledLink = styled.a`
   margin: 2rem;
   padding: 0;
+`
+
+const ContactContainer = styled.div`
+  background: ${props => props.theme.colors.darkTheme.card};
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 3rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 `
 
 const Contact = () => {
@@ -66,46 +78,48 @@ const Contact = () => {
   `)
   return (
     <Container>
-    <StyledSection id="contact">
-      <SectionTitle>Contact Me!</SectionTitle>
-      <Email>
-        <span>hello@ianbenton.com</span>
-      </Email>
-      <SocialIcons>
-        <StyledLink
-          rel="noreferrer"
-          target="_blank"
-          aria-label="Github"
-          href={`https://github.com/${site.siteMetadata.social.github}`}
-        >
-          <StyledIcon icon={faGithub} size="4x" />
-        </StyledLink>
-        <StyledLink
-          rel="noreferrer"
-          target="_blank"
-          aria-label="Instagram"
-          href={`https://www.instagram.com/${site.siteMetadata.social.instagram}`}
-        >
-          <StyledIcon icon={faInstagram} size="4x" />
-        </StyledLink>
-        <StyledLink
-          rel="noreferrer"
-          target="_blank"
-          aria-label="Linkedin"
-          href={`https://www.linkedin.com/in/${site.siteMetadata.social.linkedin}`}
-        >
-          <StyledIcon icon={faLinkedin} size="4x" />
-        </StyledLink>
-        <StyledLink
-          rel="noreferrer"
-          target="_top"
-          aria-label="Email"
-          href={`mailto:${site.siteMetadata.social.email}`}
-        >
-          <StyledIcon icon={faEnvelope} size="4x" />
-        </StyledLink>
-      </SocialIcons>
-    </StyledSection>
+      <StyledSection contact id="contact">
+        <ContactContainer>
+          <SectionTitle contact>Contact Me!</SectionTitle>
+          <Email>
+            <span>hello@ianbenton.com</span>
+          </Email>
+          <SocialIcons>
+            <StyledLink
+              rel="noreferrer"
+              target="_blank"
+              aria-label="Github"
+              href={`https://github.com/${site.siteMetadata.social.github}`}
+            >
+              <StyledIcon icon={faGithub} size="4x" />
+            </StyledLink>
+            <StyledLink
+              rel="noreferrer"
+              target="_blank"
+              aria-label="Instagram"
+              href={`https://www.instagram.com/${site.siteMetadata.social.instagram}`}
+            >
+              <StyledIcon icon={faInstagram} size="4x" />
+            </StyledLink>
+            <StyledLink
+              rel="noreferrer"
+              target="_blank"
+              aria-label="Linkedin"
+              href={`https://www.linkedin.com/in/${site.siteMetadata.social.linkedin}`}
+            >
+              <StyledIcon icon={faLinkedin} size="4x" />
+            </StyledLink>
+            <StyledLink
+              rel="noreferrer"
+              target="_top"
+              aria-label="Email"
+              href={`mailto:${site.siteMetadata.social.email}`}
+            >
+              <StyledIcon icon={faEnvelope} size="4x" />
+            </StyledLink>
+          </SocialIcons>
+        </ContactContainer>
+      </StyledSection>
     </Container>
   )
 }
