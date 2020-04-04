@@ -13,15 +13,14 @@ const ItemWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   z-index: 5;
-  padding: 4rem 0;
-
-  &:first-child {
-    margin-top: 60px;
-  }
+  padding: 3.5rem 3rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-bottom: 4rem;
+  background: ${props => props.theme.colors.darkTheme.card};
 
   @media ${props => props.theme.mediaQueries.largePhone} {
-    min-height: 50vh;
-    padding: 3rem 0;
+    padding-bottom: 6rem;
   }
 `
 
@@ -70,7 +69,7 @@ const Title = styled.h1`
   color: var(--text-highlight);
   padding: 0.5rem 0.75rem;
   border-radius: 5px;
-  background: var(--primary);
+  background: var(--primary-light);
 
   @media ${props => props.theme.mediaQueries.largePhone} {
     font-size: 2.75rem;
@@ -82,7 +81,7 @@ const Stack = styled.span`
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 
   @media ${props => props.theme.mediaQueries.tablet} {
     text-align: center;

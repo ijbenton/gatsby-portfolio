@@ -51,6 +51,7 @@ const StyledLink = styled(Link)`
 const MobileMenu = styled.div`
   position: fixed;
   top: 60px;
+  left: 0;
   width: 100%;
   height: calc(100vh - 60px);
   z-index: 5;

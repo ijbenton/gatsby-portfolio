@@ -38,7 +38,7 @@ const Highlight = styled.span`
 `
 
 const StyledIcon = styled(animated(FontAwesomeIcon))`
-  margin-top: 1rem;
+  margin-top: 2rem;
   color: white;
   cursor: pointer;
 

@@ -38,7 +38,7 @@ const Portfolio = () => {
   return (
     <StyledSection id="portfolio">
       <SectionTitle>
-        <span>Portfolio</span>
+        <span>My Portfolio</span>
       </SectionTitle>
       {allFile.edges.map(({ node }) => (
         <PortfolioItem node={node} />

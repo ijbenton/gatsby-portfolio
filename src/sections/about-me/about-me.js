@@ -6,6 +6,7 @@ import {
   Lead,
 } from "../../styles/section-styles"
 import styled from "styled-components"
+import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFile } from "@fortawesome/free-solid-svg-icons"
@@ -35,7 +36,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
 const Stack = styled.span`
   text-align: center;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   line-height: 1.3;
   color: var(--text-highlight);
   margin: 0 4rem 2rem 4rem;
@@ -50,6 +51,31 @@ const ButtonsWrapper = styled.div`
   padding-bottom: 4rem;
 `
 
+const Description = styled.div`
+  display: flex;
+  padding: 2rem 3rem;
+  align-items: center;
+  background: ${props => props.theme.colors.darkTheme.card};
+
+  @media ${props => props.theme.mediaQueries.tablet} {
+    flex-direction: column;
+  }
+`
+
+const Image = styled(Img)`
+  margin-right: 4rem;
+  flex: 1 1 25%;
+  z-index: 5;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+
+  @media ${props => props.theme.mediaQueries.tablet} {
+    flex: 0 0 auto;
+    width: 100%;
+    margin: 0;
+  }
+`
+
 const AboutMe = () => {
   const { allFile, allSite } = useStaticQuery(graphql`
     query {
@@ -62,6 +88,13 @@ const AboutMe = () => {
               frontmatter {
                 resume
                 stack
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 600) {
+                      ...GatsbyImageSharpFluid_noBase64
+                    }
+                  }
+                }
               }
               html
             }
@@ -81,34 +114,40 @@ const AboutMe = () => {
   `)
   return (
     <Container>
-    <StyledSection id="about-me">
-      <SectionTitle>
-       About Me
-      </SectionTitle>
-      <Lead
-        center
-        aboutMe
-        dangerouslySetInnerHTML={{
-          __html: allFile.edges[0].node.childMarkdownRemark.html,
-        }}
-      />
-      <SubTitle>
-        <span>My Skills</span>
-      </SubTitle>
-      <Stack>
-        {allFile.edges[0].node.childMarkdownRemark.frontmatter.stack}
-      </Stack>
-      <ButtonsWrapper>
-        <ButtonLink
-          target="_blank"
-          rel="noreferrer"
-          href={`${allSite.edges[0].node.siteMetadata.site}/${allFile.edges[0].node.childMarkdownRemark.frontmatter.resume}`}
-        >
-          <StyledIcon icon={faFile} />
-          Resume
-        </ButtonLink>
-      </ButtonsWrapper>
-    </StyledSection>
+      <StyledSection id="about-me">
+        <SectionTitle>About Me</SectionTitle>
+        <Description>
+          <Image
+            fluid={
+              allFile.edges[0].node.childMarkdownRemark.frontmatter.image
+                .childImageSharp.fluid
+            }
+          />
+          <Lead
+            center
+            aboutMe
+            dangerouslySetInnerHTML={{
+              __html: allFile.edges[0].node.childMarkdownRemark.html,
+            }}
+          />
+        </Description>
+        <SubTitle>
+          <span>My Skills</span>
+        </SubTitle>
+        <Stack>
+          {allFile.edges[0].node.childMarkdownRemark.frontmatter.stack}
+        </Stack>
+        <ButtonsWrapper>
+          <ButtonLink
+            target="_blank"
+            rel="noreferrer"
+            href={`${allSite.edges[0].node.siteMetadata.site}/${allFile.edges[0].node.childMarkdownRemark.frontmatter.resume}`}
+          >
+            <StyledIcon icon={faFile} />
+            Resume
+          </ButtonLink>
+        </ButtonsWrapper>
+      </StyledSection>
     </Container>
   )
 }

@@ -7,8 +7,7 @@ export const StyledSection = styled.section`
   flex-direction: column;
   min-height: ${props => (props.home ? "100vh" : "")};
   max-width: 124rem;
-  border-bottom: 1px solid black;
-  padding: ${props => (props.home ? "0" : "6rem 4rem 0 4rem")};
+  padding: ${props => (props.home ? "0" : "8rem")};
   margin: 0 auto;
 
   @media ${props => props.theme.mediaQueries.largePhone} {
@@ -25,13 +24,8 @@ export const SectionTitle = styled.h2`
   font-weight: 550;
   text-align: center;
   margin: 0;
-
-  @media ${props => props.theme.mediaQueries.tablet} {
-    height: 10vh;
-  }
-
+  padding-bottom: 2rem;
   @media ${props => props.theme.mediaQueries.largePhone} {
-    height: 5vh;
     font-size: 3.5rem;
   }
 `
@@ -39,11 +33,12 @@ export const SectionTitle = styled.h2`
 export const Lead = styled.div`
   color: var(--white);
   text-align: ${props => (props.center ? "center" : "left")};
+  flex: ${props => (props.aboutMe ? "1 1 75%" : "")};
   p {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     font-weight: 400;
     margin-top: 0;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
     line-height: 1.75;
     letter-spacing: 1.5px;
   }

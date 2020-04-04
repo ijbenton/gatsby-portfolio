@@ -1,6 +1,7 @@
 ---
 stack: 'HTML5 - CSS3 - SASS - JAVASCRIPT - WEBPACK - BABEL - REACT.JS - REDUX - GATSBY - GRAPHQL - STYLED COMPONENTS - FIREBASE - NODE.JS - EXPRESS.JS'
 resume: 'resume.pdf'
+image: 'headshot.jpg'
 ---
 When I'm not working on projects or courses my free time is spent exploring new beaches along the coast, going on hikes, reading blog articles, and cooking up tasty new recipes.
 

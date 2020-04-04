@@ -14,7 +14,8 @@ const theme = {
     darkTheme: {
       text: "#E5E5E5",
       textHighlight: "#F2F2F2",
-      background: "#1b1b1e",
+      background: "#232931",
+      card: "#393e46",
     },
   },
   mediaQueries: {
