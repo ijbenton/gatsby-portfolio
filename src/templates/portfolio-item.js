@@ -25,10 +25,6 @@ const ContentWrapper = styled.div`
   align-items: flex-start;
   @media ${props => props.theme.mediaQueries.tablet} {
     flex-direction: column;
-    margin: 0 4rem;
-  }
-  @media ${props => props.theme.mediaQueries.largePhone} {
-    margin: 0;
   }
 `
 

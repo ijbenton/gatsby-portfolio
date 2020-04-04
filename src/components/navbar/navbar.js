@@ -13,8 +13,6 @@ const StyledHeader = styled.header`
   z-index: 10;
   font-size: 2rem;
   background: var(--background);
-  display: flex;
-  justify-content: center;
 `
 
 const Wrapper = styled.div`
@@ -22,10 +20,12 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 60px;
-  width: 124rem;
-  &:first-child {
-    margin-left: 4rem;
-    padding: 0;
+  max-width: 124rem;
+  padding: 0 8rem;
+  margin: 0 auto;
+
+  @media ${props => props.theme.mediaQueries.tablet} {
+    padding: 0 2rem;
   }
 `
 
@@ -34,7 +34,6 @@ const StyledNav = styled.nav`
   flex: 1;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 4rem;
 
   @media ${props => props.theme.mediaQueries.largePhone} {
     display: none;
@@ -43,11 +42,15 @@ const StyledNav = styled.nav`
 
 const StyledLink = styled(Link)`
   color: #d8dbe2;
-  padding: 0 2rem;
+  padding-right: 4rem;
   cursor: pointer;
   transition: color 0.15s ease-out;
   &:hover {
     color: var(--primary-light);
+  }
+
+  &:last-child {
+    padding: ${props => props.mobileEndLink ? "" : "0"};
   }
 `
 
@@ -82,7 +85,6 @@ const MobileNav = styled.nav`
 const MobileIcon = styled(FontAwesomeIcon)`
   z-index: 25;
   color: var(--white);
-  margin-right: 4rem;
   display: none;
 
   @media ${props => props.theme.mediaQueries.largePhone} {
@@ -151,6 +153,7 @@ const Navbar = () => {
             <StyledLink
               to="contact"
               smooth={true}
+              mobileEndLink
               onClick={() => {
                 toggleMenu()
               }}

@@ -40,7 +40,7 @@ body {
   --pl-transparent: ${props => props.theme.colors.plTransparent};
   --text: ${props => props.theme.colors.darkTheme.text};
   --text-highlight: ${props => props.theme.colors.darkTheme.textHighlight};
-  --background: rgba(35,41,49, 0.9);
+  --background: rgba(35,41,49, 0.95);
   --white: #fff;
   --shadow-btn: rgba(7, 49, 69, .1);
   --shadow-color: rgba(0, 0, 0, 0.1);

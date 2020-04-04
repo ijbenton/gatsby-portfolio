@@ -11,7 +11,7 @@ export const StyledSection = styled.section`
   margin: 0 auto;
   width: ${props => (props.contact ? "100%" : "")};
 
-  @media ${props => props.theme.mediaQueries.largePhone} {
+  @media ${props => props.theme.mediaQueries.tablet} {
     padding: ${props => (props.home ? "0" : "6rem 2rem 0 2rem")};
   }
 `
