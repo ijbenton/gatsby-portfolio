@@ -27,7 +27,7 @@ html {
   }
 
 body {
-  font-family: 'Raleway', 'sans-serif';
+  font-family: 'Raleway', 'Roboto', 'Arial', 'serif';
   margin: 0;
   width: 100%;
   height: 100%;
