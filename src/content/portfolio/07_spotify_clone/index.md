@@ -1,7 +1,7 @@
 ---
 title: 'Spotify Clone'
-live: 'https://spotify-clone-ijbenton.netlify.com/'
-source: 'https://github.com/ijbenton/spotify-clone'
+live: 'https://spotify-clone-bentondev.netlify.app/'
+source: 'https://github.com/ijbenton/spotify-clone-v2'
 stack: 'React - Redux - Sass'
 image: 'spotify.png'
 ---
