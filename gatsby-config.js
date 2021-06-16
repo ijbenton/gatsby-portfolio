@@ -14,18 +14,13 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Raleway`,
-            variants: [`200`, `400`, `400i`, `600`, `600i`, `700`],
-          },
-          {
-            family: `Roboto`,
-            variants: [`200`, `400`, `400i`, `600`, `600i`, `700`],
-          },
+          `raleway\:200,400,400i,600,600i,700`,
+          `roboto\:200,400,400i,600,600i,700`,
         ],
+        display: "swap",
       },
     },
     `gatsby-transformer-sharp`,
