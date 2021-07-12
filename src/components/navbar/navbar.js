@@ -1,8 +1,32 @@
 import React, { useState } from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { Link } from "react-scroll"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
+
+const fadeIn = keyframes`
+  from {
+    transform: scale(.25);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+`
+
+const fadeOut = keyframes`
+  from {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(.25);
+    opacity: 1;
+  }
+`
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -45,12 +69,20 @@ const StyledLink = styled(Link)`
   padding-right: 4rem;
   cursor: pointer;
   transition: color 0.15s ease-out;
-  &:hover {
+
+  // Prevent hover state on touch devices
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--primary-light);
+    }
+  }
+
+  &:active {
     color: var(--primary-light);
   }
 
   &:last-child {
-    padding: ${props => props.mobileEndLink ? "" : "0"};
+    padding: ${props => (props.mobileEndLink ? "" : "0")};
   }
 `
 
@@ -61,13 +93,18 @@ const MobileMenu = styled.div`
   width: 100%;
   height: calc(100vh - 60px);
   z-index: 5;
-  display: ${props => (props.isMenuOpen === true ? "flex" : "none")};
+  display: flex;
+  transition: all 0.3s ease-in-out 0s;
+  opacity: ${props => (props.isMenuOpen ? 1 : 0.2)};
+  transform: ${props => (props.isMenuOpen ? "scaleY(1)" : "scaleY(0)")};
+  transform-origin: top;
 `
 
 const MobileNav = styled.nav`
   margin: 0;
   padding: 0;
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
