@@ -1,7 +1,7 @@
 ---
 title: 'BentonDev Portfolio'
-live: 'https://ianbenton.com/'
-source: 'https://github.com/fidalgodev/gatsby-portfolio'
+live: 'https://bentondev.netlify.app/'
+source: 'https://github.com/ijbenton/gatsby-portfolio'
 stack: 'React - Styled Components - Gatsby'
 image: 'blog.png'
 ---
