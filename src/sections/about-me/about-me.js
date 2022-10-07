@@ -1,17 +1,17 @@
-import React from "react"
-import {
-  StyledSection,
-  Container,
-  SectionTitle,
-  Lead,
-} from "../../styles/section-styles"
-import styled from "styled-components"
-import Img from "gatsby-image"
-import { graphql, useStaticQuery } from "gatsby"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFile } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
+import React from "react"
+import styled from "styled-components"
 
 import ButtonLink from "../../components/button-link/button-link"
+import {
+  Container,
+  Lead,
+  SectionTitle,
+  StyledSection,
+} from "../../styles/section-styles"
 
 const SubTitle = styled.h3`
   font-weight: 600;
@@ -20,6 +20,7 @@ const SubTitle = styled.h3`
   font-style: italic;
   margin: 3rem 0;
   color: var(--text-highlight);
+  z-index: 5;
 
   span {
     padding: 0.5rem 0.75rem;
@@ -60,6 +61,7 @@ const Description = styled.div`
   background: ${props => props.theme.colors.darkTheme.card};
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  z-index: 5;
 
   @media ${props => props.theme.mediaQueries.tablet} {
     flex-direction: column;

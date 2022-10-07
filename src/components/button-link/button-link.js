@@ -27,6 +27,7 @@ const StyledLink = styled.a`
     background: ${({ solid }) =>
       solid ? "var(--primary)" : "var(--background)"};
   }
+  z-index: 5;
 
   @media ${props => props.theme.mediaQueries.tablet} {
     font-size: 2rem;

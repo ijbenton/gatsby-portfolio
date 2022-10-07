@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Ian Benton | Front-End Web Developer`,
-    description: `I'm Ian Benton, a Front-End Web Developer from Portland, OR`,
+    title: `Ian Benton | Web/Native Developer`,
+    description: `I'm Ian Benton, a Web/Native Developer from Irvine, CA`,
     author: `Ian`,
-    site: `ianbenton.com`,
+    site: `bentondev.netlify.app`,
     social: {
       github: `ijbenton`,
       instagram: `bentondev`,
       linkedin: `bentondev`,
-      email: `hello@ianbenton.com`,
+      email: `bentonian1@gmail.com`,
     },
   },
   plugins: [
@@ -25,13 +25,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `home`,
-        path: `${__dirname}/src/content/home`,
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

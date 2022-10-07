@@ -1,11 +1,12 @@
-import React from "react"
-import styled from "styled-components"
-import { StyledSection, Container } from "../../styles/section-styles"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons"
-import { useSpring, animated, config } from "react-spring"
-import Typewriter from "typewriter-effect"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import React from "react"
 import { Link } from "react-scroll"
+import { animated, config, useSpring } from "react-spring"
+import styled from "styled-components"
+import Typewriter from "typewriter-effect"
+
+import { StyledSection } from "../../styles/section-styles"
 
 const StyledTitle = styled(animated.div)`
   color: var(--white);

@@ -1,32 +1,8 @@
-import React, { useState } from "react"
-import styled, { keyframes } from "styled-components"
-import { Link } from "react-scroll"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
-
-const fadeIn = keyframes`
-  from {
-    transform: scale(.25);
-    opacity: 0;
-  }
-
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-`
-
-const fadeOut = keyframes`
-  from {
-    transform: scale(1);
-    opacity: 0;
-  }
-
-  to {
-    transform: scale(.25);
-    opacity: 1;
-  }
-`
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import React, { useState } from "react"
+import { Link } from "react-scroll"
+import styled from "styled-components"
 
 const StyledHeader = styled.header`
   position: fixed;

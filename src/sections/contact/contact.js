@@ -1,18 +1,19 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import {
-  StyledSection,
-  Container,
-  SectionTitle,
-} from "../../styles/section-styles"
-import styled from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faGithub,
-  faLinkedin,
   faInstagram,
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { graphql, useStaticQuery } from "gatsby"
+import React from "react"
+import styled from "styled-components"
+
+import {
+  Container,
+  SectionTitle,
+  StyledSection,
+} from "../../styles/section-styles"
 
 const SocialIcons = styled.div`
   display: flex;
@@ -59,6 +60,7 @@ const ContactContainer = styled.div`
   padding: 2rem 3rem;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  z-index: 5;
 `
 
 const Contact = () => {
@@ -82,7 +84,7 @@ const Contact = () => {
         <ContactContainer>
           <SectionTitle contact>Contact Me!</SectionTitle>
           <Email>
-            <span>hello@ianbenton.com</span>
+            <span>bentonian1@gmail.com</span>
           </Email>
           <SocialIcons>
             <StyledLink

@@ -1,8 +1,8 @@
-import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { StyledSection, SectionTitle } from "../../styles/section-styles"
+import React from "react"
+
+import { SectionTitle, StyledSection } from "../../styles/section-styles"
 import PortfolioItem from "../../templates/portfolio-item"
-import styled from "styled-components"
 
 const Portfolio = () => {
   const { allFile } = useStaticQuery(graphql`
